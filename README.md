@@ -23,6 +23,21 @@ Notable files:
 - system/Scenes.gd
 - system/Utils.gd
 
+# Main Systems
+
+## Scene Management
+
+This is designed to always have `Main.tscn` be the "current scene". Use `Game.load_scene()` to change scenes (`get_tree().set_current_scene()` should not be used).
+
+You can launch a scene directly using F6, and the scene management system will automatically load `Main.tscn`, set it as the "current scene", and add the loaded scene as a child of `Main`.
+
+`Game.load_scene()` can accept either a full path to a scene (`res://path/to/file.tscn`), or a scene nickname as defined in `system/Scenes.gd`.
+
+`Game.load_scene()`'s second argument is the name of the spawn point you would like the player to start at. Character spawning is not handled by the scene management system, so this function will not attempt to validate spawn point names.
+
+## Input Management
+
+
 # API reference
 ## `Game.gd`
 
