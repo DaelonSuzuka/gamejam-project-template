@@ -3,7 +3,6 @@ extends KinematicBody2D
 # ******************************************************************************
 
 onready var body = $Body
-onready var movement = $Movement
 onready var interactors = $Interactors
 
 # ******************************************************************************
@@ -89,7 +88,6 @@ func _physics_process(delta):
 		input_state['activate'] = false
 		interactors.attempt_interaction()
 
-	# velocity.x = movement.calculate_velocity().x
 	speed = 1
 	if input_state['run']:
 		speed += 0.5
