@@ -26,6 +26,11 @@ func scene_changed():
 		world_avatar.enter_world(Game.world)
 		camera.follow(world_avatar, Vector2(.5, .5))
 
+	if 'Side' in Game.world.name:
+		world_avatar = load('res://sidescroller/character/Character.tscn').instance()
+		world_avatar.enter_world(Game.world)
+		camera.follow(world_avatar, Vector2(.75, .75))
+
 # ******************************************************************************
 
 var menu_stack = []
