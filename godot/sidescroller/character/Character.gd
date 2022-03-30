@@ -10,7 +10,6 @@ onready var interactors = $Interactors
 
 func _ready():
 	pass
-	HyperLog.log(self).angle('velocity')
 
 # ******************************************************************************
 
@@ -82,7 +81,6 @@ var dead := false
 export var gravity = 500
 export var walk_speed = 1000
 export var jump_speed = -3000
-
 
 func _physics_process(delta):
 	body.visible = true
