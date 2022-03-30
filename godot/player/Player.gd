@@ -46,7 +46,10 @@ func pop_menu():
 var input_proxy = null
 
 func set_input_proxy(proxy=null) -> void:
+	# if !proxy:
+	# 	Player.world_avatar.interactors.can_interact = false
 	input_proxy = proxy
+	Player.world_avatar.clear_input()
 
 # ******************************************************************************
 

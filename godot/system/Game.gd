@@ -172,8 +172,9 @@ func start_dialog(object, conversation, options={}):
 	var dialog = GlobalCanvas.get_node('DialogBox')
 	options['caller'] = object
 	dialog.start(conversation, options)
+	dialog.active = true
 	
-	Player.set_input_proxy(object)
+	Player.set_input_proxy(dialog)
 
 	Utils.try_connect(dialog, 'line_finished', object, 'line_finished')
 	Utils.try_connect(dialog, 'done', Diagraph.sandbox, 'clear_temp_locals', [], CONNECT_ONESHOT)

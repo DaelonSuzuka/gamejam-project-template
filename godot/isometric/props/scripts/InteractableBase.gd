@@ -55,18 +55,18 @@ func interact(object):
 
 	if opened:
 		var convo = '%s:%s:%d' % [conversation, entry, -1]
-		Game.start_dialog2(self, convo, {'len': 1})
+		Game.start_dialog(self, convo, {'len': 1})
 		line += 1
 		return
 
 	if conversation:
 		if dialog_type == "sequential":
 			var convo = '%s:%s:%d' % [conversation, entry, line]
-			Game.start_dialog2(self, convo, {'len': 1})
+			Game.start_dialog(self, convo, {'len': 1})
 			line += 1
 		if dialog_type == "continuous":
 			var convo = '%s:%s:%d' % [conversation, entry, line]
-			Game.start_dialog2(self, convo)
+			Game.start_dialog(self, convo)
 		return
 
 	execute()
@@ -81,7 +81,7 @@ func conversation_over():
 	if !opened and contents and should_open:
 		should_open = false
 		Game.set_opened(self)
-		Game.start_dialog2(self, 'Common:GotItem')
+		Game.start_dialog(self, 'Common:GotItem')
 		opened = true
 
 	execute()
@@ -94,11 +94,3 @@ func execute():
 				node.call(method, argument)
 			else:
 				node.call(method)
-
-func target_method(command):
-	prints('command is', command)
-	if target:
-		prints('target is', target)
-		var node = get_node(target)
-		if node and node.has_method(command):
-			node.call(command)

@@ -71,7 +71,14 @@ color = Color( 1, 0, 0, 1 )
 random = true
 
 [node name="Interactable" parent="." instance=ExtResource( 6 )]
-position = Vector2( 432, 167 )
+position = Vector2( 416, 175 )
+conversation = "DevRoomIso"
+entry = "Test1"
+tooltip_offset = -30.0
+length = 2.0
 
 [node name="Interactable2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 513, 143 )
+position = Vector2( 496, 137 )
+conversation = "DevRoomIso"
+entry = "Test2"
+tooltip_offset = -30.0
