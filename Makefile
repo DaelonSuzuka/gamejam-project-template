@@ -14,20 +14,10 @@ pull:
 
 webdeploy:
 	$(GODOT) --export "HTML5"
-	cp build/web/* ~/www/html*
+	cp build/web/* ~/www/html/ludum*
 
 win:
 	$(GODOT) --export "Windows Desktop"
-
-.PHONY: server
-server:
-	$(GODOT) --export-debug "Server"
-
-runserver:
-	build/win_server/IsotopeServer.exe
-
-serve: venv
-	$(VENV_PYTHON) server/main.py
 
 # **************************************************************************** #
 # Variables
@@ -41,7 +31,7 @@ else
 	GD := ~/godot/Godot_v3.4.2-stable_linux_headless.64
 endif
 
-GDARGS := --path isotope_project --no-window --quiet
+GDARGS := --path godot --no-window --quiet
 
 GODOT = $(GD) $(GDARGS)
 
