@@ -14,7 +14,7 @@ pull:
 
 webdeploy:
 	$(GODOT) --export "HTML5"
-	cp build/web/* ~/www/html/ludum/*
+	cp build/web/* ~/www/html/ludum
 
 win:
 	$(GODOT) --export "Windows Desktop"
