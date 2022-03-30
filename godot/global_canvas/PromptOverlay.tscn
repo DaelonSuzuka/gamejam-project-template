@@ -1,0 +1,342 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://global_canvas/PromptSprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://global_canvas/PromptOverlay.gd" type="Script" id=2]
+
+[node name="PromptOverlay" type="CanvasLayer"]
+layer = 128
+script = ExtResource( 2 )
+
+[node name="Prompt" type="Node2D" parent="."]
+visible = false
+
+[node name="Show Inputs" type="Label" parent="Prompt"]
+margin_left = 376.0
+margin_top = 16.0
+margin_right = 472.0
+margin_bottom = 30.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Show Prompts"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="alt1" parent="Prompt" instance=ExtResource( 1 )]
+position = Vector2( 352, 24 )
+
+[node name="alt2" parent="Prompt" instance=ExtResource( 1 )]
+position = Vector2( 368, 24 )
+
+[node name="Overworld" type="Node2D" parent="."]
+visible = false
+
+[node name="Walk" type="Label" parent="Overworld"]
+margin_left = 416.0
+margin_top = 18.0
+margin_right = 456.0
+margin_bottom = 32.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Walk"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 352, 24 )
+
+[node name="A" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 368, 24 )
+
+[node name="S" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 384, 24 )
+
+[node name="D" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 400, 24 )
+
+[node name="Run" type="Label" parent="Overworld"]
+margin_left = 416.0
+margin_top = 34.0
+margin_right = 456.0
+margin_bottom = 48.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Run"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shift1" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 384, 40 )
+
+[node name="shift2" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 400, 40 )
+
+[node name="Interact" type="Label" parent="Overworld"]
+margin_left = 416.0
+margin_top = 50.0
+margin_right = 466.0
+margin_bottom = 64.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Interact"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 400, 56 )
+
+[node name="J" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 384, 56 )
+
+[node name="Dance" type="Label" parent="Overworld"]
+margin_left = 416.0
+margin_top = 66.0
+margin_right = 466.0
+margin_bottom = 80.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Dance"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 400, 72 )
+
+[node name="K" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 384, 72 )
+
+[node name="Emote" type="Label" parent="Overworld"]
+margin_left = 416.0
+margin_top = 82.0
+margin_right = 466.0
+margin_bottom = 96.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Emote"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="T" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 400, 88 )
+
+[node name="L" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 384, 88 )
+
+[node name="Remove" type="Label" parent="Overworld"]
+margin_left = 416.0
+margin_top = 99.0
+margin_right = 498.0
+margin_bottom = 113.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="esc" parent="Overworld" instance=ExtResource( 1 )]
+position = Vector2( 400, 104 )
+
+[node name="Battle" type="Node2D" parent="."]
+visible = false
+
+[node name="Move" type="Label" parent="Battle"]
+margin_left = 400.0
+margin_top = 18.0
+margin_right = 440.0
+margin_bottom = 32.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 336, 24 )
+
+[node name="A" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 352, 24 )
+
+[node name="S" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 368, 24 )
+
+[node name="D" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 384, 24 )
+
+[node name="Shard Window" type="Label" parent="Battle"]
+margin_left = 400.0
+margin_top = 66.0
+margin_right = 490.0
+margin_bottom = 80.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Get Shards"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 384, 72 )
+
+[node name="J" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 368, 72 )
+
+[node name="Basic Attack" type="Label" parent="Battle"]
+margin_left = 400.0
+margin_top = 49.0
+margin_right = 478.0
+margin_bottom = 63.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 384, 56 )
+
+[node name="K" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 368, 56 )
+
+[node name="Use Shard" type="Label" parent="Battle"]
+margin_left = 400.0
+margin_top = 34.0
+margin_right = 464.0
+margin_bottom = 48.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Use Shard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="T" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 384, 40 )
+
+[node name="L" parent="Battle" instance=ExtResource( 1 )]
+position = Vector2( 368, 40 )
+
+[node name="ShardWindow" type="Node2D" parent="."]
+visible = false
+
+[node name="Move" type="Label" parent="ShardWindow"]
+margin_left = 376.0
+margin_top = 18.0
+margin_right = 485.0
+margin_bottom = 32.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Move Cursor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 312, 24 )
+
+[node name="A" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 328, 24 )
+
+[node name="S" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 344, 24 )
+
+[node name="D" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 360, 24 )
+
+[node name="Select" type="Label" parent="ShardWindow"]
+margin_left = 376.0
+margin_top = 40.0
+margin_right = 466.0
+margin_bottom = 54.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Select Shard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter1" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 344, 40 )
+
+[node name="enter2" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 360, 40 )
+
+[node name="enter3" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 344, 56 )
+
+[node name="enter4" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 360, 56 )
+
+[node name="Remove" type="Label" parent="ShardWindow"]
+margin_left = 376.0
+margin_top = 66.0
+margin_right = 467.0
+margin_bottom = 80.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Remove Shard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backspace1" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 344, 72 )
+
+[node name="backspace2" parent="ShardWindow" instance=ExtResource( 1 )]
+position = Vector2( 360, 72 )
+
+[node name="Menu" type="Node2D" parent="."]
+visible = false
+
+[node name="Move" type="Label" parent="Menu"]
+margin_left = 432.0
+margin_top = 18.0
+margin_right = 541.0
+margin_bottom = 32.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 368, 24 )
+
+[node name="A" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 384, 24 )
+
+[node name="S" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 400, 24 )
+
+[node name="D" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 416, 24 )
+
+[node name="Select" type="Label" parent="Menu"]
+margin_left = 432.0
+margin_top = 42.0
+margin_right = 522.0
+margin_bottom = 56.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter1" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 400, 40 )
+
+[node name="enter2" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 416, 40 )
+
+[node name="enter3" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 400, 56 )
+
+[node name="enter4" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 416, 56 )
+
+[node name="Remove" type="Label" parent="Menu"]
+margin_left = 432.0
+margin_top = 66.0
+margin_right = 514.0
+margin_bottom = 80.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="esc" parent="Menu" instance=ExtResource( 1 )]
+position = Vector2( 416, 72 )

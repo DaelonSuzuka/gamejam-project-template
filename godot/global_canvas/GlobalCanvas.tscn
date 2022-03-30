@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/justabit.tres" type="DynamicFont" id=1]
+[ext_resource path="res://global_canvas/FpsCounter.gd" type="Script" id=2]
+[ext_resource path="res://global_canvas/GlobalCanvas.gd" type="Script" id=5]
+[ext_resource path="res://global_canvas/DialogBox.tscn" type="PackedScene" id=6]
+
+[node name="GlobalCanvas" type="CanvasLayer"]
+pause_mode = 2
+layer = 99
+script = ExtResource( 5 )
+
+[node name="Debug" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_bottom = 80.0
+
+[node name="Spacer" type="Label" parent="Debug"]
+margin_right = 80.0
+margin_bottom = 14.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FpsCounter" type="Label" parent="Debug"]
+margin_top = 18.0
+margin_right = 80.0
+margin_bottom = 32.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" parent="." instance=ExtResource( 6 )]
+visible = false
