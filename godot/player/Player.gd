@@ -22,7 +22,7 @@ func scene_changed():
 	var spawns = Game.world.get_node('Spawns').get_children()
 	
 	if 'Iso' in Game.world.name:
-		world_avatar = load('res://player/WorldAvatar.tscn').instance()
+		world_avatar = load('res://isometric/character/Character.tscn').instance()
 		world_avatar.enter_world(Game.world)
 		camera.follow(world_avatar, Vector2(.5, .5))
 

@@ -62,7 +62,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "WireWalker",
 "language": "GDScript",
-"path": "res://scenes/isometric/tilemaps/wire_walkers/WireWalker.gd"
+"path": "res://isometric/tilemaps/wire_walkers/WireWalker.gd"
 } ]
 _global_script_class_icons={
 "Eval": "",

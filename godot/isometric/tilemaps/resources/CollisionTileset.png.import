@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CollisionTileset.png-5c303c5e949bbb472013be8eee012b03.stex"
+path="res://.import/CollisionTileset.png-be6514a8ce056328c5c2f865fc6ca8cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/isometric/tilemaps/resources/CollisionTileset.png"
-dest_files=[ "res://.import/CollisionTileset.png-5c303c5e949bbb472013be8eee012b03.stex" ]
+source_file="res://isometric/tilemaps/resources/CollisionTileset.png"
+dest_files=[ "res://.import/CollisionTileset.png-be6514a8ce056328c5c2f865fc6ca8cc.stex" ]
 
 [params]
 

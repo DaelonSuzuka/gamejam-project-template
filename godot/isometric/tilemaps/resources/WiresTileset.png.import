@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DiscoAutotiles.png-335d8ca0c26a74b445269bb4ef2155e7.stex"
+path="res://.import/WiresTileset.png-08af4f2300ffb7ebd4020f9619dc820d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/isometric/tilemaps/resources/DiscoAutotiles.png"
-dest_files=[ "res://.import/DiscoAutotiles.png-335d8ca0c26a74b445269bb4ef2155e7.stex" ]
+source_file="res://isometric/tilemaps/resources/WiresTileset.png"
+dest_files=[ "res://.import/WiresTileset.png-08af4f2300ffb7ebd4020f9619dc820d.stex" ]
 
 [params]
 
