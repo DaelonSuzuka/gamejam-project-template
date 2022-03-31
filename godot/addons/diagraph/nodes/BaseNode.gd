@@ -93,9 +93,9 @@ func title_bar_ctx(pos: Vector2) -> void:
 	accept_event()
 
 func _title_bar_ctx_selection(selection: String):
-	# 
 	if selection == 'Copy Path':
-		print('copying node path')
+		var path = '%s:%s' % [Parent.owner.current_conversation, data.name]
+		OS.clipboard = path
 
 	self.title_bar_ctx_selection(selection)
 
