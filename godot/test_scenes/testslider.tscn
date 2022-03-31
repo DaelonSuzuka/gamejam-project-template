@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/PlatformerBody2D/platformer_body_2d.gd" type="Script" id=1]
+[ext_resource path="res://addons/SliderLabel/SliderLabel.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="PlatformerBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 51.0
+margin_top = 119.0
+margin_right = 246.0
+margin_bottom = 135.0
+value = 50.0
+
+[node name="SliderLabel" type="Label" parent="HSlider"]
+margin_left = 36.0
+margin_top = 87.0
+margin_right = 60.0
+margin_bottom = 101.0
+size_flags_horizontal = 4
+text = "100"
+align = 1
+valign = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_initialized_": true
+}
+visibility_rule = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
