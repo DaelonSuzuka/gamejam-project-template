@@ -54,7 +54,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if !(event is InputEventMouseButton) or !event.pressed:
 		return
-	if !Rect2(rect_global_position, rect_size).has_point(event.global_position):
+	if !Rect2(rect_global_position, rect_size - Vector2(15, 15)).has_point(event.global_position):
 		return
 
 	# Scroll wheel up/down to zoom
