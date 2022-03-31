@@ -1,4 +1,3 @@
-class_name Zombie
 extends PlatformerBody2D
 
 

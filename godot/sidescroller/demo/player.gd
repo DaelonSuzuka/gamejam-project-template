@@ -1,4 +1,3 @@
-class_name Player
 extends PlatformerBody2D
 
 
