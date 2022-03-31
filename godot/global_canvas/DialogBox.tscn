@@ -50,7 +50,7 @@ anchor_right = 0.483333
 anchor_bottom = 0.681481
 custom_fonts/font = SubResource( 1 )
 
-[node name="Outline" parent="Name" index="0"]
+[node name="NameOutline" parent="Name" index="0"]
 custom_styles/panel = SubResource( 2 )
 
 [node name="Panel" parent="Name" index="1"]
@@ -74,7 +74,7 @@ line 3
 line 4"
 scroll_active = false
 
-[node name="Outline" parent="TextBox" index="1"]
+[node name="TextBoxOutline" parent="TextBox" index="1"]
 custom_styles/panel = SubResource( 4 )
 
 [node name="Panel" parent="TextBox" index="2"]

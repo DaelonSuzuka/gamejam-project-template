@@ -11,17 +11,17 @@ var DismissTimer := Timer.new()
 var original_cooldown := 0.05
 var next_char_cooldown := original_cooldown
 
-signal done
-signal line_finished
+signal done()
+signal line_finished()
 signal character_added(c)
 
-onready var Name = $Name
-onready var NameOutline = $Name/Outline
-onready var TextBox = $TextBox
-onready var TextBoxOutline = $TextBox/Outline
-onready var DebugLog = $DebugLog
-onready var Options = $Options
-onready var Portrait = $Portrait
+onready var Name = find_node('Name')
+onready var NameOutline = find_node('NameOutline')
+onready var TextBox = find_node('TextBox')
+onready var TextBoxOutline = find_node('TextBoxOutline')
+onready var DebugLog = find_node('DebugLog')
+onready var Options = find_node('Options')
+onready var Portrait = find_node('Portrait')
 
 var waiting_for_choice := false
 var active := false
