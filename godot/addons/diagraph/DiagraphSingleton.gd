@@ -45,18 +45,22 @@ func load_conversations():
 
 func load_characters():
 	characters.clear()
-	var dir := Directory.new()
-	for folder in get_files('res://' + characters_path):
-		for file in get_files('res://' + characters_path + folder, '.tscn'):
-			var file_name = 'res://' + characters_path + folder + '/' + file
-			if dir.file_exists(file_name):
-				var c = load(file_name).instance()
-				characters[c.name] = c
+	for file_name in get_all_files('res://' + characters_path, '.tscn'):
+		var c = load(file_name).instance()
+		characters[c.name] = c
 
-	var char_map = load_json(character_map_path, {})
-	for name in char_map:
-		if dir.file_exists(char_map[name]):
-			characters[name] = load(char_map[name]).instance()
+	# for folder in get_files('res://' + characters_path):
+	# 	for file in get_files('res://' + characters_path + folder, '.tscn'):
+	# 		var file_name = 'res://' + characters_path + folder + '/' + file
+	# 		if dir.file_exists(file_name):
+	# 			var c = load(file_name).instance()
+	# 			characters[c.name] = c
+
+	# var dir := Directory.new()
+	# var char_map = load_json(character_map_path, {})
+	# for name in char_map:
+	# 	if dir.file_exists(char_map[name]):
+	# 		characters[name] = load(char_map[name]).instance()
 
 # ******************************************************************************
 
@@ -114,3 +118,29 @@ func load_json(path, default=null):
 		if parse.result is Dictionary:
 			result = parse.result
 	return result
+
+func get_all_files(path: String, ext:='', max_depth:=2, depth:=0, files:=[]) -> Array:
+	if depth >= max_depth:
+		return []
+	
+	var dir = Directory.new()
+	dir.open(path)
+	
+	dir.list_dir_begin(true, true)
+
+	var file = dir.get_next()
+	while file != "":
+		var file_path = dir.get_current_dir().plus_file(file)
+		if dir.current_is_dir():
+			get_all_files(file_path, ext, max_depth, depth + 1, files)
+		else:
+			if ext:
+				if file.ends_with(ext):
+					files.append(file_path)
+			else:
+				files.append(file_path)
+		file = dir.get_next()
+
+	dir.list_dir_end()
+
+	return files
