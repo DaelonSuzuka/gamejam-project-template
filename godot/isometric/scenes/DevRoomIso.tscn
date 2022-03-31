@@ -80,6 +80,7 @@ tooltip_text = "Talk"
 length = 2.0
 
 [node name="Icon" type="Sprite" parent="Interactable"]
+modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
 
@@ -91,5 +92,6 @@ tooltip_offset = -30.0
 tooltip_text = "Talk"
 
 [node name="Icon" type="Sprite" parent="Interactable2"]
+modulate = Color( 0, 1, 0.0156863, 1 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
