@@ -12,7 +12,6 @@ func calculate_speed() -> float:
 	if avatar.input_state['run']:
 		_speed += 0.25
 
-
 	return _speed
 
 func calculate_velocity() -> Vector2:

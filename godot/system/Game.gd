@@ -223,7 +223,7 @@ func update_scene():
 # ------------------------------------------------------------------------------
 # game state flags
 
-func set_flag(flag_name, value=true):
+func set_flag(flag_name, value=true) -> void:
 	data.flags[flag_name] = value
 	save_requested = true
 
@@ -235,23 +235,23 @@ func get_flag(flag_name):
 # ------------------------------------------------------------------------------
 # item box state management
 
-func set_opened(node: Node):
+func set_opened(node: Node) -> void:
 	var path = node.owner.get_parent().get_path_to(node)
 	if !(path in data.opened_items):
 		data.opened_items.append(path)
 	save_requested = true
 	limiter.reset()
 
-func get_opened(node: Node):
+func get_opened(node: Node) -> bool:
 	var path = node.owner.get_parent().get_path_to(node)
 	return path in data.opened_items
 
 # ------------------------------------------------------------------------------
 
-func save_data():
+func save_data() -> void:
 	Files.save_json(data_file, data)
 
-func load_data():
+func load_data() -> void:
 	var result = Files.load_json(data_file)
 	if result is Dictionary:
 		for key in data:

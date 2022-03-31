@@ -3,14 +3,6 @@ extends Node
 # ******************************************************************************
 # default args
 
-# network
-var server = false # start in server mode
-var connect = false # automatically attempt to connect to the server
-var address = '' # alternate server address
-var port = '' # alternate server port
-var websockets = false # use websocket backend for multiplayer
-var username = '' # username to use for multiplayer
-
 # general
 var scene = ''
 

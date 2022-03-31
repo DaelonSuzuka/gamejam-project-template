@@ -4,7 +4,7 @@ extends Node
 
 var _playback_cache := {}
 
-func _pause_node(node: Node, value: bool):
+func _pause_node(node: Node, value: bool) -> void:
 	if node is AnimationPlayer:
 		if value:
 			_playback_cache[node.get_path()] = node.playback_active
@@ -24,17 +24,17 @@ func _pause_node(node: Node, value: bool):
 	node.set_process(!value)
 	node.set_physics_process(!value)
 
-func set_paused(node: Node, value: bool):
+func _set_paused(node: Node, value: bool) -> void:
 	for child in node.get_children():
 		if child.get_child_count():
-			set_paused(child, value)
+			_set_paused(child, value)
 		_pause_node(child, value)
 
-func pause(node: Node):
-	set_paused(node, true)
+func pause(node: Node) -> void:
+	_set_paused(node, true)
 
-func resume(node: Node):
-	set_paused(node, false)
+func resume(node: Node) -> void:
+	_set_paused(node, false)
 
 # ******************************************************************************
 
@@ -86,7 +86,7 @@ func input_probe(event, node):
 
 # ******************************************************************************
 
-func reparent_node(node, new_parent):
+func reparent_node(node:Node, new_parent:Node) -> void:
 	if !is_instance_valid(node) or !is_instance_valid(new_parent):
 		return
 
@@ -122,12 +122,12 @@ func dict_to_vec(dict):
 
 # ******************************************************************************
 
-func get_all_children(node: Node, children={}) -> Dictionary:
-	children[node.get_path()] = node
+func get_all_children(node: Node, _children={}) -> Dictionary:
+	_children[node.get_path()] = node
 
 	for child in node.get_children():
-		children[child.get_path()] = child
+		_children[child.get_path()] = child
 		if child.get_child_count():
-			get_all_children(child, children)
+			get_all_children(child, _children)
 
-	return children
+	return _children

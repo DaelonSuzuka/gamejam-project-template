@@ -1,11 +1,11 @@
 extends Node
 
 func _ready():
+	OS.set_window_title('Ludum Dare Game')
+
+	# do not automatically load scene if game was launched via F6
 	if Game.direct_launch:
 		return
-
-	# start game normally
-	OS.set_window_title('Ludum Dare Game')
 
 	var scene = 'mainmenu'
 	if Args.scene:

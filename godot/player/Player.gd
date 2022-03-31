@@ -5,7 +5,7 @@ extends Node2D
 onready var inventory: Node = $Inventory
 onready var camera: Node = $Camera
 
-var world_avatar = null
+var character = null
 
 # ******************************************************************************
 
@@ -17,19 +17,17 @@ func scene_changed():
 	if !Game.world.has_node('Spawns'):
 		return
 
-	world_avatar = null
-
-	var spawns = Game.world.get_node('Spawns').get_children()
+	character = null
 	
 	if 'Iso' in Game.world.name:
-		world_avatar = load('res://isometric/character/Character.tscn').instance()
-		world_avatar.enter_world(Game.world)
-		camera.follow(world_avatar, Vector2(.5, .5))
+		character = load('res://isometric/character/Character.tscn').instance()
+		character.enter_world(Game.world)
+		camera.follow(character, Vector2(.5, .5))
 
 	if 'Side' in Game.world.name:
-		world_avatar = load('res://sidescroller/character/Character.tscn').instance()
-		world_avatar.enter_world(Game.world)
-		camera.follow(world_avatar, Vector2(.75, .75))
+		character = load('res://sidescroller/character/Character.tscn').instance()
+		character.enter_world(Game.world)
+		camera.follow(character, Vector2(.75, .75))
 
 # ******************************************************************************
 
@@ -47,9 +45,9 @@ var input_proxy = null
 
 func set_input_proxy(proxy=null) -> void:
 	# if !proxy:
-	# 	Player.world_avatar.interactors.can_interact = false
+	# 	Player.character.interactors.can_interact = false
 	input_proxy = proxy
-	Player.world_avatar.clear_input()
+	Player.character.clear_input()
 
 # ******************************************************************************
 
@@ -57,9 +55,10 @@ func handle_input(event) -> void:
 	if Console.Line.has_focus():
 		return
 
-	if menu_stack and is_instance_valid(menu_stack[0]):
-		if menu_stack[0].has_method('handle_input'):
-			menu_stack[0].handle_input(event)
+	if menu_stack:
+		if is_instance_valid(menu_stack[0]):
+			if menu_stack[0].has_method('handle_input'):
+				menu_stack[0].handle_input(event)
 		return
 
 	# this will forcibly remove any input proxy that gets deleted
@@ -76,8 +75,8 @@ func handle_input(event) -> void:
 		PauseMenu.open()
 		return
 
-	if world_avatar:
-		world_avatar.handle_input(event)
+	if character:
+		character.handle_input(event)
 	# send input to game
 
 # ******************************************************************************

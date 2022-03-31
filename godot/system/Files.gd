@@ -3,7 +3,7 @@ extends Node
 
 # ******************************************************************************
 
-func get_files(path, ext=''):
+func get_files(path: String, ext:='') -> Array:
 	var files = []
 	var dir = Directory.new()
 	dir.open(path)
@@ -24,9 +24,9 @@ func get_files(path, ext=''):
 
 	return files
 
-func get_all_files(path, ext='', max_depth=2, depth=0, files=[]):
+func get_all_files(path: String, ext:='', max_depth:=2, depth:=0, files:=[]) -> Array:
 	if depth >= max_depth:
-		return
+		return []
 	
 	var dir = Directory.new()
 	dir.open(path)
@@ -60,7 +60,7 @@ func _ready():
 	else:
 		file_prefix = 'res://data/'
 
-func save_json(file_name: String, data, auto_prefix:=true):
+func save_json(file_name: String, data, auto_prefix:=true) -> void:
 	var f = File.new()
 	if auto_prefix:
 		file_name = file_prefix + file_name
