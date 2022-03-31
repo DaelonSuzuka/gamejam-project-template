@@ -3,9 +3,9 @@
 		"id": 3909873056,
 		"type": "speech",
 		"name": "Test1",
-		"text": "Gobot: test",
+		"text": "Gobot: test\nRedGobot: test\nGreenGobot: beep beep",
 		"next": "none",
-		"rect_size": "Vector2( 400, 400 )",
+		"rect_size": "Vector2( 390, 250 )",
 		"offset": "Vector2( 60, -110 )",
 		"connections": {
 
