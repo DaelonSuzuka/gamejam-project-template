@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/SpriteText/SpriteText.gd" type="Script" id=1]
+[ext_resource path="res://addons/SpriteText/Block Font.png" type="Texture" id=2]
+
+[node name="ReferenceRect" type="ReferenceRect"]
+margin_left = 136.0
+margin_top = 137.0
+margin_right = 375.0
+margin_bottom = 218.0
+script = ExtResource( 1 )
+text = "Sample Text"
+font_texture = ExtResource( 2 )

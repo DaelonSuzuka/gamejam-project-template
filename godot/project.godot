@@ -14,10 +14,145 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://system/Eval.gd"
 }, {
+"base": "Node2D",
+"class": "Example1",
+"language": "GDScript",
+"path": "res://addons/ezd/examples_src/example1.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Example2",
+"language": "GDScript",
+"path": "res://addons/ezd/examples_src/example2.gd"
+}, {
+"base": "Sprite",
+"class": "Example3",
+"language": "GDScript",
+"path": "res://addons/ezd/examples_src/example3.gd"
+}, {
+"base": "Node",
+"class": "Ezd",
+"language": "GDScript",
+"path": "res://addons/ezd/src/ezd.gd"
+}, {
+"base": "CanvasLayer",
+"class": "Fade",
+"language": "GDScript",
+"path": "res://addons/UniversalFade/Fade.gd"
+}, {
 "base": "Node",
 "class": "FakeEvent",
 "language": "GDScript",
 "path": "res://system/FakeEvent.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetAABB",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_aabb.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetBasis",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_basis.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetBool",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_bool.gd"
+}, {
+"base": "GadgetVector4",
+"class": "GadgetColor",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4/gadget_color.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetFloat",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_float.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetInt",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_int.gd"
+}, {
+"base": "GadgetStringEdit",
+"class": "GadgetNodePath",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_node_path.gd"
+}, {
+"base": "GadgetVector4",
+"class": "GadgetPlane",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4/gadget_plane.gd"
+}, {
+"base": "GadgetVector4",
+"class": "GadgetQuat",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4/gadget_quat.gd"
+}, {
+"base": "GadgetStringEdit",
+"class": "GadgetRID",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_rid.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetRect2",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_rect2.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetResource",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_resource.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetStringEdit",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_string_edit.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetStringLabel",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_string_label.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetTransform",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_transform.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetTransform2D",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_transform2d.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetVector2",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector2.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetVector3",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector3.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "GadgetVector4",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/gadgets/gadget_vector4.gd"
+}, {
+"base": "InspectorGadgetBase",
+"class": "InspectorGadget",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/inspector_gadget.gd"
+}, {
+"base": "MarginContainer",
+"class": "InspectorGadgetBase",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/inspector_gadget_base.gd"
+}, {
+"base": "Reference",
+"class": "InspectorGadgetUtil",
+"language": "GDScript",
+"path": "res://addons/inspector-gadget/src/inspector_gadget_util.gd"
 }, {
 "base": "Resource",
 "class": "LocalizationData",
@@ -44,6 +179,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/localization_editor/model/LocalizationSave.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "PlatformerBody2D",
+"language": "GDScript",
+"path": "res://addons/PlatformerBody2D/platformer_body_2d.gd"
+}, {
 "base": "Node",
 "class": "RateLimiter",
 "language": "GDScript",
@@ -66,12 +206,40 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Eval": "",
+"Example1": "",
+"Example2": "",
+"Example3": "",
+"Ezd": "",
+"Fade": "",
 "FakeEvent": "",
+"GadgetAABB": "",
+"GadgetBasis": "",
+"GadgetBool": "",
+"GadgetColor": "",
+"GadgetFloat": "",
+"GadgetInt": "",
+"GadgetNodePath": "",
+"GadgetPlane": "",
+"GadgetQuat": "",
+"GadgetRID": "",
+"GadgetRect2": "",
+"GadgetResource": "",
+"GadgetStringEdit": "",
+"GadgetStringLabel": "",
+"GadgetTransform": "",
+"GadgetTransform2D": "",
+"GadgetVector2": "",
+"GadgetVector3": "",
+"GadgetVector4": "",
+"InspectorGadget": "",
+"InspectorGadgetBase": "",
+"InspectorGadgetUtil": "",
 "LocalizationData": "",
 "LocalizationKeys": "",
 "LocalizationPlaceholders": "",
 "LocalizationPlaceholdersData": "",
 "LocalizationSave": "",
+"PlatformerBody2D": "",
 "RateLimiter": "",
 "TextureFont": "res://addons/texture_fonts/Assets/TextureFont.svg",
 "Timestamp": "",
@@ -110,7 +278,7 @@ gdscript/warnings/return_value_discarded=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/FileSystemView/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/dardanbujupaj.node_warnings/plugin.cfg", "res://addons/diagraph/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/localization_editor/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/FileSystemView/plugin.cfg", "res://addons/NbPM/plugin.cfg", "res://addons/PlatformerBody2D/plugin.cfg", "res://addons/SingletonScriptsShortcut/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/dardanbujupaj.node_warnings/plugin.cfg", "res://addons/diagraph/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/inspector-gadget/plugin.cfg", "res://addons/localization_editor/plugin.cfg", "res://addons/localization_editor_viewer/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/mixing-desk/plugin.cfg", "res://addons/ninepatchbutton/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/scrolling_background/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
 
 [gui]
 
@@ -215,3 +383,8 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+
+[translation_plugin]
+
+translations_location="res://translations/"
+valid_variable_names=PoolStringArray( "text" )
