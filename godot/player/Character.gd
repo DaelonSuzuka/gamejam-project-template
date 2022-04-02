@@ -76,7 +76,6 @@ var velocity := Vector2()
 var speed := 0.0
 var movement_enabled = true
 var dead := false
-var jumping = false
 
 export var gravity = 500
 export var walk_speed = 1000
@@ -84,17 +83,6 @@ export var jump_speed = -3000
 
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
-
-func get_input():
-	var dir = 0
-	if Input.is_action_pressed("walk_right"):
-		dir += 1
-	if Input.is_action_pressed("walk_left"):
-		dir -= 1
-	if dir != 0:
-		velocity.x = lerp(velocity.x, dir * speed, acceleration)
-	else:
-		velocity.x = lerp(velocity.x, 0, friction)
 
 func _physics_process(delta):
 	body.visible = true
@@ -117,21 +105,12 @@ func _physics_process(delta):
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
 
-	if jumping and is_on_floor():
-		jumping = false
-
 	velocity.y += gravity
 	if is_on_floor():
-		# velocity.x
 		velocity.y = 0
-		if input_state['jump']:
-			jumping = true
-		if jumping:
-			velocity.y = jump_speed
 
 	if movement_enabled:
-		var snap = Vector2.DOWN if not jumping else Vector2.ZERO
-		velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP, true)
+		velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)
 
 	var interact_velocity = Vector2()
 	interact_velocity.x = velocity.x
