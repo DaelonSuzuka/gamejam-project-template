@@ -35,6 +35,7 @@ func pressed(button):
 		'NewGame':
 			pass
 		'DevRoom':
+			Player.pop_menu()
 			Game.load_scene('devroom')
 		'Options':
 			pass
