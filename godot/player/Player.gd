@@ -18,16 +18,9 @@ func scene_changed():
 		return
 
 	character = null
-	
-	if 'Iso' in Game.world.name:
-		character = load('res://isometric/character/Character.tscn').instance()
-		character.enter_world(Game.world)
-		camera.follow(character, Vector2(.5, .5))
-
-	if 'Side' in Game.world.name:
-		character = load('res://sidescroller/character/Character.tscn').instance()
-		character.enter_world(Game.world)
-		camera.follow(character, Vector2(.75, .75))
+	character = load('res://player/Character.tscn').instance()
+	character.enter_world(Game.world)
+	camera.follow(character, Vector2(.75, .75))
 
 # ******************************************************************************
 

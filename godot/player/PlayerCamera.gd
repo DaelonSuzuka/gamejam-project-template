@@ -21,7 +21,7 @@ func _get_camera_center():
 	return top_left + 0.5*vsize/vtrans.get_scale()
 
 export var force_current := true
-func _process(delta):
+func _physics_process(delta):
 	if force_current:
 		current = true
 
@@ -34,8 +34,8 @@ func _process(delta):
 		if _get_camera_center().distance_to(target.global_position) < 10:
 			smoothing_speed = lerp(smoothing_speed, 5, .1)
 
-func _physics_process(delta):
-	apply_shake(delta)
+# func _physics_process(delta):
+# 	apply_shake(delta)
 
 # ******************************************************************************
 # ObserverCam features
