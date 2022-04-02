@@ -26,7 +26,7 @@ rect_min_size = Vector2( 0, 25 )
 [node name="MenuButtons" type="VBoxContainer" parent="Control"]
 margin_top = 47.0
 margin_right = 204.0
-margin_bottom = 187.0
+margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -41,32 +41,20 @@ margin_right = 204.0
 margin_bottom = 20.0
 text = "Continue"
 
-[node name="DevRoomIso" type="Button" parent="Control/MenuButtons"]
+[node name="DevRoom" type="Button" parent="Control/MenuButtons"]
 margin_top = 24.0
 margin_right = 204.0
 margin_bottom = 44.0
-text = "Dev Room - Isometric"
+text = "Dev Room"
 
-[node name="DevRoomTop" type="Button" parent="Control/MenuButtons"]
+[node name="Options" type="Button" parent="Control/MenuButtons"]
 margin_top = 48.0
 margin_right = 204.0
 margin_bottom = 68.0
-text = "Dev Room - Top Down"
-
-[node name="DevRoomSide" type="Button" parent="Control/MenuButtons"]
-margin_top = 72.0
-margin_right = 204.0
-margin_bottom = 92.0
-text = "Dev Room - Sidescroller"
-
-[node name="Options" type="Button" parent="Control/MenuButtons"]
-margin_top = 96.0
-margin_right = 204.0
-margin_bottom = 116.0
 text = "Options"
 
 [node name="Exit" type="Button" parent="Control/MenuButtons"]
-margin_top = 120.0
+margin_top = 72.0
 margin_right = 204.0
-margin_bottom = 140.0
+margin_bottom = 92.0
 text = "Exit Game"
