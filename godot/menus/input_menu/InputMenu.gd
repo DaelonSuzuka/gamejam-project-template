@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-const Action := preload("res://menus/input_menu/action.tscn")
+const Action := preload("res://menus/input_menu/Action.tscn")
 const UI_ACTIONS_ORDER := ["ui_accept", "ui_select", "ui_cancel", "ui_focus_next", "ui_focus_prev", "ui_left", "ui_right", "ui_up", "ui_down", "ui_page_up", "ui_page_down", "ui_home", "ui_end"]
 
 export var other_actions_order := PoolStringArray()
