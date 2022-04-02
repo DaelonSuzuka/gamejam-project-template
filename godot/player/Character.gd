@@ -47,10 +47,7 @@ func deactivate():
 # ******************************************************************************
 
 var input_state = {
-	'jump': false,
 	'run': false,
-	'move_up': false,
-	'move_down': false,
 	'move_left': false,
 	'move_right': false,
 	'activate': false,
@@ -61,8 +58,9 @@ func clear_input():
 		input_state[input] = false
 
 func handle_input(event):
-	if event.get('action') and event.action in input_state:
-		input_state[event.action] = event.pressed
+	for action in input_state:
+		if event.is_action(action):
+			input_state[action] = event.pressed
 
 	if event is InputEventKey:
 		if event.pressed:
@@ -78,8 +76,7 @@ var movement_enabled = true
 var dead := false
 
 export var gravity = 500
-export var walk_speed = 1000
-export var jump_speed = -3000
+export var walk_speed = 200
 
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
@@ -100,6 +97,7 @@ func _physics_process(delta):
 		dir += 1
 	if input_state['move_left']:
 		dir -= 1
+
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)
 	else:
