@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Statue.gd" type="Script" id=2]
+[ext_resource path="res://assets/falling-statue_frame01.png" type="Texture" id=3]
+[ext_resource path="res://assets/falling-statue_frame02.png" type="Texture" id=4]
 
 [sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 0, 0, 0, 0, -18.811, 1.74438, 0, 0, 0, 0, -8.47131, 1.30634 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 28 )
+extents = Vector2( 101.5, 220.5 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Fall"
@@ -36,6 +39,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PathFollow2D/Node2D/Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 4 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -64,26 +79,47 @@ tracks/1/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("PathFollow2D/Node2D/Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
+}
 
 [node name="Statue" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( -18.811, 1.74438 )
+rotation = -0.0423403
 
 [node name="Node2D" type="Node2D" parent="PathFollow2D"]
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="PathFollow2D/Node2D"]
+position = Vector2( -30.5, -179.5 )
+texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D/Node2D"]
+position = Vector2( -30.5, -179.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Node2D/StaticBody2D"]
-position = Vector2( 0, -18 )
+position = Vector2( 0.410633, -5.98593 )
+rotation = -0.152162
 shape = SubResource( 2 )
 disabled = true
 
 [node name="TypingTarget" parent="." instance=ExtResource( 1 )]
+position = Vector2( 10, -220 )
 show_word = false
+word = "push"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 3 )

@@ -7,8 +7,9 @@
 [ext_resource path="res://shaders/crt_material.tres" type="Material" id=5]
 
 [sub_resource type="Curve2D" id=57]
+resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 0, 0, 0, 0, -17, 15, 0, 0, 0, 0, 37, 407, 0, 0, 0, 0, 136, 666, 0, 0, 0, 0, 330, 1119, 0, 0, 0, 0, 657, 1534, 0, 0, 0, 0, 938, 1731, 0, 0, 0, 0, 1323, 1868, 0, 0, 0, 0, 1623, 1979, 0, 0, 0, 0, 1962, 2089, 0, 0, 0, 0, 2289, 2264, 0, 0, 0, 0, 2799, 2511 )
 }
 
 [sub_resource type="AtlasTexture" id=44]
@@ -129,7 +130,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=56]
-radius = 95.6544
+radius = 172.939
 height = 205.389
 
 [node name="Ghost" type="Path2D"]
@@ -137,8 +138,8 @@ curve = SubResource( 57 )
 script = ExtResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2( 720, -13 )
-rotation = -2.35453
+position = Vector2( -17, 15 )
+rotation = 1.4339
 
 [node name="Body" type="Node2D" parent="PathFollow2D"]
 material = ExtResource( 5 )
@@ -147,7 +148,7 @@ scale = Vector2( 0.3, 0.3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="PathFollow2D/Body"]
 frames = SubResource( 43 )
-frame = 8
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D/Body"]
@@ -155,7 +156,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Body/Area2D"]
-position = Vector2( -210, -178 )
+position = Vector2( -134.081, -149.332 )
 rotation = -1.16232
 shape = SubResource( 56 )
 
