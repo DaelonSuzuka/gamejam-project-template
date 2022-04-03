@@ -99,8 +99,11 @@ func _physics_process(delta):
 		dir -= 1
 
 	if dir != 0:
+		body.playing = true
 		velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)
 	else:
+		body.playing = false
+		body.frame = 1
 		velocity.x = lerp(velocity.x, 0, friction)
 
 	velocity.y += gravity
@@ -109,6 +112,8 @@ func _physics_process(delta):
 
 	if movement_enabled:
 		velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)
+
+	body.scale.x = 0.2 if velocity.x > 0 else -0.2
 
 	var interact_velocity = Vector2()
 	interact_velocity.x = velocity.x
