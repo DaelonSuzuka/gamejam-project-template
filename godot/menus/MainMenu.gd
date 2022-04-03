@@ -8,6 +8,7 @@ onready var MenuButtons = find_node('MenuButtons')
 
 func _ready():
 	Player.push_menu(self)
+	MenuButtons.hide()
 
 	for btn in MenuButtons.get_children():
 		connect_button(btn)
@@ -38,11 +39,19 @@ func pressed(button):
 		'NewGame':
 			pass
 		'Start':
-			Player.pop_menu()
-			Game.load_scene('city')
+			MenuButtons.show()
 		'DevRoom':
 			Player.pop_menu()
 			Game.load_scene('devroom')
+		'City':
+			Player.pop_menu()
+			Game.load_scene('city')
+		'Countryside':
+			Player.pop_menu()
+			Game.load_scene('countryside')
+		'Beach':
+			Player.pop_menu()
+			Game.load_scene('beach')
 		'Options':
 			pass
 		'Exit':
