@@ -6,7 +6,10 @@ var target: Node = null
 
 func follow(node:Node, _zoom=null, speed=5):
 	if is_instance_valid(node):
-		target = node
+		if node.has_node('CameraTarget'):
+			target = node.get_node('CameraTarget')
+		else:
+			target = node
 	if _zoom is Vector2:
 		zoom = _zoom
 		original_zoom = _zoom

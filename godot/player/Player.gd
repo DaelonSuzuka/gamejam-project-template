@@ -20,7 +20,7 @@ func scene_changed():
 	character = null
 	character = load('res://player/Character.tscn').instance()
 	character.enter_world(Game.world)
-	camera.follow(character, Vector2(1.5, 1.5))
+	camera.follow(character, Vector2(3.0, 3.0))
 
 # ******************************************************************************
 
