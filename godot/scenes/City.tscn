@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://assets/city/city01_frame.png" type="Texture" id=1]
 [ext_resource path="res://assets/city/background_city_frame.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/city/city03_frame.png" type="Texture" id=7]
 [ext_resource path="res://addons/rmsmartshape/shapes/shape_open.gd" type="Script" id=8]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=9]
+[ext_resource path="res://assets/city/city_dirt.png" type="Texture" id=10]
 
 [sub_resource type="Resource" id=77]
 script = ExtResource( 5 )
@@ -595,6 +596,22 @@ motion_scale = Vector2( 1.15, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 texture = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -5663.0
+margin_top = 967.0
+margin_right = 2508.0
+margin_bottom = 2482.0
+texture = ExtResource( 10 )
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 3294.0
+margin_top = 991.0
+margin_right = 5801.0
+margin_bottom = 2506.0
+texture = ExtResource( 10 )
+stretch_mode = 2
 
 [node name="CityFrame" type="Sprite" parent="."]
 texture = ExtResource( 1 )
