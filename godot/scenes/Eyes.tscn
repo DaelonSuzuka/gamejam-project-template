@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Eyes.gd" type="Script" id=1]
 [ext_resource path="res://assets/eyes.png" type="Texture" id=2]
+[ext_resource path="res://global_canvas/PromptSprite.tscn" type="PackedScene" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -72,3 +73,13 @@ position = Vector2( 537, 46.85 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 11 )
 animation = "left"
+
+[node name="InputPrompt" parent="." instance=ExtResource( 3 )]
+position = Vector2( 853, 547 )
+scale = Vector2( 5, 5 )
+key = "M"
+
+[node name="InputPrompt2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 924, 546 )
+scale = Vector2( 5, 5 )
+key = "/"
