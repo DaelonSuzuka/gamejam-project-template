@@ -2,7 +2,7 @@
 
 [ext_resource path="res://enemies/EyeChild.gd" type="Script" id=1]
 [ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/test2_3-sheet.png" type="Texture" id=3]
+[ext_resource path="res://assets/mc_idle_base.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=10]
 radius = 23.0
