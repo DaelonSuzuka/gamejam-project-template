@@ -1,0 +1,15 @@
+title: Test1
+type: speech
+show_choices: false
+---
+Gobot: test
+RedGobot: test
+GreenGobot: beep beep 
+===
+
+title: Test2
+type: speech
+show_choices: false
+---
+Gobot: this is also a test
+===

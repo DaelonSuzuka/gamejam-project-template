@@ -100,8 +100,7 @@ func save_conversation():
 	if !current_conversation:
 		return
 	var nodes = GraphEdit.get_nodes()
-	var path = Diagraph.name_to_path(current_conversation)
-	Diagraph.save_json(path, nodes)
+	Diagraph.save_conversation(current_conversation, nodes)
 
 func change_conversation(path):
 	save_conversation()
@@ -120,7 +119,7 @@ func load_conversation(path):
 	GraphEdit.clear()
 	current_conversation = name
 
-	var nodes = Diagraph.load_json(Diagraph.name_to_path(name), {})
+	var nodes = Diagraph.load_conversation(name, {})
 	if nodes:
 		GraphEdit.set_nodes(nodes)
 	if name in editor_data:
@@ -140,7 +139,7 @@ func delete_conversation(path):
 	editor_data.erase(path)
 	save_editor_data()
 	var dir = Directory.new()
-	dir.remove(Diagraph.prefix + Diagraph.name_to_path(path))
+	dir.remove(Diagraph.prefix + Diagraph.conversations[path])
 	Diagraph.refresh()
 
 func rename_conversation(old, new):
@@ -151,8 +150,8 @@ func rename_conversation(old, new):
 	editor_data.erase(old)
 	save_editor_data()
 	var dir = Directory.new()
-	var old_path = Diagraph.prefix + Diagraph.name_to_path(old)
-	var new_path = Diagraph.prefix + Diagraph.name_to_path(new)
+	var old_path = Diagraph.prefix + Diagraph.conversations[old]
+	var new_path = Diagraph.prefix + Diagraph.conversations[new]
 	dir.rename(old_path, new_path)
 	load_conversation(new)
 	Diagraph.refresh()

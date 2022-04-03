@@ -3,6 +3,9 @@ extends EditorPlugin
 
 # ******************************************************************************
 
+# const conversation_selector_class = load('res://addons/diagraph/SelectConversationDialog.tscn')
+# onready var conversation_selector = conversation_selector_class.instance()
+
 const singleton_path = "res://addons/diagraph/DiagraphSingleton.gd"
 
 const inspector_class = "res://addons/diagraph/DiagraphInspectorPlugin.gd"

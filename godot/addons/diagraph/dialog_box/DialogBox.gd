@@ -144,7 +144,7 @@ func start(conversation, options={}):
 		name = conversation
 	else:
 		var parts = conversation.split(':')
-		name = Diagraph.name_to_path(parts[0])
+		name = Diagraph.conversations[parts[0]]
 		if parts.size() >= 2:
 			entry = parts[1]
 		if parts.size() >= 3:
