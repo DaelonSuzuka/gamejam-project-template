@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eyes4.png-df344ee3e40c93901f499a25d20f4be7.stex"
+path="res://.import/eyes.png-c6a3aa79eac1e49082f00797d4afd828.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eyes4.png"
-dest_files=[ "res://.import/eyes4.png-df344ee3e40c93901f499a25d20f4be7.stex" ]
+source_file="res://assets/eyes.png"
+dest_files=[ "res://.import/eyes.png-c6a3aa79eac1e49082f00797d4afd828.stex" ]
 
 [params]
 
