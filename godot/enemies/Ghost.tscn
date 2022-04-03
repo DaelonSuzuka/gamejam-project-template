@@ -64,11 +64,16 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 10.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "move",
+"speed": 5.0
 } ]
 
 [node name="Ghost" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 43 )
-frame = 11
+animation = "move"
 playing = true
