@@ -62,7 +62,7 @@ func save_conversation(name, data):
 		save_json(conversations[name], data)
 	# if conversations[name].ends_with('.yarn'):
 	# 	load_yarn(conversations[name], default)
-	
+
 func load_characters():
 	characters.clear()
 	for file_name in get_all_files('res://' + characters_path, '.tscn'):
@@ -119,10 +119,10 @@ func get_files(path, ext='') -> Array:
 func get_all_files(path: String, ext:='', max_depth:=2, depth:=0, files:=[]) -> Array:
 	if depth >= max_depth:
 		return []
-	
+
 	var dir = Directory.new()
 	dir.open(path)
-	
+
 	dir.list_dir_begin(true, true)
 
 	var file = dir.get_next()
@@ -170,7 +170,7 @@ func load_json(path, default=null):
 
 func load_yarn(path, default=null):
 	var result = default
-	
+
 	var f = File.new()
 	if f.file_exists(path):
 		f.open(path, File.READ)
@@ -224,7 +224,7 @@ func create_node(header, body):
 		text = '',
 		next = 'none',
 	}
-	
+
 	var fields := {}
 	for line in header:
 		var parts = line.split(':')

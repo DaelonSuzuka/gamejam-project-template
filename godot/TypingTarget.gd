@@ -3,11 +3,6 @@ extends CanvasItem
 
 # ******************************************************************************
 
-export var word := '' setget set_word
-func set_word(value):
-	word = value
-	$Word/Label.text = value
-	update_hint()
 
 export var active := true setget set_active
 func set_active(value):
@@ -24,10 +19,21 @@ func set_custom_hint(value):
 	custom_hint = value
 	update_hint()
 
+export var auto_death = true
+export var show_word = true
+export var distance = 100
+
 signal matched()
 signal mistake()
 
 var progress := 0
+
+export var word := '' setget set_word
+func set_word(value):
+	if not show_word: return
+	word = value
+	$Word/Label.text = value
+	update_hint()
 
 # ******************************************************************************
 
@@ -44,6 +50,7 @@ func _ready():
 	set_word(word)
 	set_active(active)
 	$Word/Label.visible_characters = 0
+	if auto_death: connect("matched", get_parent(), "dead")
 
 func _input(event):
 	if !active:

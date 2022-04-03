@@ -69,7 +69,7 @@ func _gui_input(event: InputEvent) -> void:
 # Override this
 func get_title_bar_ctx_items() -> Array:
 	return []
-	
+
 func title_bar_ctx_selection(selection: String):
 	pass
 
@@ -79,7 +79,7 @@ func get_body_ctx_items() -> Array:
 
 func body_ctx_selection(selection: String):
 	pass
-	
+
 # ******************************************************************************
 # Context Menu spawner
 

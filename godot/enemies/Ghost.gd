@@ -13,7 +13,11 @@ func starts():
 
 func _process(delta: float) -> void:
 	$PathFollow2D.offset += speed
+	$TypingTarget.global_position = $PathFollow2D/Body/Area2D/CollisionShape2D.global_position - Vector2(0,50)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug+"):
 		starts()
+
+func dead():
+	queue_free()

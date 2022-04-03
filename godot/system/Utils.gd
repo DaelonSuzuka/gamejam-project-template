@@ -48,11 +48,11 @@ func _set_collision_enabled(node: Node, value: bool):
 	prints(path, node.collision_layer, value)
 
 	if !value:
-		collision_cache[path] = { 
+		collision_cache[path] = {
 			layer = node.collision_layer,
 			mask = node.collision_mask,
 		}
-		
+
 		node.collision_layer = 0
 		node.collision_mask = 0
 	else:

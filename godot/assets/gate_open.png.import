@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/beach+cave_frame.png-c1f8d2c9c7c9564358891a6222e1892c.stex"
+path="res://.import/gate_open.png-f49a7460bf94597679d205ab257db7d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/beach+cave_frame.png"
-dest_files=[ "res://.import/beach+cave_frame.png-c1f8d2c9c7c9564358891a6222e1892c.stex" ]
+source_file="res://assets/gate_open.png"
+dest_files=[ "res://.import/gate_open.png-f49a7460bf94597679d205ab257db7d5.stex" ]
 
 [params]
 

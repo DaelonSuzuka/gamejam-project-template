@@ -19,7 +19,7 @@ var world: Node = null
 func _ready():
 	randomize()
 	load_data()
-	
+
 	Diagraph.sandbox.call_deferred('add_locals', {
 		'Game': self,
 		'Player': Player,
@@ -37,7 +37,7 @@ Main.tscn. Levels are loaded in as children of 'Main/World'. Launching a scene
 directly from the editor causes that scene to be the 'current scene'.
 
 Fixed this requires saving a reference to the directly launched scene, removing
-it from the root viewport so it doesn't get deleted, and then calling 
+it from the root viewport so it doesn't get deleted, and then calling
 'get_tree().change_scene()'.
 
 Changing the scene takes longer than one game frame, for <reasons>, so this
@@ -156,7 +156,7 @@ func popup_dialog(object, conversation, options={}):
 
 	if object.has_method('line_finished'):
 		popup.connect("line_finished", object, 'line_finished')
-	
+
 	Utils.try_connect(popup, 'done', self, 'popup_over')
 	Utils.try_connect(popup, 'done', object, 'popup_over', [popup])
 
@@ -173,7 +173,7 @@ func start_dialog(object, conversation, options={}):
 	options['caller'] = object
 	dialog.start(conversation, options)
 	dialog.active = true
-	
+
 	Player.set_input_proxy(dialog)
 
 	Utils.try_connect(dialog, 'line_finished', object, 'line_finished')

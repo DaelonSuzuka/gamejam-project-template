@@ -53,48 +53,48 @@ func _init():
 func _ready():
 	if Engine.editor_hint:
 		return
-	
+
 	add_child(_tween)
 	add_child(_cooldown)
-	
+
 	_tween.connect("tween_all_completed", self, "_on_done")
 	_cooldown.connect("timeout", self, "_on_cool")
 	connect("resized", self, "_resized")
-	
+
 	_cooldown.wait_time = .1
 	bbcode_enabled = true
 	scroll_active = false
-	
+
 	var sbb = speedbb.new()
 	sbb.caller = self
 	install_effect(sbb)
-	
+
 	_resized()
 	_isready = true
-	
+
 	# this seems dumb but it's necessary
 	# bc the setget fires before the node is ready
 	self.player = player
 	for t in transitions:
 		install_transition(t)
-	
+
 	_start_msg()
 
 
 func _unhandled_input(event):
 	if _tween == null or event.is_echo():
 		return
-	
+
 	if InputMap.has_action(skip_action) and event.is_action_pressed(skip_action):
 		if !_done and _cool:
 			stop()
 			get_tree().set_input_as_handled()
-	
+
 	elif InputMap.has_action(accelerate_action) and event.is_action_pressed(accelerate_action):
 		_accel = true
 		_tween.playback_speed = speed * _speed_mult * acceleration
 		get_tree().set_input_as_handled()
-	
+
 	elif InputMap.has_action(accelerate_action) and event.is_action_released(accelerate_action):
 		_accel = false
 		_tween.playback_speed = speed * _speed_mult
@@ -104,15 +104,15 @@ func _unhandled_input(event):
 func _process(delta):
 	if Engine.editor_hint:
 		return
-	
+
 	# disables broken autoscroll
 	scroll_following = false
-	
+
 	# recalculate sizing when theme is changed
 	if theme != _old_theme:
 		_old_theme = theme
 		_resized()
-	
+
 	# scroll up or down to show current text
 	if autoscroll:
 		if use_alt_scroll:
@@ -122,23 +122,23 @@ func _process(delta):
 				_scroll(1)
 			if get_visible_line_count() <= _max_lines and visible_characters > 0 and speed < 0:
 				_scroll(-1)
-	
+
 	# inline speed multiplier change
 	if _speed_mult != _last_speed:
 		_last_speed = _speed_mult
 		_tween.playback_speed = _speed_mult * speed
-	
+
 	# detects when a reversed type is finished
 	if !_done and speed < 0 and _tween.tell() == 0:
 		_on_done()
-	
+
 	# plays a voice sound when a new letter is typed
 	if _last_char != visible_characters and voice.size() > 0 and _player != null:
 		_last_char = visible_characters
 		_player.stop()
 		_player.stream = voice[round(rand_range(0, voice.size() - 1))]
 		_player.play()
-	
+
 	if playing:
 		# updates transition time
 		_t_time += delta * _tween.playback_speed
@@ -205,20 +205,20 @@ func _set_active(val):
 
 func _set_player(path: NodePath):
 	player = path
-	
+
 	if !_isready:
 		return
-	
+
 	_player = get_node(path)
 	if _player != null:
 		_player.autoplay = false
 
 func _set_speed(val: float):
 	speed = float(val)
-	
+
 	if _tween == null:
 		return
-	
+
 	if val != 0:
 		_tween.playback_speed = _speed_mult * speed
 	else:
@@ -227,7 +227,7 @@ func _set_speed(val: float):
 func _set_accel(val: float):
 	if val <= 0:
 		return
-	
+
 	acceleration = float(val)
 	if _accel and _tween != null:
 		_tween.playback_speed = _speed_mult * speed * acceleration
@@ -302,7 +302,7 @@ func _start_msg():
 	playing = true
 	if _tween.is_active():
 		_tween.remove_all()
-	
+
 	if speed != 0:
 		_tween.playback_speed = speed
 		_done = false
@@ -325,33 +325,33 @@ func _start_msg():
 class speedbb extends RichTextEffect:
 	var bbcode: String = "spd"
 	var caller: Node = null
-	
+
 	func _process_custom_fx(char_fx) -> bool:
 		if Engine.editor_hint:
 			return true
-		
+
 		# main loop
 		if char_fx.visible and caller != null and char_fx.env.has(""):
 			# first char of speed sequence
 			if char_fx.relative_index == 0 and (
 					(caller.speed >= 0 and caller.percent_visible < 1.0)
 					 or caller.speed < 0):
-				
+
 				caller._block_speed(char_fx.env[""])
-				
+
 			# last char of speed sequence
 			if char_fx.env.get("_ct", -1) == char_fx.relative_index:
 				caller._block_speed(1)
-		
+
 		# reset for reverse mode
-		if (caller != null 
-				and caller.speed < 0 
-				and char_fx.relative_index == 0 
+		if (caller != null
+				and caller.speed < 0
+				and char_fx.relative_index == 0
 				and caller.visible_characters == char_fx.absolute_index - 1):
-			
+
 			caller._block_speed(1)
-			
+
 		# character counting, so it knows where to start and stop the speed
 		char_fx.env["_ct"] = max(char_fx.relative_index, char_fx.env.get("_ct", 0))
-		
+
 		return true

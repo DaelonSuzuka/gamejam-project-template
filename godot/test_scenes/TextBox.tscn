@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Pixellari.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://test_scenes/Pixellari.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://addons/messagebox/message_box.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
@@ -11,6 +11,8 @@ margin_right = 365.0
 margin_bottom = 74.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_text = "hey that's a test dialog"
+visible_characters = 0
+percent_visible = 0.0
 text = "hey that's a test dialog"
 scroll_active = false
 script = ExtResource( 2 )

@@ -30,9 +30,9 @@ func enter_world(world: Node):
 		if Game.requested_spawn:
 			if spawns.has_node(Game.requested_spawn):
 				spawn_name = Game.requested_spawn
-				
+
 		position = spawns.get_node(spawn_name).position
-	
+
 	interactors.current_interactable = null
 	visible = true
 

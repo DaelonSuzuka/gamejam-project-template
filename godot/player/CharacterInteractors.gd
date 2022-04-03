@@ -31,14 +31,14 @@ func interact(object):
 # just for drawing collider debug lines
 # func _draw():
 	# draw_circle($Area2D.position, 35, Color.red)
-	
+
 	# for ray in rays:
 	# 	draw_line(ray.position, ray.position + (ray.cast_to), Color.red)
 
 # just for drawing collider debug lines
 func _physics_process(delta):
 	# update()
-	
+
 	if !can_interact:
 		if interact_timeout.check_time(delta):
 			can_interact = true

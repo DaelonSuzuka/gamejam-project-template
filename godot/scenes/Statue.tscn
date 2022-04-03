@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Statue.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 28 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/path = NodePath("PathFollow2D/Node2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.7595, 86.0757 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PathFollow2D/Node2D/StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("PathFollow2D/Node2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PathFollow2D/Node2D/StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[node name="Statue" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="PathFollow2D"]
+
+[node name="Sprite" type="Sprite" parent="PathFollow2D/Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D/Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Node2D/StaticBody2D"]
+position = Vector2( 0, -18 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="TypingTarget" parent="." instance=ExtResource( 1 )]
+show_word = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fall = SubResource( 3 )
+anims/RESET = SubResource( 4 )

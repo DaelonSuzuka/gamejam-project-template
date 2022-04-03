@@ -113,7 +113,7 @@ func _input(event):
 			if event.button_index == 1:
 				left_click_hold = false
 			return
-		
+
 		if !accepting_clicks:
 			accepting_clicks = true
 			return
@@ -122,7 +122,7 @@ func _input(event):
 
 			# check if the click is on an interactable
 			var object = get_interactables_under_mouse()
-			
+
 			# add the click location as a waypoint
 			var pos = get_global_mouse_position()
 			var force = !Input.is_key_pressed(KEY_SHIFT)
