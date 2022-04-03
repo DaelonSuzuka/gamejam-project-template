@@ -12,6 +12,9 @@ func _ready():
 	for btn in MenuButtons.get_children():
 		connect_button(btn)
 
+	$Start.connect('matched', self, 'pressed', [$Start])
+	$Exit.connect('matched', self, 'pressed', [$Exit])
+
 	MenuButtons.get_child(0).grab_focus()
 
 func on_tree_exit():
@@ -34,6 +37,9 @@ func pressed(button):
 			pass
 		'NewGame':
 			pass
+		'Start':
+			Player.pop_menu()
+			Game.load_scene('city')
 		'DevRoom':
 			Player.pop_menu()
 			Game.load_scene('devroom')
