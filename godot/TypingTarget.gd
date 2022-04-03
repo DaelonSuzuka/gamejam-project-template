@@ -1,5 +1,5 @@
 tool
-extends Node2D
+extends CanvasItem
 
 # ******************************************************************************
 
@@ -7,12 +7,22 @@ export var word := '' setget set_word
 func set_word(value):
 	word = value
 	$Word/Label.text = value
-	$Hint/Label.text = value
+	update_hint()
 
 export var active := true setget set_active
 func set_active(value):
 	active = value
-	$Hint.visible = value
+	$Hint.visible = active and show_hint
+
+export var show_hint := true setget set_show_hint
+func set_show_hint(value):
+	show_hint = value
+	$Hint.visible = active and show_hint
+
+export var custom_hint := '' setget set_custom_hint
+func set_custom_hint(value):
+	custom_hint = value
+	update_hint()
 
 signal matched()
 signal mistake()
@@ -21,11 +31,16 @@ var progress := 0
 
 # ******************************************************************************
 
+func update_hint():
+	if custom_hint:
+		$Hint/Label.bbcode_text = '[shake rate=5 level=10]%s' % custom_hint
+	else:
+		$Hint/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
+
 func _ready():
 	$Word/Label.bbcode_enabled = true
 	$Word/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
 	$Hint/Label.bbcode_enabled = true
-	$Hint/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
 	set_word(word)
 	set_active(active)
 	$Word/Label.visible_characters = 0

@@ -96,15 +96,16 @@ script = ExtResource( 1 )
 z_index = 5
 
 [node name="Label" type="RichTextLabel" parent="Word"]
-margin_left = -32.0
-margin_right = 32.0
+margin_left = -64.0
+margin_right = 64.0
 margin_bottom = 20.0
 grow_horizontal = 2
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[shake rate=5 level=10]"
 visible_characters = 0
 percent_visible = 0.0
-text = "word"
 scroll_active = false
 
 [node name="Hint" type="Node2D" parent="."]
@@ -113,13 +114,14 @@ position = Vector2( 0, -17 )
 z_index = 5
 
 [node name="Label" type="RichTextLabel" parent="Hint"]
-margin_left = -32.0
-margin_right = 32.0
+margin_left = -64.0
+margin_right = 64.0
 margin_bottom = 20.0
 grow_vertical = 2
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 1 )
-text = "word"
+bbcode_enabled = true
+bbcode_text = "[shake rate=5 level=10]"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
