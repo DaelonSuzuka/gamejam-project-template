@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/justabit.tres" type="DynamicFont" id=1]
 [ext_resource path="res://global_canvas/FpsCounter.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Eyes.tscn" type="PackedScene" id=3]
 [ext_resource path="res://global_canvas/GlobalCanvas.gd" type="Script" id=5]
 [ext_resource path="res://global_canvas/DialogBox.tscn" type="PackedScene" id=6]
 
@@ -40,3 +41,10 @@ __meta__ = {
 
 [node name="DialogBox" parent="." instance=ExtResource( 6 )]
 visible = false
+
+[node name="Eyes" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -468.0
+margin_right = 468.0
+margin_bottom = 259.0

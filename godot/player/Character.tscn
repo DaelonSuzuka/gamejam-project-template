@@ -102,4 +102,3 @@ shape = SubResource( 2 )
 position = Vector2( 0, -78 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 9 )
-frame = 5

@@ -145,7 +145,7 @@ script = ExtResource( 14 )
 position = Vector2( 177, 367 )
 
 [node name="Ghost" parent="Spawns" instance=ExtResource( 15 )]
-position = Vector2( 340, -153 )
+position = Vector2( 320, -359 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
@@ -165,7 +165,7 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( -680.58, 545.448, -72.3254, 512.167, 638.375, 542.656, 1129.44, 570.727, 1314.57, 570.31, 1426.61, 558.484, 1539.71, 534.155, 1749.37, 465.34, 1964.44, 368.64, 1977.57, 397.825, 1760.94, 495.176, 1548.08, 565.042, 1431.66, 590.083, 1316.28, 602.264, 1128.56, 602.715, 636.776, 574.616, -72.1369, 544.167, -678.833, 577.4 )
+polygon = PoolVector2Array( -680.58, 545.448, -72.3254, 512.167, 638.375, 542.656, 1129.44, 570.727, 1314.57, 570.31, 1426.61, 558.484, 1539.72, 534.155, 1749.37, 465.34, 1964.44, 368.64, 1977.57, 397.824, 1760.94, 495.175, 1548.08, 565.042, 1431.66, 590.083, 1316.29, 602.264, 1128.56, 602.715, 636.776, 574.616, -72.1369, 544.166, -678.833, 577.4 )
 
 [node name="Interactable" parent="." instance=ExtResource( 10 )]
 position = Vector2( -41, 479 )

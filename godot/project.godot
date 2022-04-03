@@ -589,6 +589,7 @@ ConsoleCommands="*res://system/ConsoleCommands.gd"
 [debug]
 
 settings/fps/force_fps=60
+gdscript/warnings/enable=false
 gdscript/warnings/unused_variable=false
 gdscript/warnings/unused_argument=false
 gdscript/warnings/unused_signal=false
@@ -600,7 +601,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/FileSystemView/plugin.cfg", "res://addons/NbPM/plugin.cfg", "res://addons/PlatformerBody2D/plugin.cfg", "res://addons/SingletonScriptsShortcut/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/dardanbujupaj.node_warnings/plugin.cfg", "res://addons/diagraph/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/inspector-gadget/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/mixing-desk/plugin.cfg", "res://addons/ninepatchbutton/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/scrolling_background/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/FileSystemView/plugin.cfg", "res://addons/NbPM/plugin.cfg", "res://addons/PlatformerBody2D/plugin.cfg", "res://addons/SingletonScriptsShortcut/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/dardanbujupaj.node_warnings/plugin.cfg", "res://addons/diagraph/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/inspector-gadget/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/ninepatchbutton/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/scrolling_background/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
 
 [gui]
 
@@ -669,6 +670,16 @@ run={
 activate={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+AwakeLeft={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":77,"unicode":0,"echo":false,"script":null)
+ ]
+}
+AwakeRight={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":47,"unicode":0,"echo":false,"script":null)
  ]
 }
 
