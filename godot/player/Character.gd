@@ -30,9 +30,9 @@ func enter_world(world: Node):
 		if Game.requested_spawn:
 			if spawns.has_node(Game.requested_spawn):
 				spawn_name = Game.requested_spawn
-
+				
 		position = spawns.get_node(spawn_name).position
-
+	
 	interactors.current_interactable = null
 	visible = true
 
@@ -74,6 +74,7 @@ var velocity := Vector2()
 var speed := 0.0
 var movement_enabled = true
 var dead := false
+var idle_time := 0.0
 
 export var gravity = 500
 export var walk_speed = 200
@@ -99,11 +100,15 @@ func _physics_process(delta):
 		dir -= 1
 
 	if dir != 0:
-		body.playing = true
+		idle_time = 0
+		body.play('walk')
 		velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)
 	else:
-		body.playing = false
-		body.frame = 1
+		idle_time += delta
+		if idle_time >= 2.5:
+			body.play('idle_blink')
+		else:
+			body.play('idle')
 		velocity.x = lerp(velocity.x, 0, friction)
 
 	velocity.y += gravity
