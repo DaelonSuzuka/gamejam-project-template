@@ -944,5 +944,5 @@ margin_bottom = 160.0
 rect_scale = Vector2( 4.58057, 4.58057 )
 text = "\"I don't want to be here.\""
 
-[connection signal="area_entered" from="Spawns/Checkpoint" to="." method="_on_Checkpoint_area_entered"]
+[connection signal="body_entered" from="Spawns/Checkpoint" to="." method="_on_Checkpoint_body_entered"]
 [connection signal="body_entered" from="Spawns/NextScene" to="Spawns/NextScene" method="_on_NextScene_body_entered"]
