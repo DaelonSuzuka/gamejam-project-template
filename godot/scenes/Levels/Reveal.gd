@@ -1,5 +1,5 @@
 extends Node2D
 
 func dead():
-	$Label.dead()
+	$Label.start()
 	$AnimationPlayer.play("End")
