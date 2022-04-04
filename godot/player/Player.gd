@@ -14,7 +14,7 @@ func _ready() -> void:
 	GlobalCanvas.get_node('Eyes').hide()
 
 func scene_changed():
-	menu_stack.clear()
+	# menu_stack.clear()
 
 	GlobalCanvas.get_node('Eyes').hide()
 	if !Game.world.has_node('Spawns'):
