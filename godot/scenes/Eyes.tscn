@@ -78,12 +78,12 @@ animation = "left"
 [node name="InputPrompt" parent="." instance=ExtResource( 3 )]
 position = Vector2( 853, 547 )
 scale = Vector2( 5, 5 )
-key = "M"
+key = "J"
 
 [node name="InputPrompt2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 924, 546 )
 scale = Vector2( 5, 5 )
-key = "/"
+key = "L"
 
 [node name="Dark" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.666667 )
