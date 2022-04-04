@@ -98,7 +98,7 @@ script = ExtResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2( -18.811, 1.74438 )
-rotation = -0.0423403
+rotation = -0.0423396
 
 [node name="Node2D" type="Node2D" parent="PathFollow2D"]
 scale = Vector2( 0.5, 0.5 )

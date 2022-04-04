@@ -341,12 +341,12 @@ shape = SubResource( 10 )
 position = Vector2( 0, -145 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 9 )
-animation = "idle"
-frame = 4
+animation = "attack"
+frame = 32
 playing = true
 
 [node name="TypingTarget" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, -130 )
+position = Vector2( 16, -273 )
 word = "smash"
 
 [node name="Area2D" type="Area2D" parent="."]

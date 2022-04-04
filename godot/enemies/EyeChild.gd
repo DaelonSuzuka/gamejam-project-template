@@ -9,6 +9,7 @@ var velocity := Vector2()
 var speed := 0.0
 var movement_enabled = true
 var dead := false
+var gravity = 500
 
 export var walk_speed = 200
 var dir = 0
@@ -36,6 +37,10 @@ func _physics_process(delta):
 	else:
 		body.playing = false
 		velocity.x = lerp(velocity.x, 0, friction)
+
+	velocity.y += gravity
+	if is_on_floor():
+		velocity.y = 0
 
 	if movement_enabled:
 		velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)

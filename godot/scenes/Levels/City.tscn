@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=12]
 [ext_resource path="res://enemies/Ghost.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Gate.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/NPCS_sleep.png" type="Texture" id=15]
+[ext_resource path="res://assets/NPCS_pointing.png" type="Texture" id=16]
+[ext_resource path="res://assets/OldNPC.png" type="Texture" id=17]
 
 [sub_resource type="Resource" id=266]
 script = ExtResource( 3 )
@@ -677,6 +680,9 @@ fill_texture_z_index = -10
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
+[sub_resource type="RectangleShape2D" id=359]
+extents = Vector2( 10, 111.5 )
+
 [sub_resource type="Curve2D" id=170]
 resource_local_to_scene = true
 _data = {
@@ -752,11 +758,12 @@ position = Vector2( -5243, 691 )
 path = NodePath("Label")
 
 [node name="Label" parent="CityFrame/Pointer" instance=ExtResource( 11 )]
-margin_left = 901.0
-margin_top = -301.0
-margin_right = 1215.0
-margin_bottom = -261.0
-text = "Help ! Help ! Please do something !
+margin_left = 1197.0
+margin_top = -484.0
+margin_right = 1511.0
+margin_bottom = -419.0
+text = "Help ! Help !
+Please do something !
 Her eyes closed !"
 
 [node name="Mono" parent="CityFrame" instance=ExtResource( 10 )]
@@ -779,7 +786,7 @@ path = NodePath("Label2")
 margin_left = -138.0
 margin_top = -195.0
 margin_right = 101.0
-margin_bottom = -141.0
+margin_bottom = -131.0
 rect_scale = Vector2( 1.94664, 1.94664 )
 text = "Allnighter City :
 lying down is forbidden.
@@ -793,7 +800,7 @@ path = NodePath("Label2")
 margin_left = -380.0
 margin_top = -579.0
 margin_right = -141.0
-margin_bottom = -500.0
+margin_bottom = -470.0
 rect_scale = Vector2( 3.53624, 3.53624 )
 bbcode_text = "The demons... I see them lurking. Waiting to get inside. We must keep out eyes[color=Deeppink] open.[/color]"
 text = "The demons... I see them lurking. Waiting to get inside. We must keep out eyes[color=Deeppink] open.[/color]"
@@ -806,19 +813,32 @@ path = NodePath("Label2")
 margin_left = -48.0
 margin_top = -593.0
 margin_right = 191.0
-margin_bottom = -501.0
+margin_bottom = -486.0
 rect_scale = Vector2( 3.53624, 3.53624 )
 bbcode_text = "The demons... I see them lurking. Waiting to get inside. We must keep out eyes[color=Deeppink] open.[/color]"
 text = "The demons... I see them lurking. Waiting to get inside. We must keep out eyes[color=Deeppink] open.[/color]"
 
 [node name="Kill" parent="CityFrame" instance=ExtResource( 10 )]
-position = Vector2( -3957, 680 )
+position = Vector2( -4113, 676 )
 path = NodePath("TypingTarget")
 
 [node name="TypingTarget" parent="CityFrame/Kill" instance=ExtResource( 12 )]
-position = Vector2( 43, -113 )
+position = Vector2( 161, -81 )
 custom_hint = " "
 word = "kill"
+
+[node name="NpcsSleep" type="Sprite" parent="CityFrame/Kill"]
+position = Vector2( 175, -8.99976 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 15 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CityFrame/Kill"]
+position = Vector2( 140, 1 )
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CityFrame/Kill/StaticBody2D"]
+position = Vector2( 0, -101.5 )
+shape = SubResource( 359 )
 
 [node name="Fight" parent="CityFrame" instance=ExtResource( 10 )]
 position = Vector2( 750, 712 )
@@ -845,3 +865,14 @@ curve = SubResource( 171 )
 
 [node name="Gate" parent="CityFrame" instance=ExtResource( 14 )]
 position = Vector2( 5628, 532 )
+
+[node name="NPCs" type="Node2D" parent="CityFrame"]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="NpcsPointing" type="Sprite" parent="CityFrame/NPCs"]
+position = Vector2( -12540, 1933.33 )
+texture = ExtResource( 16 )
+
+[node name="OldNpc" type="Sprite" parent="CityFrame"]
+position = Vector2( 5267, 655 )
+texture = ExtResource( 17 )

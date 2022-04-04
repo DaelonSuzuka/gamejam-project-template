@@ -1,14 +1,17 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
 [ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=3]
 [ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=4]
 [ext_resource path="res://addons/rmsmartshape/shapes/shape_open.gd" type="Script" id=5]
-[ext_resource path="res://assets/Final_level.png" type="Texture" id=6]
+[ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Trigger.tscn" type="PackedScene" id=7]
 [ext_resource path="res://test_scenes/LabelDefault.tscn" type="PackedScene" id=8]
 [ext_resource path="res://enemies/Waver.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/background06_house.png" type="Texture" id=10]
+[ext_resource path="res://assets/NPCSwife_dead.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Levels/Reveal.gd" type="Script" id=12]
 
 [sub_resource type="Resource" id=77]
 script = ExtResource( 3 )
@@ -182,6 +185,36 @@ fill_texture_z_index = -10
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
+[sub_resource type="Animation" id=100]
+resource_name = "End"
+tracks/0/type = "value"
+tracks/0/path = NodePath("NpcSwifeDead:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=101]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("NpcSwifeDead:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="City" type="Node2D"]
 
 [node name="Spawns" type="Node2D" parent="."]
@@ -213,7 +246,7 @@ position = Vector2( 0, 1 )
 polygon = PoolVector2Array( -2073.01, 803.265, -2067.05, 985.044, -1763.76, 991.047, -1575.57, 936.644, -1293.23, 996.507, -893.214, 954.669, -594.461, 941.882, -347.092, 933.374, -248.129, 920.318, -114.033, 955.933, -99.5134, 828.101, -67.7178, 831.712, -90.3867, 990.489, -122.182, 986.878, -250.192, 952.251, -344.491, 965.268, -593.228, 973.858, -890.856, 986.582, -1294.88, 1028.46, -1574.42, 968.624, -1759.62, 1022.78, -2099.68, 1018.09, -2099.03, 986.093, -2104.99, 804.314 )
 
 [node name="CityFrame" type="Sprite" parent="."]
-texture = ExtResource( 6 )
+texture = ExtResource( 10 )
 
 [node name="Mono" parent="CityFrame" instance=ExtResource( 7 )]
 position = Vector2( -1775, 818 )
@@ -222,24 +255,42 @@ path = NodePath("Label")
 [node name="Label" parent="CityFrame/Mono" instance=ExtResource( 8 )]
 margin_left = -117.0
 margin_top = 112.0
-margin_right = 356.0
+margin_right = 406.0
 margin_bottom = 200.0
 rect_scale = Vector2( 4.29695, 4.29695 )
 bbcode_text = "\"Our house. I couldn't wait to see my []family[/color] again.\""
 text = "\"Our house. I couldn't wait to see my []family[/color] again.\""
 
-[node name="Mono2" parent="CityFrame" instance=ExtResource( 7 )]
-position = Vector2( -607, 772 )
+[node name="Waver" parent="CityFrame" instance=ExtResource( 9 )]
+position = Vector2( -294, 620 )
+type = 0
 
-[node name="Label" parent="CityFrame/Mono2" instance=ExtResource( 8 )]
-margin_left = -137.0
-margin_top = -1651.0
-margin_right = 221.0
-margin_bottom = -1588.0
+[node name="Reveal" type="Node2D" parent="CityFrame"]
+script = ExtResource( 12 )
+
+[node name="NpcSwifeDead" type="Sprite" parent="CityFrame/Reveal"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -238, 760 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 11 )
+
+[node name="TypingTarget" parent="CityFrame/Reveal" instance=ExtResource( 6 )]
+position = Vector2( -744, -879 )
+scale = Vector2( 6.67427, 6.67427 )
+custom_hint = " "
+show_word = false
+word = "family"
+
+[node name="Label" parent="CityFrame/Reveal" instance=ExtResource( 8 )]
+margin_left = -744.0
+margin_top = -879.0
+margin_right = -386.0
+margin_bottom = -816.0
 rect_scale = Vector2( 6.67427, 6.67427 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "\"We'll soon be together.
 I just have to…\""
 
-[node name="Waver" parent="CityFrame" instance=ExtResource( 9 )]
-position = Vector2( -619, 631 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CityFrame/Reveal"]
+anims/End = SubResource( 100 )
+anims/RESET = SubResource( 101 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://player/CharacterInteractors.gd" type="Script" id=1]
 [ext_resource path="res://player/Character.gd" type="Script" id=2]
@@ -6,6 +6,15 @@
 [ext_resource path="res://assets/mc_idle_blink.png" type="Texture" id=4]
 [ext_resource path="res://assets/mc_idle_base.png" type="Texture" id=5]
 [ext_resource path="res://assets/mc_attack.png" type="Texture" id=6]
+[ext_resource path="res://assets/MCslow_walk9.png" type="Texture" id=7]
+[ext_resource path="res://assets/MCslow_walk2.png" type="Texture" id=8]
+[ext_resource path="res://assets/MCslow_walk6.png" type="Texture" id=9]
+[ext_resource path="res://assets/MCslow_walk7.png" type="Texture" id=10]
+[ext_resource path="res://assets/MCslow_walk8.png" type="Texture" id=11]
+[ext_resource path="res://assets/MCslow_walk1.png" type="Texture" id=12]
+[ext_resource path="res://assets/MCslow_walk3.png" type="Texture" id=13]
+[ext_resource path="res://assets/MCslow_walk4.png" type="Texture" id=14]
+[ext_resource path="res://assets/MCslow_walk5.png" type="Texture" id=15]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.0
@@ -205,6 +214,11 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "slow_walk",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ) ],
 "loop": true,
 "name": "attack",
@@ -282,8 +296,8 @@ shape = SubResource( 2 )
 position = Vector2( 0, -78 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 9 )
-animation = "attack"
-frame = 12
+animation = "slow_walk"
+frame = 4
 playing = true
 
 [node name="CameraTarget" type="Node2D" parent="."]

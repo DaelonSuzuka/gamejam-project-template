@@ -1,15 +1,15 @@
 extends Node2D
 
-export var type = 0
+export var type = 1
 
 func _ready() -> void:
-	match type:
-		0: $AnimatedSprite.animation = "idle"+String(type)
+	$AnimatedSprite.animation = "idle"+String(type)
 
 func _process(delta: float) -> void:
 	if abs(Player.global_position.x-global_position.x) < 1000:
-		pass
-		#attack animation
+		$AnimatedSprite.animation = "attack"+String(type)
+	else: $AnimatedSprite.animation = "idle"+String(type)
+	if type != 0: $AnimationPlayer.play("Attack")
 
 func dead():
 	queue_free()
