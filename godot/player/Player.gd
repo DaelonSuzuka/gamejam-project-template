@@ -12,10 +12,14 @@ var character = null
 func _ready() -> void:
 	InputManager.register(self)
 	Game.connect('scene_changed', self, 'scene_changed')
+	GlobalCanvas.get_node('Eyes').hide()
 
 func scene_changed():
+	GlobalCanvas.get_node('Eyes').hide()
 	if !Game.world.has_node('Spawns'):
 		return
+
+	GlobalCanvas.get_node('Eyes').show()
 
 	character = null
 	character = load('res://player/Character.tscn').instance()
