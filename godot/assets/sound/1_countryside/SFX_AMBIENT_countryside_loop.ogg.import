@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_AMBIENT_countryside_loop.ogg-25937a272e10068d772ccceab57dcb1b.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/1_countryside/SFX_AMBIENT_countryside_loop.ogg"
+dest_files=[ "res://.import/SFX_AMBIENT_countryside_loop.ogg-25937a272e10068d772ccceab57dcb1b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

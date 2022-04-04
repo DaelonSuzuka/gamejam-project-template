@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_AMBIENT_stone_forest_loop.ogg-15be9e5400bfc3921d800bc116f84e4d.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/4_stone_forest/SFX_AMBIENT_stone_forest_loop.ogg"
+dest_files=[ "res://.import/SFX_AMBIENT_stone_forest_loop.ogg-15be9e5400bfc3921d800bc116f84e4d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_AMBIENT_house_loop.ogg-53e3c96e306a53ef85a1ca34c4cedbdb.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/5_house/SFX_AMBIENT_house_loop.ogg"
+dest_files=[ "res://.import/SFX_AMBIENT_house_loop.ogg-53e3c96e306a53ef85a1ca34c4cedbdb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

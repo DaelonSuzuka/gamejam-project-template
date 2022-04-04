@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_AMBIENT_SPATIAL_2nd_house_ whisper_loop.ogg-83424727a6c29b4dad4bce0bd6e74176.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/2_town/Spatial/SFX_AMBIENT_SPATIAL_2nd_house_ whisper_loop.ogg"
+dest_files=[ "res://.import/SFX_AMBIENT_SPATIAL_2nd_house_ whisper_loop.ogg-83424727a6c29b4dad4bce0bd6e74176.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
