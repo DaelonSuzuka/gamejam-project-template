@@ -41,7 +41,6 @@ func set_word(value):
 	update_hint()
 
 func set_show_word(value):
-	print("ok")
 	show_word = value
 	$Word.visible = active and show_word
 # ******************************************************************************
@@ -73,6 +72,10 @@ func _ready():
 func _input(event):
 	if !active:
 		return
+#	if show_word:
+#		if Player.character.global_position.distance_to(global_position) > distance:
+#			$Hint.visible = false
+	$Hint.visible = show_hint and Player.character and Player.character.global_position.distance_to(global_position) < distance
 	if !(event is InputEventKey) or !event.pressed:
 		return
 	if !word:

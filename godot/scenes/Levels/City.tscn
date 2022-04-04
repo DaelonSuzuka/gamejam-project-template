@@ -948,6 +948,7 @@ texture = ExtResource( 16 )
 position = Vector2( 5267, 655 )
 texture = ExtResource( 17 )
 
+[connection signal="body_entered" from="Spawns/NextScene" to="Spawns/NextScene" method="_on_NextScene_body_entered"]
 [connection signal="body_entered" from="Spawns/Checkpoint" to="." method="_on_Checkpoint_body_entered"]
 
 [editable path="CityFrame/Kill/TypingTarget"]

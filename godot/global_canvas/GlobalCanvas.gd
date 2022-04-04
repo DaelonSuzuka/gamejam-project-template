@@ -48,3 +48,9 @@ func debug(name, text):
 
 func start_tutorial():
 	$AnimationPlayer.play('EyeTuto')
+
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("debug+"):
+		$Debug.visible = !$Debug.visible

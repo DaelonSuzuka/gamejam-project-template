@@ -861,7 +861,7 @@ limit_right = 5750
 position = Vector2( -5208, 611 )
 
 [node name="Dev" type="Node2D" parent="Spawns"]
-position = Vector2( 5459, 547 )
+position = Vector2( 5507, 700 )
 
 [node name="NextScene" parent="Spawns" instance=ExtResource( 18 )]
 position = Vector2( 5708, 793 )
@@ -1044,5 +1044,6 @@ scale = Vector2( 0.75, 0.75 )
 position = Vector2( -171, 654 )
 texture = ExtResource( 17 )
 
+[connection signal="body_entered" from="Spawns/NextScene" to="Spawns/NextScene" method="_on_NextScene_body_entered"]
 [connection signal="body_entered" from="Spawns/Checkpoint" to="." method="_on_Checkpoint_body_entered"]
 [connection signal="body_entered" from="Spawns/Checkpoint2" to="." method="_on_Checkpoint2_body_entered"]

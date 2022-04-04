@@ -17,10 +17,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 9, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -200, 235 ), Vector2( -200, 235 ), Vector2( 44, 0 ) ]
+"values": [ Vector2( 44, 0 ), Vector2( -200, 235 ), Vector2( -200, 235 ), Vector2( 44, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Eyes:rect_scale")
@@ -29,10 +29,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 9, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.57307, 1.57307 ), Vector2( 1.57307, 1.57307 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.57307, 1.57307 ), Vector2( 1.57307, 1.57307 ), Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Eyes/InputPrompt:position")
@@ -41,10 +41,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 9, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 397.311, 123.961 ), Vector2( 397.311, 123.961 ), Vector2( 853, 547 ) ]
+"values": [ Vector2( 853, 547 ), Vector2( 397.311, 123.961 ), Vector2( 397.311, 123.961 ), Vector2( 853, 547 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Eyes/InputPrompt2:position")
@@ -53,10 +53,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 9, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 534.622, 123.961 ), Vector2( 534.622, 123.961 ), Vector2( 924, 546 ) ]
+"values": [ Vector2( 924, 546 ), Vector2( 534.622, 123.961 ), Vector2( 534.622, 123.961 ), Vector2( 924, 546 ) ]
 }
 tracks/4/type = "animation"
 tracks/4/path = NodePath("AnimationPlayer/Mash")
@@ -65,8 +65,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"clips": PoolStringArray( "Mash", "[stop]" ),
-"times": PoolRealArray( 0.2, 9.9 )
+"clips": PoolStringArray( "[stop]", "Mash", "[stop]" ),
+"times": PoolRealArray( 0, 0.2, 9.9 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -76,7 +76,7 @@ tracks/0/path = NodePath("Eyes:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -88,7 +88,7 @@ tracks/1/path = NodePath("Eyes:rect_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -100,7 +100,7 @@ tracks/2/path = NodePath("Eyes:rect_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -112,7 +112,7 @@ tracks/3/path = NodePath("Eyes/InputPrompt:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -124,7 +124,7 @@ tracks/4/path = NodePath("Eyes/InputPrompt2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -168,7 +168,7 @@ tracks/0/path = NodePath("../Eyes/InputPrompt:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -180,7 +180,7 @@ tracks/1/path = NodePath("../Eyes/InputPrompt2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -228,13 +228,6 @@ visible = false
 margin_left = 44.0
 margin_right = 980.0
 margin_bottom = 259.0
-rect_scale = Vector2( 1.57307, 1.57307 )
-
-[node name="InputPrompt" parent="Eyes" index="2"]
-position = Vector2( 397.311, 123.961 )
-
-[node name="InputPrompt2" parent="Eyes" index="3"]
-position = Vector2( 534.622, 123.961 )
 
 [node name="Black" type="TextureRect" parent="."]
 modulate = Color( 0, 0, 0, 1 )

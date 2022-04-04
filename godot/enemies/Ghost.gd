@@ -20,6 +20,6 @@ func _input(event: InputEvent) -> void:
 		start()
 
 func dead():
-	$PathFollow2D/Body/Sprite/AnimationPlayerr.play("Death")
+	$PathFollow2D/Body/Sprite/AnimationPlayer.play("Death")
 	yield(get_tree().create_timer(.3), "timeout")
 	queue_free()

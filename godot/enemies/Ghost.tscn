@@ -216,7 +216,7 @@ scale = Vector2( 0.45, 0.45 )
 [node name="Sprite" type="AnimatedSprite" parent="PathFollow2D/Body"]
 material = SubResource( 58 )
 frames = SubResource( 43 )
-frame = 9
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D/Body/Sprite"]
@@ -233,7 +233,8 @@ rotation = -1.16232
 shape = SubResource( 56 )
 
 [node name="TypingTarget" parent="." instance=ExtResource( 4 )]
-position = Vector2( 655, -129 )
+position = Vector2( 720, -128 )
+scale = Vector2( 1.47129, 1.47129 )
 distance = 1000
 word = "slay"
 
