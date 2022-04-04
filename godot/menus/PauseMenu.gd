@@ -26,6 +26,7 @@ func connect_button(button):
 	button.connect('pressed', self, 'pressed', [button])
 
 func open():
+	GlobalCanvas.get_node('Eyes').hide()
 	Game.pause_world()
 	active = true
 	MenuButtons.show()
@@ -44,6 +45,7 @@ func close():
 	$OptionMenu.hide()
 	ScreenDimEffect.hide()
 	Player.pop_menu()
+	GlobalCanvas.get_node('Eyes').show()
 
 # ******************************************************************************
 

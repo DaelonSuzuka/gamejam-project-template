@@ -35,6 +35,9 @@ func _physics_process(delta: float) -> void:
 		2,4: inc = 10
 
 func _input(event: InputEvent) -> void:
+	if !visible or !active:
+		return
+
 	if event.is_action_pressed("AwakeLeft"):
 		left_closed = max(0, left_closed - 250)
 	if event.is_action_pressed("AwakeRight"):
