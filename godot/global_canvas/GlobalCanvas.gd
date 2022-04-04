@@ -8,7 +8,7 @@ func _ready():
 			child.connect('pressed', self, 'debug_button', [child])
 
 func _process(delta):
-	$Eyes.active = $DebugControls/Eyes.pressed
+	$Eyes.active = !$DebugControls/Eyes.pressed
 
 func debug_button(button):
 	match button.name:
