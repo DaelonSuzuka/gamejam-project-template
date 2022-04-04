@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -17,6 +17,10 @@
 [ext_resource path="res://assets/NPCS_sleep.png" type="Texture" id=15]
 [ext_resource path="res://assets/NPCS_pointing.png" type="Texture" id=16]
 [ext_resource path="res://assets/OldNPC.png" type="Texture" id=17]
+[ext_resource path="res://scenes/NextScene.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=547]
+extents = Vector2( 19.6689, 116 )
 
 [sub_resource type="Resource" id=454]
 script = ExtResource( 3 )
@@ -707,6 +711,23 @@ _data = {
 [node name="Default" type="Node2D" parent="Spawns"]
 position = Vector2( -5560, 536 )
 
+[node name="NextScene" parent="Spawns" instance=ExtResource( 18 )]
+position = Vector2( 5640, 736 )
+next = "res://scenes/Levels/Beach.tscn"
+
+[node name="Checkpoint" type="Area2D" parent="Spawns"]
+position = Vector2( -648, 656 )
+collision_layer = 8
+collision_mask = 4
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Checkpoint"]
+position = Vector2( -9.66882, -4.56091 )
+z_index = 5
+shape = SubResource( 547 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )
 
@@ -802,8 +823,8 @@ margin_top = -579.0
 margin_right = -141.0
 margin_bottom = -470.0
 rect_scale = Vector2( 3.53624, 3.53624 )
-bbcode_text = "The demons... I see them lurking. Waiting to get inside. We must keep out eyes[color=Deeppink] open.[/color]"
-text = "The demons... I see them lurking. Waiting to get inside. We must keep out eyes[color=Deeppink] open.[/color]"
+bbcode_text = "The demons... I see them lurking. Waiting to get inside. We must keep our eyes[color=fuchsia] OPEN[/color]."
+text = "The demons... I see them lurking. Waiting to get inside. We must keep our eyes OPEN."
 
 [node name="NPC" parent="CityFrame" instance=ExtResource( 10 )]
 position = Vector2( -2010, 645 )

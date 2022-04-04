@@ -197,7 +197,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 0.952941, 0.392157, 0.792157, 1 ) ]
 }
 
 [sub_resource type="Animation" id=101]
@@ -220,7 +220,7 @@ tracks/0/keys = {
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( -1768, 713 )
+position = Vector2( -709, 685 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )
@@ -249,17 +249,17 @@ polygon = PoolVector2Array( -2073.01, 803.265, -2067.05, 985.044, -1763.76, 991.
 texture = ExtResource( 10 )
 
 [node name="Mono" parent="CityFrame" instance=ExtResource( 7 )]
-position = Vector2( -1775, 818 )
+position = Vector2( -713, 777 )
 path = NodePath("Label")
 
 [node name="Label" parent="CityFrame/Mono" instance=ExtResource( 8 )]
-margin_left = -117.0
-margin_top = 112.0
-margin_right = 406.0
-margin_bottom = 200.0
+margin_left = -1120.0
+margin_top = 122.0
+margin_right = -597.0
+margin_bottom = 210.0
 rect_scale = Vector2( 4.29695, 4.29695 )
-bbcode_text = "\"Our house. I couldn't wait to see my []family[/color] again.\""
-text = "\"Our house. I couldn't wait to see my []family[/color] again.\""
+bbcode_text = "\"Our house. I couldn't wait to see my [color=fuchsia]FAMILY[/color] again.\""
+text = "\"Our house. I couldn't wait to see my FAMILY again.\""
 
 [node name="Waver" parent="CityFrame" instance=ExtResource( 9 )]
 position = Vector2( -294, 620 )

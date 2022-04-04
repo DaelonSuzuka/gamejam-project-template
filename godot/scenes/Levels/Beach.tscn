@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=2]
+[gd_scene load_steps=159 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://scenes/Bridge.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/NPCSwife_alive.png" type="Texture" id=14]
 [ext_resource path="res://assets/NPCS_pointing.png" type="Texture" id=15]
+[ext_resource path="res://scenes/NextScene.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=549]
+extents = Vector2( 19.6689, 116 )
 
 [sub_resource type="Resource" id=411]
 script = ExtResource( 3 )
@@ -1017,6 +1021,25 @@ _data = {
 [node name="Default" type="Node2D" parent="Spawns"]
 position = Vector2( -3548, 426 )
 
+[node name="NextScene" parent="Spawns" instance=ExtResource( 16 )]
+position = Vector2( 5750, 2566 )
+next = "res://scenes/Levels/Forest.tscn"
+
+[node name="Checkpoint" type="Area2D" parent="Spawns"]
+position = Vector2( 4123, 1399 )
+rotation = -1.5759
+scale = Vector2( 1, 7.67644 )
+collision_layer = 8
+collision_mask = 4
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Checkpoint"]
+position = Vector2( -9.66882, -4.56091 )
+z_index = 5
+shape = SubResource( 549 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )
 
@@ -1135,33 +1158,43 @@ position = Vector2( 2677, 1800 )
 path = NodePath("Label")
 
 [node name="Label" parent="CityFrame/TriggerDialog4" instance=ExtResource( 11 )]
-margin_left = -1781.0
+margin_left = -1710.0
 margin_top = -1224.0
-margin_right = -1501.0
+margin_right = -1430.0
 margin_bottom = -1010.0
 rect_scale = Vector2( 4.69282, 5.36845 )
 bbcode_text = "Sweetheart, I'm sorry.
 I didn't mean...
 I don't want to harm the children.
 It growls inside my stomach.
-I'm just [color=Deeppink]push[/color]ed to my limits.
+I've just been [color=fuchsia]PUSH[/color]ed to my limits.
+
 I love you."
 text = "Sweetheart, I'm sorry.
 I didn't mean...
 I don't want to harm the children.
 It growls inside my stomach.
-I'm just [color=Deeppink]push[/color]ed to my limits.
+I've just been PUSHed to my limits.
+
 I love you."
 
 [node name="Statue" parent="CityFrame" instance=ExtResource( 12 )]
 position = Vector2( 5692, 1584 )
 curve = SubResource( 410 )
 
+[node name="PathFollow2D" parent="CityFrame/Statue" index="0"]
+position = Vector2( 28, -20 )
+rotation = 0.0676924
+
+[node name="TypingTarget" parent="CityFrame/Statue" index="1"]
+show_hint = false
+
 [node name="Bridge" parent="CityFrame" instance=ExtResource( 13 )]
 position = Vector2( 2805, -111 )
 z_index = -1
 
 [node name="NpcSwifeAlive" type="Sprite" parent="CityFrame"]
+modulate = Color( 1, 0.45098, 0.831373, 1 )
 position = Vector2( 4848, -452 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 14 )
@@ -1170,3 +1203,5 @@ texture = ExtResource( 14 )
 position = Vector2( 151, -378 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 15 )
+
+[editable path="CityFrame/Statue"]

@@ -12,5 +12,5 @@ margin_right = 331.0
 margin_bottom = 40.0
 rect_scale = Vector2( 3, 3 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "abc"
+bbcode_enabled = true
 script = ExtResource( 2 )
