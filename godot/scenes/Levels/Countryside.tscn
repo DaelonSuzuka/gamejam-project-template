@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://enemies/Ghost.tscn" type="PackedScene" id=9]
 [ext_resource path="res://test_scenes/LabelDefault.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/NextScene.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/Levels/Level.gd" type="Script" id=12]
+[ext_resource path="res://scenes/Levels/Countryside.gd" type="Script" id=12]
+[ext_resource path="res://menus/MainMenu.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=312]
 extents = Vector2( 19.6689, 116 )
@@ -852,14 +853,17 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, -176, 112, 0, 0, 0, 0, -292, 288, 0, 0, 0, 0, -376, 444, 0, 0, 0, 0, -452, 680, 0, 0, 0, 0, -380, 932, 0, 0, 0, 0, -228, 1032, 0, 0, 0, 0, -24, 1040, 0, 0, 0, 0, 228, 988, 0, 0, 0, 0, 472, 896, 0, 0, 0, 0, 640, 780, 0, 0, 0, 0, 924, 652, 0, 0, 0, 0, 1036, 612, 0, 0, 0, 0, 1268, 544, 0, 0, 0, 0, 1484, 520, 0, 0, 0, 0, 1752, 588, 0, 0, 0, 0, 1872, 772, 0, 0, 0, 0, 1816, 972, 0, 0, 0, 0, 1648, 1052, 0, 0, 0, 0, 1440, 1032, 0, 0, 0, 0, 1268, 904, 0, 0, 0, 0, 1288, 708, 0, 0, 0, 0, 1444, 480, 0, 0, 0, 0, 1704, 376, 0, 0, 0, 0, 1852, 440, 0, 0, 0, 0, 2156, 532, 0, 0, 0, 0, 2372, 808, 0, 0, 0, 0, 2608, 944, 0, 0, 0, 0, 2856, 988, 0, 0, 0, 0, 3064, 1052 )
 }
 
-[node name="City" type="Node2D"]
+[node name="Countryside" type="Node2D"]
 position = Vector2( 877.338, 296.561 )
 script = ExtResource( 12 )
+
+[node name="CameraTarget" type="Node2D" parent="."]
+position = Vector2( -5671.91, 206.37 )
 
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( 7082.66, 655.439 )
+position = Vector2( -5881.34, 395.439 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -905,9 +909,15 @@ polygon = PoolVector2Array( -7411.69, 322.653, -7406.05, 636.914, -7333.66, 644.
 
 [node name="CityFrame" type="Sprite" parent="."]
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CityFrame2" type="Sprite" parent="."]
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Ghost" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2000, -1336 )
@@ -943,6 +953,8 @@ margin_right = 242.0
 margin_bottom = 160.0
 rect_scale = Vector2( 4.58057, 4.58057 )
 text = "\"I don't want to be here.\""
+
+[node name="MainMenu" parent="." instance=ExtResource( 13 )]
 
 [connection signal="body_entered" from="Spawns/Checkpoint" to="." method="_on_Checkpoint_body_entered"]
 [connection signal="body_entered" from="Spawns/NextScene" to="Spawns/NextScene" method="_on_NextScene_body_entered"]

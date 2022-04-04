@@ -19,8 +19,11 @@ func _ready():
 
 	MenuButtons.get_child(0).grab_focus()
 
-func on_tree_exit():
-	Player.pop_menu()
+	call_deferred('hide_eyes')
+
+func hide_eyes():
+	Player.camera.follow($'../CameraTarget', Vector2(2.0, 2.0))
+	GlobalCanvas.get_node('Eyes').hide()
 
 func connect_button(button):
 	button.connect('pressed', self, 'pressed', [button])
@@ -37,7 +40,6 @@ func handle_input(event):
 
 func pressed(button):
 	match button.name:
-
 		'Credits':
 			if !$CreditsImage.visible:
 				$CreditsImage.show()
@@ -45,23 +47,8 @@ func pressed(button):
 			else:
 				$CreditsImage.hide()
 				$Start.active = true
-		'NewGame':
-			pass
 		'Start':
-			MenuButtons.show()
-		'DevRoom':
+			GlobalCanvas.get_node('Eyes').show()
+			Player.camera.follow(Player.character, Vector2(3.0, 3.0), .01)
 			Player.pop_menu()
-			Game.load_scene('devroom')
-		'City':
-			Player.pop_menu()
-			Game.load_scene('city')
-		'Countryside':
-			Player.pop_menu()
-			Game.load_scene('countryside')
-		'Beach':
-			Player.pop_menu()
-			Game.load_scene('beach')
-		'Options':
-			pass
-		'Exit':
-			get_tree().quit()
+			$Credits.hide()

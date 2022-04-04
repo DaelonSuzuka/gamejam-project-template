@@ -7,7 +7,7 @@ func _ready():
 	if Game.direct_launch:
 		return
 
-	var scene = 'mainmenu'
+	var scene = 'countryside'
 	if Args.scene:
 		scene = Args.scene
 	Game.load_scene(scene)

@@ -3,6 +3,7 @@ extends Camera2D
 # ******************************************************************************
 
 var target: Node = null
+var target_zoom = zoom
 
 func follow(node:Node, _zoom=null, speed=5):
 	if is_instance_valid(node):
@@ -11,7 +12,7 @@ func follow(node:Node, _zoom=null, speed=5):
 		else:
 			target = node
 	if _zoom is Vector2:
-		zoom = _zoom
+		target_zoom = _zoom
 		original_zoom = _zoom
 	smoothing_speed = speed
 
@@ -33,6 +34,8 @@ func _physics_process(delta):
 
 	if target and target.is_inside_tree():
 		global_position = target.global_position
+
+		zoom = lerp(zoom, target_zoom, .01)
 
 		if _get_camera_center().distance_to(target.global_position) < 10:
 			smoothing_speed = lerp(smoothing_speed, 5, .1)

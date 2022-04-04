@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/background_title_screen.png" type="Texture" id=2]
@@ -6,11 +6,25 @@
 [ext_resource path="res://assets/ui/Credit_final.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/credits_button/creditst-OFF.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/credits_button/creditst-ON.png" type="Texture" id=6]
+[ext_resource path="res://assets/Bohemian Soul.otf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 7 )
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
@@ -84,24 +98,26 @@ text = "type start"
 align = 1
 
 [node name="Start" parent="." instance=ExtResource( 3 )]
-position = Vector2( 528, 501 )
+position = Vector2( 544, 538 )
 scale = Vector2( 2, 2 )
-custom_hint = "type START"
+custom_hint = "[color=white]type [/color]START"
 word = "start"
+
+[node name="Word" parent="Start" index="0"]
+position = Vector2( 96, -76 )
 
 [node name="Label" parent="Start/Word" index="0"]
 margin_top = -1.5
 margin_bottom = 18.5
-bbcode_text = "[shake rate=5 level=10]START"
-percent_visible = 1.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]START"
 text = "START"
 
 [node name="Label" parent="Start/Hint" index="0"]
-margin_left = -128.0
 margin_top = -8.0
-margin_right = 128.0
 margin_bottom = 12.0
-bbcode_text = "[shake rate=5 level=10]type START"
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_text = "[shake rate=5 level=10][color=fuchsia][color=white]type [/color]START"
 text = "type START"
 
 [node name="CreditsImage" type="TextureRect" parent="."]
