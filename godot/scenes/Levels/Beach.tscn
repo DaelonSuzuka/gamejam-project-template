@@ -1014,9 +1014,6 @@ limit_right = 5738
 [node name="Default" type="Node2D" parent="Spawns"]
 position = Vector2( -5032, 584 )
 
-[node name="Dev" type="Node2D" parent="Spawns"]
-position = Vector2( -392, 528 )
-
 [node name="NextScene" parent="Spawns" instance=ExtResource( 16 )]
 position = Vector2( 5750, 2566 )
 next = "res://scenes/Levels/Forest.tscn"
@@ -1203,12 +1200,9 @@ rotation = 0.0676924
 scale = Vector2( 1.31152, 1.31152 )
 custom_hint = "????"
 
-[node name="Label" parent="CityFrame/Statue/TypingTarget/Word" index="0"]
-text = "[shake rate=5 level=10][color=fuchsia]PUSH"
-
 [node name="Label" parent="CityFrame/Statue/TypingTarget/Hint" index="0"]
 bbcode_text = "[shake rate=5 level=10][color=fuchsia]????"
-text = "[shake rate=5 level=10][color=fuchsia]????"
+text = "????"
 
 [node name="Bridge" parent="CityFrame" instance=ExtResource( 13 )]
 position = Vector2( 2805, -111 )

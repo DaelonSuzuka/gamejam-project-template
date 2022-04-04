@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/Ghost-sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/ghost_move.png" type="Texture" id=2]
@@ -12,6 +12,40 @@ resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -17, 15, 0, 0, 0, 0, 37, 407, 0, 0, 0, 0, 136, 666, 0, 0, 0, 0, 330, 1119, 0, 0, 0, 0, 657, 1534, 0, 0, 0, 0, 938, 1731, 0, 0, 0, 0, 1323, 1868, 0, 0, 0, 0, 1623, 1979, 0, 0, 0, 0, 1962, 2089, 0, 0, 0, 0, 2289, 2264, 0, 0, 0, 0, 2799, 2511 )
 }
+
+[sub_resource type="Shader" id=59]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform float scan_line_jitter : hint_range(0.0,0.075) = 0.015;
+uniform float horizontal_shake : hint_range(0.0,0.25) = 0.01;
+uniform float color_drift : hint_range(0.0,0.1) = 0.03; 
+
+float nrand(float x, float y) {
+	return fract(sin(dot(vec2(x,y),vec2(12.9898, 78.233))) * 43758.5433);
+}
+
+void fragment() {
+	float u = UV.x;
+	float v = UV.y;
+	
+	float jitter = nrand(v, TIME) * 2.0 - 1.0;
+	jitter *= step(0, abs(jitter)) * scan_line_jitter;
+	float jump = mix(v, fract(v), 0.0);
+	float shake = (nrand(TIME,2.0) - 0.5) * horizontal_shake;
+	float drift = sin(jump) * color_drift;
+	
+	vec4 src1 = texture(TEXTURE, fract(vec2(u+jitter+shake,jump)));
+	vec4 src2 = texture(TEXTURE, fract(vec2(u+jitter+shake+drift,jump)));
+	COLOR = vec4(src1.r,src2.g,src1.b,src1.a);	
+}"
+
+[sub_resource type="ShaderMaterial" id=58]
+resource_local_to_scene = true
+shader = SubResource( 59 )
+shader_param/scan_line_jitter = 0.0
+shader_param/horizontal_shake = 0.0
+shader_param/color_drift = 0.0
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 1 )
@@ -130,6 +164,36 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=60]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/scan_line_jitter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.027, 0.0 ]
+}
+
+[sub_resource type="Animation" id=61]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/scan_line_jitter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
 [sub_resource type="CapsuleShape2D" id=56]
 radius = 172.939
 height = 205.389
@@ -150,9 +214,14 @@ scale = Vector2( 0.45, 0.45 )
 [node name="RegularPolygon2D" parent="PathFollow2D/Body" instance=ExtResource( 6 )]
 
 [node name="Sprite" type="AnimatedSprite" parent="PathFollow2D/Body"]
+material = SubResource( 58 )
 frames = SubResource( 43 )
-frame = 3
+frame = 9
 playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D/Body/Sprite"]
+anims/Death = SubResource( 60 )
+anims/RESET = SubResource( 61 )
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D/Body" groups=["Death"]]
 collision_layer = 2

@@ -870,6 +870,12 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Dev" type="Node2D" parent="Spawns"]
+position = Vector2( 808, 152 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="Checkpoint" type="Area2D" parent="Spawns"]
 position = Vector2( 816, 384 )
 collision_layer = 8
