@@ -245,6 +245,7 @@ anims/Mash = SubResource( 3 )
 anims/RESET = SubResource( 4 )
 
 [node name="DebugControls" type="VBoxContainer" parent="."]
+visible = false
 margin_right = 109.0
 margin_bottom = 196.0
 
