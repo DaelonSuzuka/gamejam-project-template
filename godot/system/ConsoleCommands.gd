@@ -23,11 +23,6 @@ func _ready():
 		.set_description('Reset all world items')\
 		.register()
 
-	Console.add_command('give_item', Player.inventory, 'give_item')\
-		.add_argument('shard', TYPE_STRING)\
-		.set_description('Add item to player')\
-		.register()
-
 	Console.add_command('set_flag', Game, 'set_flag')\
 		.add_argument('flag', TYPE_STRING)\
 		.add_argument('value', TYPE_BOOL)\
