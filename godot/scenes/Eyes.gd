@@ -10,11 +10,12 @@ var inc = .5
 onready var Left := $Left
 onready var Right := $Right
 
+var active := true
+
 # ******************************************************************************
 
-
 func _physics_process(delta: float) -> void:
-	if !visible:
+	if !visible or !active:
 		return
 
 	if left_closed == MAX_CLOSED and right_closed == MAX_CLOSED and not Player.character.dead:
