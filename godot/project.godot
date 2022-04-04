@@ -149,31 +149,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/inspector_gadget_util.gd"
 }, {
-"base": "Resource",
-"class": "LocalizationData",
-"language": "GDScript",
-"path": "res://addons/localization_editor/model/LocalizationData.gd"
-}, {
-"base": "Reference",
-"class": "LocalizationKeys",
-"language": "GDScript",
-"path": "res://localization/LocalizationKeys.gd"
-}, {
-"base": "Reference",
-"class": "LocalizationPlaceholders",
-"language": "GDScript",
-"path": "res://localization/LocalizationPlaceholders.gd"
-}, {
-"base": "Resource",
-"class": "LocalizationPlaceholdersData",
-"language": "GDScript",
-"path": "res://addons/localization_editor/model/LocalizationPlaceholdersData.gd"
-}, {
-"base": "Resource",
-"class": "LocalizationSave",
-"language": "GDScript",
-"path": "res://addons/localization_editor/model/LocalizationSave.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "PlatformerBody2D",
 "language": "GDScript",
@@ -498,11 +473,6 @@ _global_script_class_icons={
 "InspectorGadget": "",
 "InspectorGadgetBase": "",
 "InspectorGadgetUtil": "",
-"LocalizationData": "",
-"LocalizationKeys": "",
-"LocalizationPlaceholders": "",
-"LocalizationPlaceholdersData": "",
-"LocalizationSave": "",
 "PlatformerBody2D": "",
 "RMS2D_Material": "",
 "RMS2D_VertexProperties": "",
@@ -601,7 +571,7 @@ window/stretch/mode="2d"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/NbPM/plugin.cfg", "res://addons/PlatformerBody2D/plugin.cfg", "res://addons/SingletonScriptsShortcut/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/diagraph/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/inspector-gadget/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/ninepatchbutton/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/scrolling_background/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/NbPM/plugin.cfg", "res://addons/PlatformerBody2D/plugin.cfg", "res://addons/SingletonScriptsShortcut/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/inspector-gadget/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/scrolling_background/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
 
 [gui]
 
@@ -694,10 +664,6 @@ debug+={
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="Player"
 2d_physics/layer_11="Interactables"
-
-[locale]
-
-translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.de.translation", "res://localization/localizations.ru.translation" )
 
 [physics]
 
