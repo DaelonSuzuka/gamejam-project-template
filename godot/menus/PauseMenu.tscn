@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://menus/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/pause_menu_buttons/option-OFF.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/ui/grey_pause_filter.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/volume_handle.png" type="Texture" id=12]
 [ext_resource path="res://assets/sound/0_main/SFX_UI_menu_click.wav" type="AudioStream" id=13]
+[ext_resource path="res://addons/input_event_key_grabber/input_event_key_grabber_button.gd" type="Script" id=14]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 12 )
@@ -34,7 +35,6 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.2 )
 
 [node name="Textures" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -93,7 +93,6 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="MenuButtons" type="Control" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 409.6
 margin_top = 240.0
 margin_right = 613.6
@@ -102,6 +101,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Resume" type="Button" parent="MenuButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -36.0
 margin_top = -108.0
 margin_right = 287.0
@@ -109,6 +109,7 @@ margin_bottom = -9.0
 text = "Resume"
 
 [node name="Option" type="Button" parent="MenuButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -32.0
 margin_top = 17.0
 margin_right = 300.0
@@ -116,13 +117,80 @@ margin_bottom = 122.0
 text = "Option"
 
 [node name="Exit" type="Button" parent="MenuButtons"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -19.0
 margin_top = 156.0
 margin_right = 295.0
 margin_bottom = 257.0
 text = "Exit"
 
+[node name="GridContainer" type="Control" parent="MenuButtons"]
+margin_left = -337.6
+margin_top = 156.0
+margin_right = -297.6
+margin_bottom = 196.0
+
+[node name="Label" type="Label" parent="MenuButtons/GridContainer"]
+margin_top = 3.0
+margin_right = 97.0
+margin_bottom = 17.0
+text = "Move Left"
+align = 2
+
+[node name="MoveLeft" type="Button" parent="MenuButtons/GridContainer"]
+margin_left = 101.0
+margin_right = 123.0
+margin_bottom = 20.0
+text = "A"
+script = ExtResource( 14 )
+
+[node name="Label2" type="Label" parent="MenuButtons/GridContainer"]
+margin_top = 27.0
+margin_right = 97.0
+margin_bottom = 41.0
+text = "Move Right"
+align = 2
+
+[node name="MoveRight" type="Button" parent="MenuButtons/GridContainer"]
+margin_left = 101.0
+margin_top = 24.0
+margin_right = 123.0
+margin_bottom = 44.0
+text = "D"
+script = ExtResource( 14 )
+
+[node name="Label3" type="Label" parent="MenuButtons/GridContainer"]
+margin_top = 51.0
+margin_right = 97.0
+margin_bottom = 65.0
+text = "Open Left Eye"
+align = 2
+
+[node name="LeftEye" type="Button" parent="MenuButtons/GridContainer"]
+margin_left = 101.0
+margin_top = 48.0
+margin_right = 123.0
+margin_bottom = 68.0
+text = "J"
+script = ExtResource( 14 )
+
+[node name="Label4" type="Label" parent="MenuButtons/GridContainer"]
+margin_top = 75.0
+margin_right = 97.0
+margin_bottom = 89.0
+text = "Open Right Eye"
+align = 2
+
+[node name="RightEye" type="Button" parent="MenuButtons/GridContainer"]
+margin_left = 101.0
+margin_top = 72.0
+margin_right = 123.0
+margin_bottom = 92.0
+text = "L"
+script = ExtResource( 14 )
+
 [node name="OptionMenu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
