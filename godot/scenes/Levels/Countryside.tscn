@@ -852,7 +852,10 @@ _data = {
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( 568, 360 )
+position = Vector2( -5992, 400 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )

@@ -13,7 +13,7 @@ var active := false
 func _ready():
 	if get_tree().get_current_scene() != self:
 		Menu.hide()
-		
+
 	ScreenDimEffect.hide()
 
 	for btn in MenuButtons.get_children():

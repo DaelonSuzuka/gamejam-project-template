@@ -19,4 +19,6 @@ position = Vector2( 14.5, 171.5 )
 shape = SubResource( 1 )
 
 [node name="TypingTarget" parent="." instance=ExtResource( 1 )]
+custom_hint = " "
 show_word = false
+word = "open"

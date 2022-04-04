@@ -48,7 +48,10 @@ func update_hint():
 		$Hint/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
 
 func start():
-	$Hint/Label.text = ""
+	set_show_hint(true)
+#	$Hint/Label.text = ""
+#	update_hint()
+#	print($Hint/Label.text.length())
 
 func _ready():
 	$Word/Label.bbcode_enabled = true
