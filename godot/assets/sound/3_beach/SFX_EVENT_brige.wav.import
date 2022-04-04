@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_EVENT_brige.wav-6d009c14904cdde213a4b2717e3c83bc.sample"
+
+[deps]
+
+source_file="res://assets/sound/3_beach/SFX_EVENT_brige.wav"
+dest_files=[ "res://.import/SFX_EVENT_brige.wav-6d009c14904cdde213a4b2717e3c83bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

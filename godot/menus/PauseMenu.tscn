@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://menus/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/pause_menu_buttons/option-OFF.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/ui/volume.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/grey_pause_filter.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/volume_handle.png" type="Texture" id=12]
+[ext_resource path="res://assets/sound/0_main/SFX_UI_menu_click.wav" type="AudioStream" id=13]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 12 )
@@ -149,3 +150,6 @@ custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 value = 20.0
+
+[node name="MenuClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
