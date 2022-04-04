@@ -52,7 +52,7 @@ func pressed(button):
 				$CreditsImage.hide()
 				$Start.active = true
 		'Start':
-			Player.camera.follow(Player.character, Vector2(3.0, 3.0), .01)
+			Player.camera.follow(Player.character, Vector2(3.0, 3.0))
 			Player.pop_menu()
 			$Credits.hide()
 			GlobalCanvas.get_node('Eyes').show()
