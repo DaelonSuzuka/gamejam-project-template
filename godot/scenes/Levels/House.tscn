@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://assets/background06_house.png" type="Texture" id=10]
 [ext_resource path="res://assets/NPCSwife_dead.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Levels/Reveal.gd" type="Script" id=12]
+[ext_resource path="res://assets/sound/5_house/SFX_AMBIENT_house_loop.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sound/5_house/SFX_EVENT_SOUNTRACK_wife_corpse_reveal.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sound/5_house/SFX_EVENT_wife_corpse_reveal.wav" type="AudioStream" id=15]
 
 [sub_resource type="GDScript" id=102]
 script/source = "extends Node2D
@@ -253,6 +256,18 @@ limit_right = 1920
 
 [node name="Default" type="Node2D" parent="Spawns"]
 position = Vector2( -709, 685 )
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 13 )
+autoplay = true
+
+[node name="EventSoundtrackWifeReveal" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 14 )
+
+[node name="EventWifeReveal" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 15 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )

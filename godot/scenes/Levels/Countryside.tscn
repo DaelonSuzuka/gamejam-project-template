@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=135 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/NextScene.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Levels/Countryside.gd" type="Script" id=12]
 [ext_resource path="res://menus/MainMenu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sound/1_countryside/SFX_AMBIENT_countryside_loop.ogg" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=312]
 extents = Vector2( 19.6689, 116 )
@@ -892,6 +893,12 @@ shape = SubResource( 312 )
 [node name="NextScene" parent="Spawns" instance=ExtResource( 11 )]
 position = Vector2( 7592, 768 )
 next = "res://scenes/Levels/City.tscn"
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 14 )
+autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )

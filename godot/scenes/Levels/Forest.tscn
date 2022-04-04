@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=141 format=2]
 
 [ext_resource path="res://assets/forest01_frame.png" type="Texture" id=1]
 [ext_resource path="res://assets/background_forest_frame.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/OldNPC.png" type="Texture" id=17]
 [ext_resource path="res://scenes/NextScene.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/Levels/Level.gd" type="Script" id=19]
+[ext_resource path="res://assets/sound/4_stone_forest/SFX_AMBIENT_stone_forest_loop.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/sound/4_stone_forest/SFX_EVENT_statue_push.wav" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=421]
 extents = Vector2( 19.6689, 116 )
@@ -848,7 +850,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 4, 6, 0, 0, 0, 0, -200, 21, 0, 0, 0, 0, -363, 109, 0, 0, 0, 0, -554, 283, 0, 0, 0, 0, -867, 488, 0, 0, 0, 0, -1095, 705, 0, 0, 0, 0, -1357, 887, 0, 0, 0, 0, -1728, 916, 0, 0, 0, 0, -2233, 887, 0, 0, 0, 0, -2455, 767, 0, 0, 0, 0, -2750, 553, 0, 0, 0, 0, -2979, 184, 0, 0, 0, 0, -2994, -177, 0, 0, 0, 0, -2918, -406, 0, 0, 0, 0, -2686, -611, 0, 0, 0, 0, -2191, -684, 0, 0, 0, 0, -1738, -482, 0, 0, 0, 0, -1365, -139, 0, 0, 0, 0, -1126, 138, 0, 0, 0, 0, -795, 454, 0, 0, 0, 0, -553, 624, 0, 0, 0, 0, -282, 756, 0, 0, 0, 0, 165, 834, 0, 0, 0, 0, 936, 824, 0, 0, 0, 0, 1481, 717, 0, 0, 0, 0, 1682, 269, 0, 0, 0, 0, 1517, -194, 0, 0, 0, 0, 1183, -404, 0, 0, 0, 0, 759, -420, 0, 0, 0, 0, 30, 11 )
 }
 
-[node name="City" type="Node2D"]
+[node name="Forest" type="Node2D"]
 script = ExtResource( 19 )
 limit_left = -5750
 limit_right = 5750
@@ -890,6 +892,15 @@ __meta__ = {
 position = Vector2( -9.66882, -4.56091 )
 z_index = 5
 shape = SubResource( 421 )
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 20 )
+autoplay = true
+
+[node name="EventStatuePush" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 21 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )

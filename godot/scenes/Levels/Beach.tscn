@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=2]
+[gd_scene load_steps=162 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://scenes/Levels/Level.gd" type="Script" id=17]
 [ext_resource path="res://scenes/Letter.gd" type="Script" id=18]
 [ext_resource path="res://assets/Letter closed.png" type="Texture" id=19]
+[ext_resource path="res://assets/sound/3_beach/SFX_AMBIENT_beach_loop.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/sound/3_beach/SFX_EVENT_brige.wav" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=549]
 extents = Vector2( 19.6689, 116 )
@@ -1003,7 +1005,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 28, -20, 0, 0, 0, 0, 87, -16 )
 }
 
-[node name="City" type="Node2D"]
+[node name="Beach" type="Node2D"]
 script = ExtResource( 17 )
 limit_bottom = 3056
 limit_left = -5696
@@ -1032,6 +1034,15 @@ __meta__ = {
 position = Vector2( -9.66882, -4.56091 )
 z_index = 5
 shape = SubResource( 549 )
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 20 )
+autoplay = true
+
+[node name="EventBridge" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 21 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )
