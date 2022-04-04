@@ -16,7 +16,7 @@ signal scene_changed()
 var world_container: Node = null
 var world: Node = null
 
-var seen_title = false
+var dead_flag := false
 
 func _ready():
 	randomize()

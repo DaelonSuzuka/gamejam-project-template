@@ -135,11 +135,10 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 		dead()
 
 func dead():
-	Game.seen_title = true
 	set_physics_process(false)
 	visible = false
 	dead = true
-	GlobalCanvas.get_node("Eyes").set_process(false)
 	print(Game.world.checkpoint)
+	Game.dead_flag = true
 	yield(get_tree().create_timer(2), "timeout")
 	Game.load_scene(Game.world.filename, Game.world.checkpoint)
