@@ -19,6 +19,10 @@ webdeploy:
 win:
 	$(GODOT) --export "Windows Desktop"
 
+itch:
+	$(GODOT) --export "HTML5"
+	butler.exe push build/web bottled-up-studio/ludumdare50:html5
+
 # **************************************************************************** #
 # Variables
 
