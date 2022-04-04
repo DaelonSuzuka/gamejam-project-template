@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	OS.set_window_title('Ludum Dare Game')
+	OS.set_window_title('Nightwaker')
 
 	# do not automatically load scene if game was launched via F6
 	if Game.direct_launch:
