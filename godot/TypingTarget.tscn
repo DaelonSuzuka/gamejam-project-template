@@ -33,10 +33,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.2 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Word/Label:visible_characters")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "matched"
-length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Word:modulate")
 tracks/0/interp = 1

@@ -30,6 +30,8 @@ signal mistake()
 var progress := 0
 
 export var word := '' setget set_word
+export var stay_active = false
+
 func set_word(value):
 	word = value
 	$Word/Label.text = value
@@ -86,12 +88,18 @@ func _input(event):
 			$Word/Label.bbcode_enabled = true
 			$Word/Label.bbcode_text = '[wave amp=50 freq=10]%s' % word
 			$AnimationPlayer.play('matched')
-			active = false
+			active = stay_active
 			emit_signal('matched')
+			if active:
+				$AnimationPlayer.play_backwards('matched')
+				reset()
 	else:
 		if progress > 0:
-			progress = 0
+			reset()
 			emit_signal('mistake')
 			$Word/Label.bbcode_enabled = true
 			$Word/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
 			$AnimationPlayer.play('mistake')
+
+func reset():
+	progress = 0

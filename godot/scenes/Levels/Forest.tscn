@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=136 format=2]
 
 [ext_resource path="res://assets/forest01_frame.png" type="Texture" id=1]
 [ext_resource path="res://assets/background_forest_frame.png" type="Texture" id=2]
@@ -820,16 +820,22 @@ fill_texture_z_index = -10
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
+[sub_resource type="Curve2D" id=307]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -18.811, 1.74438, 0, 0, 0, 0, 10.7752, 2.38574 )
+}
+
+[sub_resource type="Curve2D" id=190]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -18.811, 1.74438, 0, 0, 0, 0, 160.097, 7.11292, 0, 0, 0, 0, 473.699, -70.154, 0, 0, 0, 0, 702.195, -140.657, 0, 0, 0, 0, 825.799, -130.23 )
+}
+
 [sub_resource type="Curve2D" id=191]
 resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -12, -5, 0, 0, 0, 0, -133, 185, 0, 0, 0, 0, -334, 414, 0, 0, 0, 0, -524, 709, 0, 0, 0, 0, -738, 1047, 0, 0, 0, 0, -1197, 1471, 0, 0, 0, 0, -1491, 1769, 0, 0, 0, 0, -1798, 1874, 0, 0, 0, 0, -2169, 1922, 0, 0, 0, 0, -2656, 1906, 0, 0, 0, 0, -2878, 1890, 0, 0, 0, 0, -3281, 1773, 0, 0, 0, 0, -3555, 1507, 0, 0, 0, 0, -3769, 1229, 0, 0, 0, 0, -3954, 914, 0, 0, 0, 0, -4067, 616, 0, 0, 0, 0, -4043, 265, 0, 0, 0, 0, -3817, -53 )
-}
-
-[sub_resource type="Curve2D" id=306]
-resource_local_to_scene = true
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -17, 15, 0, 0, 0, 0, 37, 407, 0, 0, 0, 0, 136, 666, 0, 0, 0, 0, 330, 1119, 0, 0, 0, 0, 657, 1534, 0, 0, 0, 0, 938, 1731, 0, 0, 0, 0, 1323, 1868, 0, 0, 0, 0, 1623, 1979, 0, 0, 0, 0, 1962, 2089, 0, 0, 0, 0, 2289, 2264, 0, 0, 0, 0, 2799, 2511 )
 }
 
 [sub_resource type="Curve2D" id=192]
@@ -837,24 +843,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 4, 6, 0, 0, 0, 0, -200, 21, 0, 0, 0, 0, -363, 109, 0, 0, 0, 0, -554, 283, 0, 0, 0, 0, -867, 488, 0, 0, 0, 0, -1095, 705, 0, 0, 0, 0, -1357, 887, 0, 0, 0, 0, -1728, 916, 0, 0, 0, 0, -2233, 887, 0, 0, 0, 0, -2455, 767, 0, 0, 0, 0, -2750, 553, 0, 0, 0, 0, -2979, 184, 0, 0, 0, 0, -2994, -177, 0, 0, 0, 0, -2918, -406, 0, 0, 0, 0, -2686, -611, 0, 0, 0, 0, -2191, -684, 0, 0, 0, 0, -1738, -482, 0, 0, 0, 0, -1365, -139, 0, 0, 0, 0, -1126, 138, 0, 0, 0, 0, -795, 454, 0, 0, 0, 0, -553, 624, 0, 0, 0, 0, -282, 756, 0, 0, 0, 0, 165, 834, 0, 0, 0, 0, 936, 824, 0, 0, 0, 0, 1481, 717, 0, 0, 0, 0, 1682, 269, 0, 0, 0, 0, 1517, -194, 0, 0, 0, 0, 1183, -404, 0, 0, 0, 0, 759, -420, 0, 0, 0, 0, 30, 11 )
 }
 
-[sub_resource type="Curve2D" id=307]
-resource_local_to_scene = true
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -18.811, 1.74438, 0, 0, 0, 0, -8.47131, 1.30634 )
-}
-
-[sub_resource type="Curve2D" id=190]
-resource_local_to_scene = true
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -18.811, 1.74438, 0, 0, 0, 0, 160.097, 7.11292, 0, 0, 0, 0, 473.699, -70.154, 0, 0, 0, 0, 910.161, -153.068 )
-}
-
 [node name="City" type="Node2D"]
 
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( -5322, 700 )
+position = Vector2( 4761, 683 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )
@@ -906,6 +900,18 @@ texture = ExtResource( 7 )
 position = Vector2( 6, 0 )
 texture = ExtResource( 1 )
 
+[node name="Statue" parent="CityFrame" instance=ExtResource( 14 )]
+position = Vector2( -658, 779 )
+rotation = 0.152996
+scale = Vector2( 1.75, 1.75 )
+curve = SubResource( 307 )
+
+[node name="Statue2" parent="CityFrame" instance=ExtResource( 14 )]
+position = Vector2( 1537, 775 )
+rotation = 0.152996
+scale = Vector2( 1.75, 1.75 )
+curve = SubResource( 190 )
+
 [node name="Old" parent="CityFrame" instance=ExtResource( 11 )]
 position = Vector2( -258, 698 )
 path = NodePath("Label")
@@ -950,14 +956,6 @@ path = NodePath("Ghost")
 position = Vector2( 2523, -1986 )
 curve = SubResource( 191 )
 
-[node name="Fight2" parent="CityFrame" instance=ExtResource( 11 )]
-position = Vector2( 2291, 774 )
-path = NodePath("Ghost")
-
-[node name="Ghost" parent="CityFrame/Fight2" instance=ExtResource( 16 )]
-position = Vector2( -1145, -2028 )
-curve = SubResource( 306 )
-
 [node name="Fight3" parent="CityFrame" instance=ExtResource( 11 )]
 position = Vector2( -3158, 759 )
 path = NodePath("Ghost")
@@ -983,18 +981,6 @@ rotation = -0.0995448
 [node name="Gate" parent="CityFrame" instance=ExtResource( 12 )]
 position = Vector2( 5044, 574 )
 rotation = 0.0820067
-
-[node name="Statue" parent="CityFrame" instance=ExtResource( 14 )]
-position = Vector2( -644, 778 )
-rotation = 0.152996
-scale = Vector2( 1.75, 1.75 )
-curve = SubResource( 307 )
-
-[node name="Statue2" parent="CityFrame" instance=ExtResource( 14 )]
-position = Vector2( 1330, 773 )
-rotation = 0.152996
-scale = Vector2( 1.75, 1.75 )
-curve = SubResource( 190 )
 
 [node name="EyeChild" parent="CityFrame" instance=ExtResource( 15 )]
 position = Vector2( 4330, 740 )

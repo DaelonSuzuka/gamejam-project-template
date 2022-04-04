@@ -12,7 +12,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 101.5, 220.5 )
+extents = Vector2( 34.4891, 220.5 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Fall"
@@ -99,6 +99,7 @@ script = ExtResource( 2 )
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2( -18.811, 1.74438 )
 rotation = -0.0423396
+loop = false
 
 [node name="Node2D" type="Node2D" parent="PathFollow2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -111,7 +112,7 @@ texture = ExtResource( 3 )
 position = Vector2( -30.5, -179.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Node2D/StaticBody2D"]
-position = Vector2( 0.410633, -5.98593 )
+position = Vector2( -3.6435, -5.36415 )
 rotation = -0.152162
 shape = SubResource( 2 )
 disabled = true
@@ -120,7 +121,10 @@ disabled = true
 position = Vector2( 10, -220 )
 show_word = false
 word = "push"
+stay_active = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 3 )
 anims/RESET = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]

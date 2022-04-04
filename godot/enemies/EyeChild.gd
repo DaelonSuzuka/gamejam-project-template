@@ -23,7 +23,6 @@ func _ready() -> void:
 
 func _process(delta):
 	var distance = Player.character.global_position.x-global_position.x
-	print(distance)
 	var spotted = (abs(distance) < 1000)
 
 	if spotted:
@@ -35,9 +34,10 @@ func _process(delta):
 		speed = 1
 		dir = [0,-dir,dir][randi()%3]
 
-	match dir:
-		1: $Body.flip_h = false
-		-1: $Body.flip_h = true
+	match int(dir):
+		1: $Body.scale.x = .2
+		-1: $Body.scale.x = -.2
+
 
 	if dir != 0: velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)
 	else: velocity.x = lerp(velocity.x, 0, friction)
@@ -49,7 +49,7 @@ func _process(delta):
 	if movement_enabled:
 		velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)
 
-	body.scale.x = 0.2 if velocity.x > 0 else -0.2
+#	body.scale.x = 0.2 if velocity.x > 0 else -0.2
 
 func dead():
 	queue_free()
