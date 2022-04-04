@@ -7,6 +7,7 @@ func _ready():
 		'Game': Game,
 		'Utils': Utils,
 		'Player': Player,
+		'Files': Files,
 	}
 
 	Console.add_command('load_scene', self, 'load_scene')\
