@@ -149,11 +149,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/inspector-gadget/src/inspector_gadget_util.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "PlatformerBody2D",
-"language": "GDScript",
-"path": "res://addons/PlatformerBody2D/platformer_body_2d.gd"
-}, {
 "base": "Resource",
 "class": "RMS2D_Material",
 "language": "GDScript",
@@ -473,7 +468,6 @@ _global_script_class_icons={
 "InspectorGadget": "",
 "InspectorGadgetBase": "",
 "InspectorGadgetUtil": "",
-"PlatformerBody2D": "",
 "RMS2D_Material": "",
 "RMS2D_VertexProperties": "",
 "RMS2D_VertexPropertiesArray": "",
@@ -553,7 +547,6 @@ PauseMenu="*res://menus/PauseMenu.tscn"
 Player="*res://player/Player.tscn"
 Game="*res://system/Game.gd"
 Scenes="*res://system/Scenes.gd"
-Diagraph="*res://addons/diagraph/DiagraphSingleton.gd"
 ConsoleCommands="*res://system/ConsoleCommands.gd"
 
 [debug]
@@ -571,7 +564,7 @@ window/stretch/mode="2d"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/NbPM/plugin.cfg", "res://addons/PlatformerBody2D/plugin.cfg", "res://addons/SingletonScriptsShortcut/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/diagraph/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/inspector-gadget/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/ninepatchbutton/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/scrolling_background/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Clipboard_Panel/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/CommandPalettePopup/plugin.cfg", "res://addons/NbPM/plugin.cfg", "res://addons/PlatformerBody2D/plugin.cfg", "res://addons/SingletonScriptsShortcut/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/SpritesheetGenerator/plugin.cfg", "res://addons/custom-scene-launcher/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/input_event_key_grabber/plugin.cfg", "res://addons/inspector-gadget/plugin.cfg", "res://addons/messagebox/plugin.cfg", "res://addons/ninepatchbutton/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/regular_polygon2d_node/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/scrolling_background/plugin.cfg", "res://addons/selection_shortcuts/plugin.cfg", "res://addons/texture_fonts/plugin.cfg" )
 
 [gui]
 
@@ -644,17 +637,17 @@ activate={
 }
 AwakeLeft={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":77,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 AwakeRight={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":47,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 debug+={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777349,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

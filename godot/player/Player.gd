@@ -2,7 +2,6 @@ extends Node2D
 
 # ******************************************************************************
 
-onready var inventory: Node = $Inventory
 onready var camera: Node = $Camera
 
 var character = null
