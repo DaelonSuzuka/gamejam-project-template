@@ -97,6 +97,7 @@ func _input(event):
 		if progress == word.length():
 			$Word/Label.bbcode_enabled = true
 			$Word/Label.bbcode_text = '[wave amp=50 freq=10]' + word.to_upper()
+			$MatchSound.play()
 			$AnimationPlayer.play('matched')
 			active = stay_active
 			emit_signal('matched')

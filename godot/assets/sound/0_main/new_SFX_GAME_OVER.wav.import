@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/new_SFX_GAME_OVER.wav-5a5d918b1aef1202ae2cc4cc3f25e3ab.sample"
+
+[deps]
+
+source_file="res://assets/sound/0_main/new_SFX_GAME_OVER.wav"
+dest_files=[ "res://.import/new_SFX_GAME_OVER.wav-5a5d918b1aef1202ae2cc4cc3f25e3ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
