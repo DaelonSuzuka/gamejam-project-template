@@ -124,73 +124,7 @@ margin_right = 295.0
 margin_bottom = 257.0
 text = "Exit"
 
-[node name="GridContainer" type="Control" parent="MenuButtons"]
-margin_left = -337.6
-margin_top = 156.0
-margin_right = -297.6
-margin_bottom = 196.0
-
-[node name="Label" type="Label" parent="MenuButtons/GridContainer"]
-margin_top = 3.0
-margin_right = 97.0
-margin_bottom = 17.0
-text = "Move Left"
-align = 2
-
-[node name="MoveLeft" type="Button" parent="MenuButtons/GridContainer"]
-margin_left = 101.0
-margin_right = 123.0
-margin_bottom = 20.0
-text = "A"
-script = ExtResource( 14 )
-
-[node name="Label2" type="Label" parent="MenuButtons/GridContainer"]
-margin_top = 27.0
-margin_right = 97.0
-margin_bottom = 41.0
-text = "Move Right"
-align = 2
-
-[node name="MoveRight" type="Button" parent="MenuButtons/GridContainer"]
-margin_left = 101.0
-margin_top = 24.0
-margin_right = 123.0
-margin_bottom = 44.0
-text = "D"
-script = ExtResource( 14 )
-
-[node name="Label3" type="Label" parent="MenuButtons/GridContainer"]
-margin_top = 51.0
-margin_right = 97.0
-margin_bottom = 65.0
-text = "Open Left Eye"
-align = 2
-
-[node name="LeftEye" type="Button" parent="MenuButtons/GridContainer"]
-margin_left = 101.0
-margin_top = 48.0
-margin_right = 123.0
-margin_bottom = 68.0
-text = "J"
-script = ExtResource( 14 )
-
-[node name="Label4" type="Label" parent="MenuButtons/GridContainer"]
-margin_top = 75.0
-margin_right = 97.0
-margin_bottom = 89.0
-text = "Open Right Eye"
-align = 2
-
-[node name="RightEye" type="Button" parent="MenuButtons/GridContainer"]
-margin_left = 101.0
-margin_top = 72.0
-margin_right = 123.0
-margin_bottom = 92.0
-text = "L"
-script = ExtResource( 14 )
-
 [node name="OptionMenu" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -207,9 +141,9 @@ __meta__ = {
 }
 
 [node name="VolumeSlider" type="HSlider" parent="OptionMenu"]
-margin_left = 392.0
+margin_left = 384.0
 margin_top = 332.0
-margin_right = 740.0
+margin_right = 748.0
 margin_bottom = 430.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_icons/grabber_highlight = SubResource( 2 )
@@ -217,7 +151,81 @@ custom_icons/grabber = SubResource( 2 )
 custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
-value = 20.0
+max_value = 1.0
+step = 0.01
+
+[node name="Keybinds" type="Control" parent="OptionMenu"]
+margin_left = 72.0
+margin_top = 396.0
+margin_right = 112.0
+margin_bottom = 436.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionMenu/Keybinds"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionMenu/Keybinds/HBoxContainer"]
+margin_right = 97.0
+margin_bottom = 92.0
+
+[node name="Label" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
+margin_right = 97.0
+margin_bottom = 14.0
+text = "Move Left"
+align = 2
+
+[node name="Label2" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 97.0
+margin_bottom = 32.0
+text = "Move Right"
+align = 2
+
+[node name="Label3" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 97.0
+margin_bottom = 50.0
+text = "Open Left Eye"
+align = 2
+
+[node name="Label4" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 97.0
+margin_bottom = 68.0
+text = "Open Right Eye"
+align = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="OptionMenu/Keybinds/HBoxContainer"]
+margin_left = 101.0
+margin_right = 123.0
+margin_bottom = 92.0
+
+[node name="MoveLeft" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
+margin_right = 22.0
+margin_bottom = 20.0
+text = "A"
+script = ExtResource( 14 )
+
+[node name="MoveRight" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 22.0
+margin_bottom = 44.0
+text = "D"
+script = ExtResource( 14 )
+
+[node name="LeftEye" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
+margin_top = 48.0
+margin_right = 22.0
+margin_bottom = 68.0
+text = "J"
+script = ExtResource( 14 )
+
+[node name="RightEye" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
+margin_top = 72.0
+margin_right = 22.0
+margin_bottom = 92.0
+text = "L"
+script = ExtResource( 14 )
 
 [node name="MenuClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
