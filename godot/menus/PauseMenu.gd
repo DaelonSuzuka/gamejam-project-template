@@ -5,22 +5,41 @@ extends CanvasLayer
 onready var ScreenDimEffect = find_node('ScreenDimEffect')
 onready var MenuButtons = find_node('MenuButtons')
 
+onready var MoveRight = find_node('MoveRight')
+onready var MoveLeft = find_node('MoveLeft')
+onready var Run = find_node('Run')
+onready var Activate = find_node('Activate')
+onready var LeftEye = find_node('LeftEye')
+onready var RightEye = find_node('RightEye')
+
 var active := false
 
 # ******************************************************************************
 
 func _ready():
 	$OptionMenu.hide()
-	if get_tree().get_current_scene() != self:
-		MenuButtons.hide()
-		$Textures.hide()
+	MenuButtons.hide()
+	$Textures.hide()
+	
+	if get_tree().get_current_scene() == self:
+		Player.push_menu(self)
+		MenuButtons.show()
+		$Textures.show()
 
 	ScreenDimEffect.hide()
 
-	find_node('MoveRight').connect('event_updated', self, 'rebind_key', ['move_right'])
-	find_node('MoveLeft').connect('event_updated', self, 'rebind_key', ['move_left'])
-	find_node('LeftEye').connect('event_updated', self, 'rebind_key', ['AwakeLeft'])
-	find_node('RightEye').connect('event_updated', self, 'rebind_key', ['AwakeRight'])
+	MoveRight.event = InputMap.get_action_list('move_right')[0]
+	MoveRight.connect('event_updated', self, 'rebind_key', ['move_right'])
+	MoveLeft.event = InputMap.get_action_list('move_left')[0]
+	MoveLeft.connect('event_updated', self, 'rebind_key', ['move_left'])
+	Run.event = InputMap.get_action_list('run')[0]
+	Run.connect('event_updated', self, 'rebind_key', ['run'])
+	Activate.event = InputMap.get_action_list('activate')[0]
+	Activate.connect('event_updated', self, 'rebind_key', ['activate'])
+	LeftEye.event = InputMap.get_action_list('AwakeLeft')[0]
+	LeftEye.connect('event_updated', self, 'rebind_key', ['AwakeLeft'])
+	RightEye.event = InputMap.get_action_list('AwakeRight')[0]
+	RightEye.connect('event_updated', self, 'rebind_key', ['AwakeRight'])
 
 	$OptionMenu/VolumeSlider.value = Game.data.volume
 	$OptionMenu/VolumeSlider.connect('value_changed', self, 'volume_changed')

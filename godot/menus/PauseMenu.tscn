@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://menus/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/pause_menu_buttons/option-OFF.png" type="Texture" id=2]
@@ -24,6 +24,67 @@ region = Rect2( 13, 8, 83, 98 )
 [sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 1 )
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -134,16 +195,15 @@ anchor_left = 0.2
 anchor_top = 0.2
 anchor_right = 0.8
 anchor_bottom = 0.8
+margin_left = 200.0
+margin_right = 200.0
 texture = ExtResource( 10 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="VolumeSlider" type="HSlider" parent="OptionMenu"]
-margin_left = 384.0
+margin_left = 584.0
 margin_top = 332.0
-margin_right = 748.0
+margin_right = 948.0
 margin_bottom = 430.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_icons/grabber_highlight = SubResource( 2 )
@@ -154,76 +214,154 @@ custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
 step = 0.01
 
-[node name="Keybinds" type="Control" parent="OptionMenu"]
-margin_left = 72.0
-margin_top = 396.0
-margin_right = 112.0
-margin_bottom = 436.0
+[node name="Keybinds" type="GridContainer" parent="OptionMenu"]
+anchor_left = 0.135312
+anchor_top = 0.308
+anchor_right = 0.283312
+anchor_bottom = 0.635
+margin_left = 0.439995
+margin_top = 0.199982
+margin_right = -0.112015
+margin_bottom = -3.05176e-05
+rect_scale = Vector2( 1.5, 1.5 )
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionMenu/Keybinds"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionMenu/Keybinds/HBoxContainer"]
+[node name="Label" type="Label" parent="OptionMenu/Keybinds"]
 margin_right = 97.0
-margin_bottom = 92.0
-
-[node name="Label" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
-margin_right = 97.0
-margin_bottom = 14.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
 text = "Move Left"
 align = 2
+valign = 1
 
-[node name="Label2" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 97.0
-margin_bottom = 32.0
-text = "Move Right"
-align = 2
-
-[node name="Label3" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 97.0
-margin_bottom = 50.0
-text = "Open Left Eye"
-align = 2
-
-[node name="Label4" type="Label" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer"]
-margin_top = 54.0
-margin_right = 97.0
-margin_bottom = 68.0
-text = "Open Right Eye"
-align = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="OptionMenu/Keybinds/HBoxContainer"]
+[node name="MoveLeft" type="Button" parent="OptionMenu/Keybinds"]
 margin_left = 101.0
-margin_right = 123.0
-margin_bottom = 92.0
-
-[node name="MoveLeft" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
-margin_right = 22.0
+margin_right = 136.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 35, 20 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
 text = "A"
 script = ExtResource( 14 )
 
-[node name="MoveRight" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
+[node name="Label2" type="Label" parent="OptionMenu/Keybinds"]
 margin_top = 24.0
-margin_right = 22.0
+margin_right = 97.0
 margin_bottom = 44.0
+rect_min_size = Vector2( 0, 20 )
+text = "Move Right"
+align = 2
+valign = 1
+
+[node name="MoveRight" type="Button" parent="OptionMenu/Keybinds"]
+margin_left = 101.0
+margin_top = 24.0
+margin_right = 136.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 35, 20 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
 text = "D"
 script = ExtResource( 14 )
 
-[node name="LeftEye" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
+[node name="Label5" type="Label" parent="OptionMenu/Keybinds"]
 margin_top = 48.0
-margin_right = 22.0
+margin_right = 97.0
 margin_bottom = 68.0
+rect_min_size = Vector2( 0, 20 )
+text = "Run"
+align = 2
+valign = 1
+
+[node name="Run" type="Button" parent="OptionMenu/Keybinds"]
+margin_left = 101.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 35, 20 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
+text = "D"
+script = ExtResource( 14 )
+
+[node name="Label6" type="Label" parent="OptionMenu/Keybinds"]
+margin_top = 72.0
+margin_right = 97.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 0, 20 )
+text = "Activate"
+align = 2
+valign = 1
+
+[node name="Activate" type="Button" parent="OptionMenu/Keybinds"]
+margin_left = 101.0
+margin_top = 72.0
+margin_right = 136.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 35, 20 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
+text = "E"
+script = ExtResource( 14 )
+
+[node name="Label3" type="Label" parent="OptionMenu/Keybinds"]
+margin_top = 96.0
+margin_right = 97.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 0, 20 )
+text = "Open Left Eye"
+align = 2
+valign = 1
+
+[node name="LeftEye" type="Button" parent="OptionMenu/Keybinds"]
+margin_left = 101.0
+margin_top = 96.0
+margin_right = 136.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 35, 20 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
 text = "J"
 script = ExtResource( 14 )
 
-[node name="RightEye" type="Button" parent="OptionMenu/Keybinds/HBoxContainer/VBoxContainer2"]
-margin_top = 72.0
-margin_right = 22.0
-margin_bottom = 92.0
+[node name="Label4" type="Label" parent="OptionMenu/Keybinds"]
+margin_top = 120.0
+margin_right = 97.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 20 )
+text = "Open Right Eye"
+align = 2
+valign = 1
+
+[node name="RightEye" type="Button" parent="OptionMenu/Keybinds"]
+margin_left = 101.0
+margin_top = 120.0
+margin_right = 136.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 35, 20 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
 text = "L"
 script = ExtResource( 14 )
 
