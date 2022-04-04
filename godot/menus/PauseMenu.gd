@@ -4,7 +4,6 @@ extends CanvasLayer
 
 onready var ScreenDimEffect = find_node('ScreenDimEffect')
 onready var MenuButtons = find_node('MenuButtons')
-onready var Menu = find_node('Menu')
 
 var active := false
 
@@ -12,7 +11,9 @@ var active := false
 
 func _ready():
 	if get_tree().get_current_scene() != self:
-		Menu.hide()
+		MenuButtons.hide()
+		$Textures.hide()
+		$OptionMenu.hide()
 
 	ScreenDimEffect.hide()
 
@@ -27,7 +28,9 @@ func connect_button(button):
 func open():
 	Game.pause_world()
 	active = true
-	Menu.show()
+	MenuButtons.show()
+	$Textures.show()
+	$OptionMenu.hide()
 	# $PressSound.play()
 	ScreenDimEffect.show()
 	Player.push_menu(self)
@@ -36,7 +39,9 @@ func open():
 func close():
 	Game.resume_world()
 	active = false
-	Menu.hide()
+	MenuButtons.hide()
+	$Textures.hide()
+	$OptionMenu.hide()
 	ScreenDimEffect.hide()
 	Player.pop_menu()
 
@@ -49,11 +54,14 @@ func handle_input(event):
 # ******************************************************************************
 
 func pressed(button):
+	
 	match button.name:
-		'Continue':
+		'Resume':
 			close()
-		'Options':
-			pass
-		'Quit':
+		'Option':
+			MenuButtons.hide()
+			$Textures.hide()
+			$OptionMenu.show()
+		'Exit':
 			close()
 			Game.load_scene('mainmenu')
