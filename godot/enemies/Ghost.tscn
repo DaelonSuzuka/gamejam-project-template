@@ -151,7 +151,7 @@ scale = Vector2( 0.45, 0.45 )
 
 [node name="Sprite" type="AnimatedSprite" parent="PathFollow2D/Body"]
 frames = SubResource( 43 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D/Body" groups=["Death"]]
