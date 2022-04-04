@@ -1203,9 +1203,12 @@ rotation = 0.0676924
 scale = Vector2( 1.31152, 1.31152 )
 custom_hint = "????"
 
+[node name="Label" parent="CityFrame/Statue/TypingTarget/Word" index="0"]
+text = "[shake rate=5 level=10][color=fuchsia]PUSH"
+
 [node name="Label" parent="CityFrame/Statue/TypingTarget/Hint" index="0"]
-bbcode_text = "[shake rate=5 level=10]????"
-text = "????"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]????"
+text = "[shake rate=5 level=10][color=fuchsia]????"
 
 [node name="Bridge" parent="CityFrame" instance=ExtResource( 13 )]
 position = Vector2( 2805, -111 )

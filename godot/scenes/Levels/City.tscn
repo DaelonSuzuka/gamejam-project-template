@@ -719,9 +719,6 @@ limit_right = 5680
 [node name="Default" type="Node2D" parent="Spawns"]
 position = Vector2( -5560, 536 )
 
-[node name="Dev" type="Node2D" parent="Spawns"]
-position = Vector2( 744, 512 )
-
 [node name="NextScene" parent="Spawns" instance=ExtResource( 18 )]
 position = Vector2( 5640, 736 )
 next = "res://scenes/Levels/Beach.tscn"

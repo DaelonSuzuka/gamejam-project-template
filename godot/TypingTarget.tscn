@@ -14,7 +14,7 @@ tracks/0/path = NodePath("Word:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -26,7 +26,7 @@ tracks/1/path = NodePath("Hint:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -38,7 +38,7 @@ tracks/2/path = NodePath("Word/Label:visible_characters")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -121,7 +121,6 @@ percent_visible = 0.0
 scroll_active = false
 
 [node name="Hint" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0.2 )
 position = Vector2( 0, -17 )
 z_index = 5
 

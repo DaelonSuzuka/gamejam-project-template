@@ -105,14 +105,15 @@ func _physics_process(delta):
 
 	if dir != 0:
 		idle_time = 0
-		body.play('walk')
+		if $Body.animation != "attack":
+			body.play('walk')
 		velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)
 	else:
 		idle_time += delta
-		if idle_time >= 2.5:
-			body.play('idle_blink')
-		else:
-			body.play('idle')
+		if $Body.animation != "attack":
+			if idle_time >= 2.5:
+				body.play('idle_blink')
+			else: body.play('idle')
 		velocity.x = lerp(velocity.x, 0, friction)
 
 	velocity.y += gravity
@@ -141,3 +142,9 @@ func dead():
 	Game.dead_flag = true
 	yield(get_tree().create_timer(2), "timeout")
 	Game.load_scene(Game.world.filename, Game.world.checkpoint)
+
+
+func punch():
+	$Body.animation = "attack"
+	yield(get_tree().create_timer(1), "timeout")
+	$Body.animation = "idle"

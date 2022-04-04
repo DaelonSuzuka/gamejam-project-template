@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/Ghost-sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/ghost_move.png" type="Texture" id=2]
 [ext_resource path="res://enemies/Ghost.gd" type="Script" id=3]
 [ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=4]
 [ext_resource path="res://shaders/crt_material.tres" type="Material" id=5]
+[ext_resource path="res://scenes/Aura.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=57]
 resource_local_to_scene = true
@@ -146,9 +147,11 @@ material = ExtResource( 5 )
 rotation = 2.35619
 scale = Vector2( 0.45, 0.45 )
 
+[node name="RegularPolygon2D" parent="PathFollow2D/Body" instance=ExtResource( 6 )]
+
 [node name="Sprite" type="AnimatedSprite" parent="PathFollow2D/Body"]
 frames = SubResource( 43 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D/Body" groups=["Death"]]

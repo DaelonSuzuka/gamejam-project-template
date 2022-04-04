@@ -97,6 +97,7 @@ func _input(event):
 			$AnimationPlayer.play('matched')
 			active = stay_active
 			emit_signal('matched')
+			Player.character.punch()
 			if active:
 				$AnimationPlayer.play_backwards('matched')
 				reset()
