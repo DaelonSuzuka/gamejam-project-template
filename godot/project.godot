@@ -547,7 +547,6 @@ PauseMenu="*res://menus/PauseMenu.tscn"
 Player="*res://player/Player.tscn"
 Game="*res://system/Game.gd"
 Scenes="*res://system/Scenes.gd"
-Diagraph="*res://addons/diagraph/DiagraphSingleton.gd"
 ConsoleCommands="*res://system/ConsoleCommands.gd"
 
 [debug]
