@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 	if target and target.is_inside_tree():
 		global_position = target.global_position
-	
+
 		if _get_camera_center().distance_to(target.global_position) < 10:
 			smoothing_speed = lerp(smoothing_speed, 5, .1)
 
@@ -108,7 +108,10 @@ func _ready():
 	noise.seed = randi()
 	noise.period = 4
 	noise.octaves = 2
-		
+
+	limit_bottom = 1056
+	limit_top = -1072
+
 func apply_shake(delta):
 	if !trauma:
 		return
@@ -119,6 +122,6 @@ func apply_shake(delta):
 	rotation = max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
 	offset.x = max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
 	offset.y = max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
-	
+
 func shake(amount):
 	trauma = min(trauma + amount, 1.0)

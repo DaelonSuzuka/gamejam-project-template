@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://player/CharacterInteractors.gd" type="Script" id=1]
 [ext_resource path="res://player/Character.gd" type="Script" id=2]
@@ -74,58 +74,6 @@ region = Rect2( 4719, 0, 429, 902 )
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 5 )
 region = Rect2( 5148, 0, 429, 902 )
-
-[sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 6 )
-region = Rect2( 984, 0, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=45]
-atlas = ExtResource( 6 )
-region = Rect2( 1968, 0, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 6 )
-region = Rect2( 2952, 0, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 1048, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 6 )
-region = Rect2( 984, 1048, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 6 )
-region = Rect2( 1968, 1048, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 6 )
-region = Rect2( 2952, 1048, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 2096, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 6 )
-region = Rect2( 984, 2096, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 6 )
-region = Rect2( 1968, 2096, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 6 )
-region = Rect2( 2952, 2096, 984, 1048 )
-
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 3144, 984, 1048 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 3 )
@@ -207,6 +155,58 @@ region = Rect2( 4836, 0, 403, 1010 )
 atlas = ExtResource( 4 )
 region = Rect2( 5239, 0, 403, 1010 )
 
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 6 )
+region = Rect2( 984, 0, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 6 )
+region = Rect2( 1968, 0, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 6 )
+region = Rect2( 2952, 0, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 1048, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 6 )
+region = Rect2( 984, 1048, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 6 )
+region = Rect2( 1968, 1048, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 6 )
+region = Rect2( 2952, 1048, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 2096, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 6 )
+region = Rect2( 984, 2096, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 6 )
+region = Rect2( 1968, 2096, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 6 )
+region = Rect2( 2952, 2096, 984, 1048 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 3144, 984, 1048 )
+
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
@@ -219,11 +219,6 @@ animations = [ {
 "name": "slow_walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ) ],
-"loop": true,
-"name": "attack",
-"speed": 15.0
-}, {
 "frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
 "loop": true,
 "name": "walk",
@@ -233,13 +228,22 @@ animations = [ {
 "loop": true,
 "name": "idle_blink",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ) ],
+"loop": true,
+"name": "attack",
+"speed": 15.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 30.5, 75 )
 
 [node name="Character" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource( 2 )
 gravity = 75
+walk_speed = 250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -297,8 +301,19 @@ position = Vector2( 0, -78 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 9 )
 animation = "slow_walk"
-frame = 4
+frame = 3
 playing = true
 
 [node name="CameraTarget" type="Node2D" parent="."]
 position = Vector2( 0, -550 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2( 1172.86, 1144.43 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 14.5, -75 )
+shape = SubResource( 56 )
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]

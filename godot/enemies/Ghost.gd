@@ -7,7 +7,7 @@ func _ready() -> void:
 	$PathFollow2D.loop = loop
 	set_process(false)
 
-func starts():
+func start():
 	$PathFollow2D/Body/Sprite.animation = "Fly"
 	set_process(true)
 
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug+"):
-		starts()
+		start()
 
 func dead():
 	queue_free()

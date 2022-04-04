@@ -852,7 +852,7 @@ _data = {
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( -5992, 400 )
+position = Vector2( 568, 360 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )
@@ -886,6 +886,7 @@ texture = ExtResource( 6 )
 position = Vector2( 2000, -1336 )
 scale = Vector2( 2, 2 )
 curve = SubResource( 194 )
+speed = 5
 
 [node name="TriggerDialog" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1512, 728 )
@@ -893,23 +894,25 @@ scale = Vector2( 16.8684, -1.08153 )
 path = NodePath("../Ghost")
 
 [node name="Pointer" parent="." instance=ExtResource( 8 )]
-position = Vector2( -3416, 536 )
+position = Vector2( -3976, 480 )
 path = NodePath("Label")
 
 [node name="Label" parent="Pointer" instance=ExtResource( 10 )]
-margin_left = -336.0
+margin_left = -128.0
 margin_top = 120.0
-margin_right = -22.0
+margin_right = 405.0
 margin_bottom = 160.0
+rect_scale = Vector2( 4.75212, 4.75212 )
 text = "\"… …There's something I need to remember\""
 
 [node name="Pointer2" parent="." instance=ExtResource( 8 )]
-position = Vector2( -168, 520 )
+position = Vector2( -424, 568 )
 path = NodePath("Label")
 
 [node name="Label" parent="Pointer2" instance=ExtResource( 10 )]
-margin_left = -216.0
-margin_top = 136.0
-margin_right = 98.0
-margin_bottom = 176.0
+margin_left = -72.0
+margin_top = 120.0
+margin_right = 242.0
+margin_bottom = 160.0
+rect_scale = Vector2( 4.58057, 4.58057 )
 text = "\"I don't want to be here.\""

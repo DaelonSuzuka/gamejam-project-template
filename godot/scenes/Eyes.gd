@@ -18,8 +18,8 @@ func _physics_process(delta: float) -> void:
 		#left_closed = 0
 		#right_closed = 0
 
-	left_closed += 1
-	right_closed += 1
+	left_closed = min(MAX_CLOSED,left_closed+1)
+	right_closed =  min(MAX_CLOSED,right_closed+1)
 
 	Left.frame = int(1 + left_closed / 25)
 	Right.frame = int(1 + right_closed / 25)

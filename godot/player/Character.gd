@@ -7,6 +7,8 @@ onready var interactors = $Interactors
 
 # ******************************************************************************
 
+
+
 func _ready():
 	pass
 
@@ -58,6 +60,8 @@ func clear_input():
 		input_state[input] = false
 
 func handle_input(event):
+	if dead:return
+
 	for action in input_state:
 		if event.is_action(action):
 			input_state[action] = event.pressed
@@ -124,3 +128,13 @@ func _physics_process(delta):
 	interact_velocity.x = velocity.x
 	interactors.rotate_interactors(interact_velocity)
 	interactors.check_tooltip()
+
+
+func _on_Hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Death") and not dead:
+		dead()
+
+func dead():
+	set_physics_process(false)
+	visible = false
+	dead = true

@@ -414,14 +414,14 @@ position = Vector2( 0, -119 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 82
+frame = 27
 playing = true
 
 [node name="TypingTarget" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -130 )
 word = "smash"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Death"]]
 collision_layer = 2
 collision_mask = 4
 

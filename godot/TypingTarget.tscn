@@ -123,6 +123,7 @@ rect_clip_content = false
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[shake rate=5 level=10]"
+text = "[shake rate=5 level=10]"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
