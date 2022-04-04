@@ -34,7 +34,7 @@ export var stay_active = false
 
 func set_word(value):
 	word = value
-	$Word/Label.text = value
+	$Word/Label.bbcode_text = '[shake rate=5 level=10]%s' % word.to_upper()
 	update_hint()
 
 func set_show_word(value):
@@ -47,7 +47,7 @@ func update_hint():
 	if custom_hint:
 		$Hint/Label.bbcode_text = '[shake rate=5 level=10]%s' % custom_hint
 	else:
-		$Hint/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
+		$Hint/Label.bbcode_text = '[shake rate=5 level=10]%s' % word.to_upper()
 
 func start():
 	set_show_hint(true)
@@ -57,7 +57,7 @@ func start():
 
 func _ready():
 	$Word/Label.bbcode_enabled = true
-	$Word/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
+	$Word/Label.bbcode_text = '[shake rate=5 level=10]%s' % word.to_upper()
 	$Hint/Label.bbcode_enabled = true
 	set_word(word)
 	set_active(active)
@@ -86,7 +86,7 @@ func _input(event):
 
 		if progress == word.length():
 			$Word/Label.bbcode_enabled = true
-			$Word/Label.bbcode_text = '[wave amp=50 freq=10]%s' % word
+			$Word/Label.bbcode_text = '[wave amp=50 freq=10]%s' % word.to_upper()
 			$AnimationPlayer.play('matched')
 			active = stay_active
 			emit_signal('matched')
@@ -98,7 +98,7 @@ func _input(event):
 			reset()
 			emit_signal('mistake')
 			$Word/Label.bbcode_enabled = true
-			$Word/Label.bbcode_text = '[shake rate=5 level=10]%s' % word
+			$Word/Label.bbcode_text = '[shake rate=5 level=10]%s' % word.to_upper()
 			$AnimationPlayer.play('mistake')
 
 func reset():
