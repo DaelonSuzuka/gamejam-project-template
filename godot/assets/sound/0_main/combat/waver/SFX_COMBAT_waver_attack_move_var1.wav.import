@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_COMBAT_waver_attack_move_var1.wav-f4540c80620a3cc21af83e2cbb31b3f7.sample"
+
+[deps]
+
+source_file="res://assets/sound/0_main/combat/waver/SFX_COMBAT_waver_attack_move_var1.wav"
+dest_files=[ "res://.import/SFX_COMBAT_waver_attack_move_var1.wav-f4540c80620a3cc21af83e2cbb31b3f7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
