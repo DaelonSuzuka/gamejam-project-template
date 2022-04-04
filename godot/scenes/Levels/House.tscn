@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -83,9 +83,9 @@ point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 107 )
 
-[sub_resource type="Resource" id=109]
+[sub_resource type="Resource" id=126]
 script = ExtResource( 3 )
-texture_idx = 0
+texture_idx = -1
 flip = false
 width = 1.0
 
@@ -94,7 +94,7 @@ script = ExtResource( 2 )
 position = Vector2( -893.213, 652.677 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 109 )
+properties = SubResource( 126 )
 
 [sub_resource type="Resource" id=111]
 script = ExtResource( 3 )
@@ -143,7 +143,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=118]
 script = ExtResource( 2 )
-position = Vector2( -1575.55, 635.118 )
+position = Vector2( -1234.29, 434.288 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 117 )
@@ -156,7 +156,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=120]
 script = ExtResource( 2 )
-position = Vector2( -1293.24, 694.702 )
+position = Vector2( -1260.02, 687.907 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 119 )
@@ -205,7 +205,7 @@ _points = {
 _point_order = [ 12, 13, 16, 62, 63, 17, 18, 40, 19, 64, 65 ]
 _constraints = {
 }
-_next_key = 66
+_next_key = 68
 
 [sub_resource type="Resource" id=76]
 script = ExtResource( 4 )
@@ -216,8 +216,43 @@ fill_texture_z_index = -10
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
+[sub_resource type="Shader" id=127]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform float scan_line_jitter : hint_range(0.0,0.075) = 0.015;
+uniform float horizontal_shake : hint_range(0.0,0.25) = 0.01;
+uniform float color_drift : hint_range(0.0,0.1) = 0.03; 
+
+float nrand(float x, float y) {
+	return fract(sin(dot(vec2(x,y),vec2(12.9898, 78.233))) * 43758.5433);
+}
+
+void fragment() {
+	float u = UV.x;
+	float v = UV.y;
+	
+	float jitter = nrand(v, TIME) * 2.0 - 1.0;
+	jitter *= step(0, abs(jitter)) * scan_line_jitter;
+	float jump = mix(v, fract(v), 0.0);
+	float shake = (nrand(TIME,2.0) - 0.5) * horizontal_shake;
+	float drift = sin(jump) * color_drift;
+	
+	vec4 src1 = texture(TEXTURE, fract(vec2(u+jitter+shake,jump)));
+	vec4 src2 = texture(TEXTURE, fract(vec2(u+jitter+shake+drift,jump)));
+	COLOR = vec4(src1.r,src2.g,src1.b,src1.a);	
+}"
+
+[sub_resource type="ShaderMaterial" id=128]
+resource_local_to_scene = true
+shader = SubResource( 127 )
+shader_param/scan_line_jitter = 0.075
+shader_param/horizontal_shake = 0.0
+shader_param/color_drift = 0.0
+
 [sub_resource type="Animation" id=100]
 resource_name = "End"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NpcSwifeDead:modulate")
 tracks/0/interp = 1
@@ -229,6 +264,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 0.952941, 0.392157, 0.792157, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NpcSwifeDead:material:shader_param/scan_line_jitter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.075, 0.075, 0.0 ]
 }
 
 [sub_resource type="Animation" id=101]
@@ -245,6 +292,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("NpcSwifeDead:material:shader_param/scan_line_jitter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.075 ]
+}
 
 [node name="House" type="Node2D"]
 script = SubResource( 102 )
@@ -255,7 +314,7 @@ limit_right = 1920
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( -709, 685 )
+position = Vector2( -640, 688 )
 
 [node name="Sounds" type="Node2D" parent="."]
 
@@ -290,13 +349,16 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 modulate = Color( 1, 1, 1, 0.3 )
 position = Vector2( 0, 1 )
-polygon = PoolVector2Array( -2073.01, 803.265, -2067.05, 985.044, -1763.76, 991.047, -1575.57, 936.644, -1293.23, 996.507, -893.214, 954.669, -594.461, 941.882, -347.092, 933.374, -248.129, 920.318, -114.033, 955.933, -99.5134, 828.101, -67.7178, 831.712, -90.3867, 990.489, -122.182, 986.878, -250.192, 952.251, -344.491, 965.268, -593.228, 973.858, -890.856, 986.582, -1294.88, 1028.46, -1574.42, 968.624, -1759.62, 1022.78, -2099.68, 1018.09, -2099.03, 986.093, -2104.99, 804.314 )
+polygon = PoolVector2Array( -2073.01, 803.265, -2067.05, 985.044, -1763.83, 990.798, -1229.59, 729.589, -1255.87, 985.779, -893.213, 954.671, -594.461, 941.882, -347.092, 933.374, -248.129, 920.318, -114.033, 955.933, -99.5134, 828.101, -67.7178, 831.712, -90.3867, 990.489, -122.182, 986.878, -250.192, 952.251, -344.491, 965.268, -593.228, 973.858, -890.998, 986.595, -1278.56, 1008.35, -1247.97, 755.789, -1757.03, 1022.07, -2099.68, 1018.09, -2099.03, 986.093, -2104.99, 804.314 )
 
 [node name="CityFrame" type="Sprite" parent="."]
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Mono" parent="CityFrame" instance=ExtResource( 7 )]
-position = Vector2( -713, 777 )
+position = Vector2( -640, 776 )
 path = NodePath("Label")
 
 [node name="Label" parent="CityFrame/Mono" instance=ExtResource( 8 )]
@@ -308,7 +370,8 @@ rect_scale = Vector2( 4.29695, 4.29695 )
 bbcode_text = "\"Our house. I couldn't wait to see my [color=fuchsia]FAMILY[/color] again.\""
 text = "\"Our house. I couldn't wait to see my FAMILY again.\""
 
-[node name="Waver" parent="CityFrame" instance=ExtResource( 9 )]
+[node name="FakeWaver" parent="CityFrame" instance=ExtResource( 9 )]
+modulate = Color( 0.956863, 0.219608, 0.886275, 1 )
 position = Vector2( -294, 620 )
 type = 0
 
@@ -317,16 +380,18 @@ script = ExtResource( 12 )
 
 [node name="NpcSwifeDead" type="Sprite" parent="CityFrame/Reveal"]
 modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 128 )
 position = Vector2( -238, 760 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 11 )
 
-[node name="TypingTarget" parent="CityFrame/Reveal" instance=ExtResource( 6 )]
+[node name="Family" parent="CityFrame/Reveal" instance=ExtResource( 6 )]
 position = Vector2( -256, 736 )
 scale = Vector2( 6.67427, 6.67427 )
+active = false
 custom_hint = " "
 show_word = false
-distance = 300
+distance = 4000
 word = "family"
 
 [node name="Label" parent="CityFrame/Reveal" instance=ExtResource( 8 )]

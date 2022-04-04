@@ -15,3 +15,6 @@ func dead():
 	$AnimatedSprite/AnimationPlayer.play("Death")
 	yield(get_tree().create_timer(.3), "timeout")
 	queue_free()
+	
+	if name == "FakeWaver":
+		get_node("../Reveal/Family").active = true

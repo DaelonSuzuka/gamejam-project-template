@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/fonts/justabit.tres" type="DynamicFont" id=1]
 [ext_resource path="res://global_canvas/FpsCounter.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Eyes.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/black_framework.png" type="Texture" id=4]
 [ext_resource path="res://global_canvas/GlobalCanvas.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Levels/Credits.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "EyeTuto"
@@ -224,13 +225,6 @@ __meta__ = {
 margin_left = 44.0
 margin_right = 980.0
 margin_bottom = 259.0
-rect_scale = Vector2( 1.57307, 1.57307 )
-
-[node name="InputPrompt" parent="Eyes" index="2"]
-position = Vector2( 397.311, 123.961 )
-
-[node name="InputPrompt2" parent="Eyes" index="3"]
-position = Vector2( 534.622, 123.961 )
 
 [node name="Black" type="TextureRect" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -296,5 +290,8 @@ margin_top = 138.0
 margin_right = 109.0
 margin_bottom = 158.0
 text = "House"
+
+[node name="Credits" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [editable path="Eyes"]

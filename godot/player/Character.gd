@@ -141,6 +141,8 @@ func dead():
 	dead = true
 	Game.dead_flag = true
 	yield(get_tree().create_timer(2), "timeout")
+	if Game.ending:
+		GlobalCanvas.show_credits()
 	Game.load_scene(Game.world.filename, Game.world.checkpoint)
 
 

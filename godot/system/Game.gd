@@ -17,6 +17,7 @@ var world_container: Node = null
 var world: Node = null
 
 var dead_flag := false
+var ending = false
 
 func _ready():
 	randomize()
