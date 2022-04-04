@@ -854,7 +854,7 @@ _data = {
 }
 
 [node name="Countryside" type="Node2D"]
-position = Vector2( -2680.65, -263.514 )
+position = Vector2( 877.338, 296.561 )
 script = ExtResource( 12 )
 limit_bottom = 1376
 limit_left = -6720
