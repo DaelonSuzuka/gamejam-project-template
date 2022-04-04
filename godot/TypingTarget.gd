@@ -62,7 +62,10 @@ func _ready():
 	set_word(word)
 	set_active(active)
 	$Word/Label.visible_characters = 0
-	if auto_death: connect("matched", get_parent(), "dead")
+
+	if auto_death: 
+		if get_parent().has_method('dead'):
+			connect("matched", get_parent(), "dead")
 
 func _input(event):
 	if !active:
