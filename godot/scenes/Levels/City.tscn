@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=123 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -19,6 +19,10 @@
 [ext_resource path="res://assets/OldNPC.png" type="Texture" id=17]
 [ext_resource path="res://scenes/NextScene.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/Levels/Level.gd" type="Script" id=19]
+[ext_resource path="res://assets/sound/2_town/SFX_AMBIENT_town_loop.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/sound/2_town/Spatial/SFX_AMBIENT_SPATIAL_2nd_house_ whisper_loop.ogg" type="AudioStream" id=21]
+[ext_resource path="res://assets/sound/2_town/Spatial/SFX_AMBIENT_SPATIAL_3rd_house_angry_loop.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/sound/2_town/Spatial/SFX_AMBIENT_SPATIAL_6th_house_depressed_loop.ogg" type="AudioStream" id=23]
 
 [sub_resource type="RectangleShape2D" id=547]
 extents = Vector2( 19.6689, 116 )
@@ -735,6 +739,28 @@ position = Vector2( -9.66882, -4.56091 )
 z_index = 5
 shape = SubResource( 547 )
 
+[node name="Sounds" type="Node2D" parent="."]
+position = Vector2( 0, -1 )
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 20 )
+autoplay = true
+
+[node name="Spatial2ndHouse" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2( -2503.66, 535.765 )
+stream = ExtResource( 21 )
+autoplay = true
+
+[node name="Spatial3rdHouse" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2( 91.4092, 487.819 )
+stream = ExtResource( 22 )
+autoplay = true
+
+[node name="Spatial6thHouse" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2( 3805.54, 520.226 )
+stream = ExtResource( 23 )
+autoplay = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 150, -150 )
 
@@ -863,14 +889,14 @@ show_hint = false
 word = "kill"
 
 [node name="Label" parent="CityFrame/Kill/TypingTarget/Word" index="0"]
-bbcode_text = "[shake rate=5 level=10]KILL"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]KILL"
 text = "KILL"
 
 [node name="Hint" parent="CityFrame/Kill/TypingTarget" index="1"]
 visible = false
 
 [node name="Label" parent="CityFrame/Kill/TypingTarget/Hint" index="0"]
-bbcode_text = "[shake rate=5 level=10]KILL"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]KILL"
 text = "KILL"
 
 [node name="NpcsSleep" type="Sprite" parent="CityFrame/Kill"]
