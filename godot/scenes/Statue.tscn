@@ -123,8 +123,21 @@ show_word = false
 word = "push"
 stay_active = true
 
+[node name="Word" parent="TypingTarget" index="0"]
+visible = false
+
+[node name="Label" parent="TypingTarget/Word" index="0"]
+bbcode_text = "[shake rate=5 level=10]PUSH"
+text = "PUSH"
+
+[node name="Label" parent="TypingTarget/Hint" index="0"]
+bbcode_text = "[shake rate=5 level=10]PUSH"
+text = "PUSH"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 3 )
 anims/RESET = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[editable path="TypingTarget"]

@@ -9,7 +9,7 @@ onready var MenuButtons = find_node('MenuButtons')
 func _ready():
 	Player.push_menu(self)
 	MenuButtons.hide()
-	
+
 	connect_button($Credits)
 
 	for btn in MenuButtons.get_children():

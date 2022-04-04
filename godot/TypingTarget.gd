@@ -63,7 +63,7 @@ func _ready():
 	set_active(active)
 	$Word/Label.visible_characters = 0
 
-	if auto_death: 
+	if auto_death:
 		if get_parent().has_method('dead'):
 			connect("matched", get_parent(), "dead")
 

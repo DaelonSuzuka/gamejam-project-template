@@ -148,7 +148,7 @@ scale = Vector2( 0.45, 0.45 )
 
 [node name="Sprite" type="AnimatedSprite" parent="PathFollow2D/Body"]
 frames = SubResource( 43 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D/Body" groups=["Death"]]
@@ -163,3 +163,13 @@ shape = SubResource( 56 )
 [node name="TypingTarget" parent="." instance=ExtResource( 4 )]
 position = Vector2( 655, -129 )
 word = "slay"
+
+[node name="Label" parent="TypingTarget/Word" index="0"]
+bbcode_text = "[shake rate=5 level=10]SLAY"
+text = "SLAY"
+
+[node name="Label" parent="TypingTarget/Hint" index="0"]
+bbcode_text = "[shake rate=5 level=10]SLAY"
+text = "SLAY"
+
+[editable path="TypingTarget"]

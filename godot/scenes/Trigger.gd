@@ -8,4 +8,5 @@ func _on_TriggerDialog_body_entered(body: Node) -> void:
 	$CollisionShape2D.set_deferred("disabled", true)
 
 func dead():
+	yield(get_tree().create_timer(1), "timeout")
 	queue_free()

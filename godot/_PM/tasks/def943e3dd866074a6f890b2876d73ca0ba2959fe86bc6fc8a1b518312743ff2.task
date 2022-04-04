@@ -4,7 +4,7 @@
 	"assigned": 0,
 	"timestamp": 1649020393,
 	"hash": "def943e3dd866074a6f890b2876d73ca0ba2959fe86bc6fc8a1b518312743ff2",
-	"description": "- scale player\n- change scene\n- cam limits\n- ghost of Fight2 can't get a Curve2D (disappear when reenter scene)\n- typing display in bright pink (+bbcode Open label near gatel)",
+	"description": "- tuto\n- end\n- slay only close monsters\n- update colors",
 	"todos": [
 
 	]

@@ -17,6 +17,8 @@
 [ext_resource path="res://assets/NPCS_pointing.png" type="Texture" id=15]
 [ext_resource path="res://scenes/NextScene.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/Levels/Level.gd" type="Script" id=17]
+[ext_resource path="res://scenes/Letter.gd" type="Script" id=18]
+[ext_resource path="res://assets/Letter closed.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=549]
 extents = Vector2( 19.6689, 116 )
@@ -880,20 +882,20 @@ width = 1.0
 
 [sub_resource type="Resource" id=672]
 script = ExtResource( 2 )
-position = Vector2( 4470.31, 2970.87 )
+position = Vector2( 4464.93, 2937.91 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 671 )
 
 [sub_resource type="Resource" id=673]
 script = ExtResource( 3 )
-texture_idx = 0
+texture_idx = 5
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id=674]
 script = ExtResource( 2 )
-position = Vector2( 4582.29, 2922.87 )
+position = Vector2( 4584.98, 2879.15 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 673 )
@@ -906,7 +908,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=676]
 script = ExtResource( 2 )
-position = Vector2( 4665.48, 2942.07 )
+position = Vector2( 4817.46, 3025.26 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 675 )
@@ -919,7 +921,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=678]
 script = ExtResource( 2 )
-position = Vector2( 4817.46, 3025.26 )
+position = Vector2( 5298.66, 2961.77 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 677 )
@@ -932,7 +934,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=680]
 script = ExtResource( 2 )
-position = Vector2( 5298.66, 2961.77 )
+position = Vector2( 5606.17, 2842.18 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 679 )
@@ -945,38 +947,25 @@ width = 1.0
 
 [sub_resource type="Resource" id=682]
 script = ExtResource( 2 )
-position = Vector2( 5606.17, 2842.18 )
+position = Vector2( 5609.36, 2494.1 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 681 )
 
 [sub_resource type="Resource" id=683]
 script = ExtResource( 3 )
-texture_idx = 0
+texture_idx = 3
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id=684]
 script = ExtResource( 2 )
-position = Vector2( 5599.76, 2494.1 )
+position = Vector2( 2064.04, 2927.58 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 683 )
 
 [sub_resource type="Resource" id=685]
-script = ExtResource( 3 )
-texture_idx = 3
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id=686]
-script = ExtResource( 2 )
-position = Vector2( 2064.04, 2927.58 )
-point_in = Vector2( 0, 0 )
-point_out = Vector2( 0, 0 )
-properties = SubResource( 685 )
-
-[sub_resource type="Resource" id=687]
 script = ExtResource( 1 )
 _points = {
 0: SubResource( 658 ),
@@ -988,17 +977,16 @@ _points = {
 6: SubResource( 670 ),
 7: SubResource( 672 ),
 8: SubResource( 674 ),
-9: SubResource( 676 ),
-10: SubResource( 678 ),
-11: SubResource( 680 ),
-12: SubResource( 682 ),
-13: SubResource( 684 ),
-14: SubResource( 686 )
+10: SubResource( 676 ),
+11: SubResource( 678 ),
+12: SubResource( 680 ),
+13: SubResource( 682 ),
+14: SubResource( 684 )
 }
-_point_order = [ 0, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+_point_order = [ 0, 14, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13 ]
 _constraints = {
 }
-_next_key = 15
+_next_key = 16
 
 [sub_resource type="Resource" id=243]
 script = ExtResource( 4 )
@@ -1017,11 +1005,17 @@ _data = {
 
 [node name="City" type="Node2D"]
 script = ExtResource( 17 )
+limit_bottom = 3056
+limit_left = -5696
+limit_right = 5738
 
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( -3548, 426 )
+position = Vector2( -5032, 584 )
+
+[node name="Dev" type="Node2D" parent="Spawns"]
+position = Vector2( -392, 528 )
 
 [node name="NextScene" parent="Spawns" instance=ExtResource( 16 )]
 position = Vector2( 5750, 2566 )
@@ -1066,7 +1060,7 @@ polygon = PoolVector2Array( -5910.99, 672.212, -5904.52, 844.534, -5693.27, 826.
 
 [node name="SS2D_Shape_Open2" type="Node2D" parent="StaticBody2D"]
 script = ExtResource( 5 )
-_points = SubResource( 687 )
+_points = SubResource( 685 )
 material_overrides = {
 }
 shape_material = SubResource( 243 )
@@ -1076,13 +1070,20 @@ flip_edges = false
 render_edges = true
 collision_size = 32.0
 collision_offset = 0.0
-collision_polygon_node_path = NodePath("")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D2")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+modulate = Color( 1, 1, 1, 0.3 )
+position = Vector2( 0, 1 )
+polygon = PoolVector2Array( 2054.2, 2619.55, 2064.04, 2926.58, 2460.68, 2971.75, 2765.04, 3014.07, 3004.88, 3062.04, 3244.73, 2997.79, 3811.13, 3013.94, 4151.94, 2932.95, 4464.83, 2936.49, 4585.09, 2876.13, 4817.66, 3023.33, 5298.63, 2960.66, 5603.9, 2839.62, 5609.36, 2493.1, 5641.36, 2493.39, 5630.23, 2857.8, 5306.58, 2991.66, 4810.84, 3054.6, 4583.39, 2908.09, 4471.86, 2967.7, 4155.47, 2964.75, 3814.4, 3045.78, 3248.47, 3029.57, 3005.89, 3094.02, 2759.67, 3045.62, 2456.67, 3003.5, 2028.44, 2959.4, 2032.06, 2927.6, 2022.22, 2620.57 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 scale = Vector2( 1.5, 1 )
 motion_scale = Vector2( 1.1, 1 )
+motion_offset = Vector2( -500, 0 )
+motion_mirroring = Vector2( 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( -1934.67, 977 )
@@ -1095,16 +1096,15 @@ texture = ExtResource( 6 )
 [node name="Waver" parent="CityFrame" instance=ExtResource( 8 )]
 position = Vector2( -4144, -479 )
 
-[node name="Waver2" parent="CityFrame" instance=ExtResource( 8 )]
-position = Vector2( 4738, 1697 )
-
 [node name="Waver3" parent="CityFrame" instance=ExtResource( 8 )]
-position = Vector2( 3402, 1728 )
+position = Vector2( 3392, 1690 )
+rotation = -0.143497
 scale = Vector2( -0.3, 0.3 )
 type = 2
 
 [node name="Waver4" parent="CityFrame" instance=ExtResource( 8 )]
-position = Vector2( 3010, 1770 )
+position = Vector2( 2968, 1730 )
+rotation = 0.113312
 scale = Vector2( -0.3, 0.3 )
 
 [node name="EyeChild" parent="CityFrame" instance=ExtResource( 9 )]
@@ -1180,20 +1180,35 @@ I've just been PUSHed to my limits.
 
 I love you."
 
+[node name="TriggerDialog5" parent="CityFrame" instance=ExtResource( 10 )]
+position = Vector2( 2677, 1800 )
+
+[node name="LetterClosed" type="Sprite" parent="CityFrame/TriggerDialog5"]
+position = Vector2( -565, -262 )
+scale = Vector2( 2.09, 2.09 )
+texture = ExtResource( 19 )
+hframes = 2
+script = ExtResource( 18 )
+
 [node name="Statue" parent="CityFrame" instance=ExtResource( 12 )]
-position = Vector2( 5692, 1584 )
+position = Vector2( 4728, 1746 )
 curve = SubResource( 410 )
+collision = true
 
 [node name="PathFollow2D" parent="CityFrame/Statue" index="0"]
 position = Vector2( 28, -20 )
 rotation = 0.0676924
 
 [node name="TypingTarget" parent="CityFrame/Statue" index="1"]
-show_hint = false
+scale = Vector2( 1.31152, 1.31152 )
+custom_hint = "????"
+
+[node name="Label" parent="CityFrame/Statue/TypingTarget/Hint" index="0"]
+bbcode_text = "[shake rate=5 level=10]????"
+text = "????"
 
 [node name="Bridge" parent="CityFrame" instance=ExtResource( 13 )]
 position = Vector2( 2805, -111 )
-z_index = -1
 
 [node name="NpcSwifeAlive" type="Sprite" parent="CityFrame"]
 modulate = Color( 1, 0.45098, 0.831373, 1 )
@@ -1209,3 +1224,4 @@ texture = ExtResource( 15 )
 [connection signal="body_entered" from="Spawns/Checkpoint" to="." method="_on_Checkpoint_body_entered"]
 
 [editable path="CityFrame/Statue"]
+[editable path="CityFrame/Statue/TypingTarget"]

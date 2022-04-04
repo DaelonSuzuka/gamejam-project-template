@@ -707,11 +707,16 @@ _data = {
 
 [node name="City" type="Node2D"]
 script = ExtResource( 19 )
+limit_left = -5664
+limit_right = 5680
 
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
 position = Vector2( -5560, 536 )
+
+[node name="Dev" type="Node2D" parent="Spawns"]
+position = Vector2( -4224, 552 )
 
 [node name="NextScene" parent="Spawns" instance=ExtResource( 18 )]
 position = Vector2( 5640, 736 )
@@ -757,6 +762,7 @@ polygon = PoolVector2Array( -5837.89, 589.716, -5831.78, 771.8, -5547.19, 787.38
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 scale = Vector2( 1.5, 1 )
 motion_scale = Vector2( 1.1, 1 )
+motion_offset = Vector2( -400, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 7 )
@@ -851,9 +857,21 @@ position = Vector2( -4113, 676 )
 path = NodePath("TypingTarget")
 
 [node name="TypingTarget" parent="CityFrame/Kill" instance=ExtResource( 12 )]
-position = Vector2( 161, -81 )
+position = Vector2( 241, -116 )
+scale = Vector2( 2.22329, 2.22329 )
 show_hint = false
 word = "kill"
+
+[node name="Label" parent="CityFrame/Kill/TypingTarget/Word" index="0"]
+bbcode_text = "[shake rate=5 level=10]KILL"
+text = "KILL"
+
+[node name="Hint" parent="CityFrame/Kill/TypingTarget" index="1"]
+visible = false
+
+[node name="Label" parent="CityFrame/Kill/TypingTarget/Hint" index="0"]
+bbcode_text = "[shake rate=5 level=10]KILL"
+text = "KILL"
 
 [node name="NpcsSleep" type="Sprite" parent="CityFrame/Kill"]
 position = Vector2( 175, -8.99976 )
@@ -861,7 +879,7 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 15 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CityFrame/Kill"]
-position = Vector2( 140, 1 )
+position = Vector2( 33, 4 )
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CityFrame/Kill/StaticBody2D"]
@@ -907,3 +925,5 @@ position = Vector2( 5267, 655 )
 texture = ExtResource( 17 )
 
 [connection signal="body_entered" from="Spawns/Checkpoint" to="." method="_on_Checkpoint_body_entered"]
+
+[editable path="CityFrame/Kill/TypingTarget"]

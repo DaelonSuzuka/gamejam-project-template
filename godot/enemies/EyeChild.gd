@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _process(delta):
 	var distance = Player.character.global_position.x-global_position.x
-	var spotted = (abs(distance) < 1000)
+	var spotted = (Player.character.global_position.distance_to(global_position) < 1000)
 
 	if spotted:
 		$Body.animation = "run"
@@ -35,8 +35,8 @@ func _process(delta):
 		dir = [0,-dir,dir][randi()%3]
 
 	match int(dir):
-		1: $Body.scale.x = .2
-		-1: $Body.scale.x = -.2
+		1: $Body.scale.x = -.2
+		-1: $Body.scale.x = .2
 
 
 	if dir != 0: velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)

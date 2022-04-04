@@ -54,7 +54,7 @@ func handle_input(event):
 # ******************************************************************************
 
 func pressed(button):
-	
+
 	match button.name:
 		'Resume':
 			close()

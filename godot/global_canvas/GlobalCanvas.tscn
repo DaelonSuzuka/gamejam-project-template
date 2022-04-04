@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/justabit.tres" type="DynamicFont" id=1]
 [ext_resource path="res://global_canvas/FpsCounter.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Eyes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/black_framework.png" type="Texture" id=4]
 [ext_resource path="res://global_canvas/GlobalCanvas.gd" type="Script" id=5]
 [ext_resource path="res://global_canvas/DialogBox.tscn" type="PackedScene" id=6]
 
@@ -48,3 +49,12 @@ anchor_right = 0.5
 margin_left = -468.0
 margin_right = 468.0
 margin_bottom = 259.0
+
+[node name="Black" type="TextureRect" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2812.0
+margin_bottom = 1560.0
+rect_scale = Vector2( 0.278191, 0.278191 )
+texture = ExtResource( 4 )

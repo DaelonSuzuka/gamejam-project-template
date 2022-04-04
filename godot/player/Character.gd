@@ -138,3 +138,7 @@ func dead():
 	set_physics_process(false)
 	visible = false
 	dead = true
+	GlobalCanvas.get_node("Eyes").set_process(false)
+	print(Game.world.checkpoint)
+	yield(get_tree().create_timer(2), "timeout")
+	Game.load_scene(Game.world.filename, Game.world.checkpoint)
