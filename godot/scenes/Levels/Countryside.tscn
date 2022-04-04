@@ -866,7 +866,7 @@ position = Vector2( -5671.91, 206.37 )
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( -5881.34, 395.439 )
+position = Vector2( -5830, 390 )
 __meta__ = {
 "_editor_description_": ""
 }
