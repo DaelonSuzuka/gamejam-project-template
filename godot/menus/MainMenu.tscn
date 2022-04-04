@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/background_title_screen.png" type="Texture" id=2]
 [ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/ui/Credit_final.png" type="Texture" id=4]
+[ext_resource path="res://assets/sound/0_main/SFX_UI_menu_click.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/ui/credits_button/creditst-ON.png" type="Texture" id=6]
 [ext_resource path="res://assets/Bohemian Soul.otf" type="DynamicFontData" id=7]
 
@@ -141,5 +142,8 @@ margin_top = 536.0
 margin_right = 998.0
 margin_bottom = 581.0
 text = "Credits"
+
+[node name="MenuClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [editable path="Start"]

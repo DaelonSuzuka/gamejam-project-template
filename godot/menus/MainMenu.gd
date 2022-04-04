@@ -53,6 +53,7 @@ func handle_input(event):
 func pressed(button):
 	match button.name:
 		'Credits':
+			$MenuClick.play()
 			if !$CreditsImage.visible:
 				$CreditsImage.show()
 				$Start.active = false

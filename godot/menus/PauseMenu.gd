@@ -54,14 +54,16 @@ func handle_input(event):
 # ******************************************************************************
 
 func pressed(button):
-
 	match button.name:
 		'Resume':
+			$MenuClick.play()
 			close()
 		'Option':
+			$MenuClick.play()
 			MenuButtons.hide()
 			$Textures.hide()
 			$OptionMenu.show()
 		'Exit':
+			$MenuClick.play()
 			close()
 			Game.load_scene('mainmenu')
