@@ -9,12 +9,13 @@ onready var MenuButtons = find_node('MenuButtons')
 func _ready():
 	Player.push_menu(self)
 	MenuButtons.hide()
+	
+	connect_button($Credits)
 
 	for btn in MenuButtons.get_children():
 		connect_button(btn)
 
 	$Start.connect('matched', self, 'pressed', [$Start])
-	$Exit.connect('matched', self, 'pressed', [$Exit])
 
 	MenuButtons.get_child(0).grab_focus()
 
@@ -27,15 +28,23 @@ func connect_button(button):
 # ******************************************************************************
 
 func handle_input(event):
-	pass
+	if $CreditsImage.visible:
+		if event.pressed and event.action == 'ui_cancel':
+			$CreditsImage.hide()
+			$Start.active = true
 
 # ******************************************************************************
 
 func pressed(button):
 	match button.name:
 
-		'Continue':
-			pass
+		'Credits':
+			if !$CreditsImage.visible:
+				$CreditsImage.show()
+				$Start.active = false
+			else:
+				$CreditsImage.hide()
+				$Start.active = true
 		'NewGame':
 			pass
 		'Start':

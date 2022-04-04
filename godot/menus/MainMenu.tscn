@@ -1,23 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/background_title_screen.png" type="Texture" id=2]
 [ext_resource path="res://TypingTarget.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/Credit_final.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/credits_button/creditst-OFF.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/credits_button/creditst-ON.png" type="Texture" id=6]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
-margin_left = 800.0
-margin_top = 468.0
-margin_right = 1004.0
-margin_bottom = 619.0
+visible = false
+margin_left = 433.0
+margin_top = 251.0
+margin_right = 637.0
+margin_bottom = 402.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -80,14 +84,57 @@ text = "type start"
 align = 1
 
 [node name="Start" parent="." instance=ExtResource( 3 )]
-position = Vector2( 528, 519 )
-scale = Vector2( 3, 3 )
+position = Vector2( 528, 501 )
+scale = Vector2( 2, 2 )
+custom_hint = "type START"
 word = "start"
-custom_hint = "type start"
 
-[node name="Exit" parent="." instance=ExtResource( 3 )]
+[node name="Label" parent="Start/Word" index="0"]
+margin_top = -1.5
+margin_bottom = 18.5
+bbcode_text = "[shake rate=5 level=10]START"
+percent_visible = 1.0
+text = "START"
+
+[node name="Label" parent="Start/Hint" index="0"]
+margin_left = -128.0
+margin_top = -8.0
+margin_right = 128.0
+margin_bottom = 12.0
+bbcode_text = "[shake rate=5 level=10]type START"
+text = "type START"
+
+[node name="CreditsImage" type="TextureRect" parent="."]
 visible = false
-position = Vector2( 872, 519 )
-scale = Vector2( 3, 3 )
-word = "exit"
-custom_hint = "type exit"
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="CreditsButton4" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Credits" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 866.0
+margin_top = 536.0
+margin_right = 998.0
+margin_bottom = 581.0
+text = "Credits"
+
+[node name="CreditsButton2" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[editable path="Start"]
