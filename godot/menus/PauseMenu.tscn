@@ -278,7 +278,7 @@ margin_top = 48.0
 margin_right = 97.0
 margin_bottom = 68.0
 rect_min_size = Vector2( 0, 20 )
-text = "Run"
+text = "Walk Faster"
 align = 2
 valign = 1
 
