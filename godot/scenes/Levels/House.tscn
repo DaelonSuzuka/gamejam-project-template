@@ -307,10 +307,11 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 11 )
 
 [node name="TypingTarget" parent="CityFrame/Reveal" instance=ExtResource( 6 )]
-position = Vector2( -744, -879 )
+position = Vector2( -256, 736 )
 scale = Vector2( 6.67427, 6.67427 )
 custom_hint = " "
 show_word = false
+distance = 300
 word = "family"
 
 [node name="Label" parent="CityFrame/Reveal" instance=ExtResource( 8 )]

@@ -162,14 +162,15 @@ shape = SubResource( 56 )
 
 [node name="TypingTarget" parent="." instance=ExtResource( 4 )]
 position = Vector2( 655, -129 )
+distance = 1000
 word = "slay"
 
 [node name="Label" parent="TypingTarget/Word" index="0"]
-bbcode_text = "[shake rate=5 level=10]SLAY"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]SLAY"
 text = "SLAY"
 
 [node name="Label" parent="TypingTarget/Hint" index="0"]
-bbcode_text = "[shake rate=5 level=10]SLAY"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]SLAY"
 text = "SLAY"
 
 [editable path="TypingTarget"]

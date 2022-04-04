@@ -414,19 +414,20 @@ position = Vector2( 0, -119 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 91
+frame = 59
 playing = true
 
 [node name="TypingTarget" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -130 )
+distance = 1000
 word = "smash"
 
 [node name="Label" parent="TypingTarget/Word" index="0"]
-bbcode_text = "[shake rate=5 level=10]SMASH"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]SMASH"
 text = "SMASH"
 
 [node name="Label" parent="TypingTarget/Hint" index="0"]
-bbcode_text = "[shake rate=5 level=10]SMASH"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]SMASH"
 text = "SMASH"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Death"]]

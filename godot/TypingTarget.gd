@@ -22,7 +22,7 @@ func set_custom_hint(value):
 
 export var auto_death = true
 export var show_word = true setget set_show_word
-export var distance = 100
+export var distance = 1000
 
 signal matched()
 signal mistake()

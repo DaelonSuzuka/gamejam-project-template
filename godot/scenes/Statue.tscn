@@ -120,6 +120,7 @@ disabled = true
 [node name="TypingTarget" parent="." instance=ExtResource( 1 )]
 position = Vector2( 10, -220 )
 show_word = false
+distance = 250
 word = "push"
 stay_active = true
 
@@ -127,11 +128,11 @@ stay_active = true
 visible = false
 
 [node name="Label" parent="TypingTarget/Word" index="0"]
-bbcode_text = "[shake rate=5 level=10]PUSH"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]PUSH"
 text = "PUSH"
 
 [node name="Label" parent="TypingTarget/Hint" index="0"]
-bbcode_text = "[shake rate=5 level=10]PUSH"
+bbcode_text = "[shake rate=5 level=10][color=fuchsia]PUSH"
 text = "PUSH"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

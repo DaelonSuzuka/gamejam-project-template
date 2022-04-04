@@ -4,7 +4,7 @@
 	"assigned": 0,
 	"timestamp": 1649020393,
 	"hash": "def943e3dd866074a6f890b2876d73ca0ba2959fe86bc6fc8a1b518312743ff2",
-	"description": "- slay only close monsters\n- update colors\n- fix spawn bug",
+	"description": "- slay only close monsters\n- update colors\n- monster death\n- music",
 	"todos": [
 
 	]

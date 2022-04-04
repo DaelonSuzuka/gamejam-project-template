@@ -720,7 +720,7 @@ limit_right = 5680
 position = Vector2( -5560, 536 )
 
 [node name="Dev" type="Node2D" parent="Spawns"]
-position = Vector2( -4224, 552 )
+position = Vector2( 744, 512 )
 
 [node name="NextScene" parent="Spawns" instance=ExtResource( 18 )]
 position = Vector2( 5640, 736 )
@@ -886,6 +886,7 @@ path = NodePath("TypingTarget")
 position = Vector2( 353, -116 )
 scale = Vector2( 2.22329, 2.22329 )
 show_hint = false
+distance = 500
 word = "kill"
 
 [node name="Label" parent="CityFrame/Kill/TypingTarget/Word" index="0"]
