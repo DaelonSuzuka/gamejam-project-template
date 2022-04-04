@@ -7,9 +7,17 @@ onready var MenuButtons = find_node('MenuButtons')
 # ******************************************************************************
 
 func _ready():
-	if Game.dead_flag:
-		Game.dead_flag = false
+	$Start.hide()
+	$Credits.hide()
+	$CreditsButtonTexture.hide()
+
+	if Game.direct_launch or Game.dead_flag:
+		GlobalCanvas.get_node('Eyes').show()
 		return
+
+	$Start.show()
+	$Credits.show()
+	$CreditsButtonTexture.show()
 
 	Player.push_menu(self)
 	MenuButtons.hide()
@@ -55,5 +63,7 @@ func pressed(button):
 			Player.camera.follow(Player.character, Vector2(3.0, 3.0))
 			Player.pop_menu()
 			$Credits.hide()
+			$Start.hide()
+			$CreditsButtonTexture.hide()
 			GlobalCanvas.get_node('Eyes').show()
 			# GlobalCanvas.get_node('Eyes').start_tutorial()
