@@ -856,7 +856,10 @@ limit_right = 5750
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
-position = Vector2( 4761, 683 )
+position = Vector2( -5208, 611 )
+
+[node name="Dev" type="Node2D" parent="Spawns"]
+position = Vector2( 5459, 547 )
 
 [node name="NextScene" parent="Spawns" instance=ExtResource( 18 )]
 position = Vector2( 5708, 793 )
@@ -915,6 +918,8 @@ polygon = PoolVector2Array( -5920.98, 745.694, -5906.59, 756.08, -5910.35, 947.0
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 scale = Vector2( 1.5, 1 )
 motion_scale = Vector2( 1.1, 1 )
+motion_offset = Vector2( -500, 0 )
+motion_mirroring = Vector2( 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 2 )

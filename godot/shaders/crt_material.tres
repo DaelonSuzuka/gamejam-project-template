@@ -3,7 +3,8 @@
 [ext_resource path="res://crt_shader.shader" type="Shader" id=1]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource( 1 )
-shader_param/scan_line_jitter = 0.015
-shader_param/horizontal_shake = 0.01
-shader_param/color_drift = 0.03
+shader_param/scan_line_jitter = 0.0
+shader_param/horizontal_shake = 0.0
+shader_param/color_drift = 0.0

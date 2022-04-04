@@ -52,4 +52,6 @@ func _process(delta):
 #	body.scale.x = 0.2 if velocity.x > 0 else -0.2
 
 func dead():
+	$Body/AnimationPlayer.play("Death")
+	yield(get_tree().create_timer(.3), "timeout")
 	queue_free()
