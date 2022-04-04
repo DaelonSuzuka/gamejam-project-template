@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Eyes.gd" type="Script" id=1]
 [ext_resource path="res://assets/eyes.png" type="Texture" id=2]
 [ext_resource path="res://global_canvas/PromptSprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/EyesClosedCanvas.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
@@ -83,3 +84,11 @@ key = "M"
 position = Vector2( 924, 546 )
 scale = Vector2( 5, 5 )
 key = "/"
+
+[node name="Dark" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.666667 )
+position = Vector2( -46, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 5

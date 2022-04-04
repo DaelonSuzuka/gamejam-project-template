@@ -18,22 +18,24 @@ func _physics_process(delta: float) -> void:
 	if !visible or !active:
 		return
 
-	if left_closed == MAX_CLOSED and right_closed == MAX_CLOSED and not Player.character.dead:
-		Player.character.dead()
-		left_closed = 0
-		right_closed = 0
 
 	left_closed = min(MAX_CLOSED,left_closed+inc)
 	right_closed =  min(MAX_CLOSED,right_closed+inc)
 
 	Left.frame = int(1 + left_closed / 250)
 	Right.frame = int(1 + right_closed / 250)
+#	$Dark.frame = max(Left.frame,Right.frame)
 
 	match int(max(Left.frame,Right.frame)):
 		0: inc = 20
 		1,3: inc = 2
 		2,4: inc = 10
 
+	if left_closed == MAX_CLOSED and right_closed == MAX_CLOSED and not Player.character.dead:
+		Player.character.dead()
+		left_closed = 0
+		right_closed = 0
+		
 func _input(event: InputEvent) -> void:
 	if !visible or !active:
 		return
