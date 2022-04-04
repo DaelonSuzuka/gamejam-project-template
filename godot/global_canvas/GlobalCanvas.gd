@@ -21,3 +21,7 @@ func debug(name, text):
 	label.text = text
 	$Debug.add_child(label)
 	debug_labels[name] = label
+
+
+func start_tutorial():
+	$AnimationPlayer.play('EyeTuto')

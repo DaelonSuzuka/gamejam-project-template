@@ -1,5 +1,5 @@
 tool
-extends CanvasItem
+extends Node2D
 
 # ******************************************************************************
 
@@ -84,8 +84,9 @@ func _input(event):
 
 	if progress >= word.length():
 		progress = word.length()
+		
 
-	if word[progress] == c:
+	if word[progress] == c and Player.character.global_position.distance_to(global_position) < distance:
 		if progress < word.length():
 			progress += 1
 		$Word/Label.visible_characters = progress

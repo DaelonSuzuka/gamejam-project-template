@@ -883,7 +883,7 @@ position = Vector2( -4113, 676 )
 path = NodePath("TypingTarget")
 
 [node name="TypingTarget" parent="CityFrame/Kill" instance=ExtResource( 12 )]
-position = Vector2( 241, -116 )
+position = Vector2( 353, -116 )
 scale = Vector2( 2.22329, 2.22329 )
 show_hint = false
 word = "kill"

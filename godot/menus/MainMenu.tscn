@@ -100,6 +100,7 @@ align = 1
 position = Vector2( 544, 538 )
 scale = Vector2( 2, 2 )
 custom_hint = "[color=white]type [/color]START"
+distance = 10000
 word = "start"
 
 [node name="Word" parent="Start" index="0"]

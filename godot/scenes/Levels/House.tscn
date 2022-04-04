@@ -12,165 +12,192 @@
 [ext_resource path="res://assets/background06_house.png" type="Texture" id=10]
 [ext_resource path="res://assets/NPCSwife_dead.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Levels/Reveal.gd" type="Script" id=12]
-[ext_resource path="res://scenes/Levels/Level.gd" type="Script" id=13]
 
-[sub_resource type="Resource" id=102]
+[sub_resource type="GDScript" id=102]
+script/source = "extends Node2D
+
+export (int) var limit_top
+export (int) var limit_bottom
+export (int) var limit_left
+export (int) var limit_right
+
+var checkpoint = \"Default\"
+
+
+func _ready() -> void:
+	GlobalCanvas.get_node(\"Eyes\").set_process(true)
+
+	if limit_bottom != 0: Player.camera.limit_bottom = limit_bottom
+	if limit_top != 0: Player.camera.limit_top = limit_top
+	if limit_left != 0: Player.camera.limit_left = limit_left
+	if limit_right != 0: Player.camera.limit_right = limit_right
+	
+	
+
+
+func _on_Checkpoint_body_entered(body: Node) -> void:
+	checkpoint = \"Checkpoint\"
+func _on_Checkpoint2_body_entered(body: Node) -> void:
+	checkpoint = \"Checkpoint2\"
+"
+
+[sub_resource type="Resource" id=103]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=103]
+[sub_resource type="Resource" id=104]
 script = ExtResource( 2 )
 position = Vector2( -2073.01, 501.265 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 102 )
+properties = SubResource( 103 )
 
-[sub_resource type="Resource" id=104]
+[sub_resource type="Resource" id=105]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=105]
+[sub_resource type="Resource" id=106]
 script = ExtResource( 2 )
 position = Vector2( -2067.05, 683.044 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 104 )
+properties = SubResource( 105 )
 
-[sub_resource type="Resource" id=106]
+[sub_resource type="Resource" id=107]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=107]
+[sub_resource type="Resource" id=108]
 script = ExtResource( 2 )
 position = Vector2( -1763.74, 689.226 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 106 )
+properties = SubResource( 107 )
 
-[sub_resource type="Resource" id=108]
+[sub_resource type="Resource" id=109]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=109]
+[sub_resource type="Resource" id=110]
 script = ExtResource( 2 )
 position = Vector2( -893.213, 652.677 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 108 )
+properties = SubResource( 109 )
 
-[sub_resource type="Resource" id=110]
+[sub_resource type="Resource" id=111]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=111]
+[sub_resource type="Resource" id=112]
 script = ExtResource( 2 )
 position = Vector2( -594.461, 639.882 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 110 )
+properties = SubResource( 111 )
 
-[sub_resource type="Resource" id=112]
+[sub_resource type="Resource" id=113]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=113]
+[sub_resource type="Resource" id=114]
 script = ExtResource( 2 )
 position = Vector2( -248.148, 618.614 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 112 )
+properties = SubResource( 113 )
 
-[sub_resource type="Resource" id=114]
+[sub_resource type="Resource" id=115]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=115]
+[sub_resource type="Resource" id=116]
 script = ExtResource( 2 )
 position = Vector2( -347.091, 631.392 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 114 )
+properties = SubResource( 115 )
 
-[sub_resource type="Resource" id=116]
+[sub_resource type="Resource" id=117]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=117]
+[sub_resource type="Resource" id=118]
 script = ExtResource( 2 )
 position = Vector2( -1575.55, 635.118 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 116 )
+properties = SubResource( 117 )
 
-[sub_resource type="Resource" id=118]
+[sub_resource type="Resource" id=119]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=119]
+[sub_resource type="Resource" id=120]
 script = ExtResource( 2 )
 position = Vector2( -1293.24, 694.702 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 118 )
+properties = SubResource( 119 )
 
-[sub_resource type="Resource" id=120]
+[sub_resource type="Resource" id=121]
 script = ExtResource( 3 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=121]
+[sub_resource type="Resource" id=122]
 script = ExtResource( 2 )
 position = Vector2( -114.033, 653.933 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 120 )
+properties = SubResource( 121 )
 
-[sub_resource type="Resource" id=122]
+[sub_resource type="Resource" id=123]
 script = ExtResource( 3 )
 texture_idx = -8
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=123]
+[sub_resource type="Resource" id=124]
 script = ExtResource( 2 )
 position = Vector2( -99.5134, 526.101 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 122 )
+properties = SubResource( 123 )
 
-[sub_resource type="Resource" id=124]
+[sub_resource type="Resource" id=125]
 script = ExtResource( 1 )
 _points = {
-12: SubResource( 103 ),
-13: SubResource( 105 ),
-16: SubResource( 107 ),
-17: SubResource( 109 ),
-18: SubResource( 111 ),
-19: SubResource( 113 ),
-40: SubResource( 115 ),
-62: SubResource( 117 ),
-63: SubResource( 119 ),
-64: SubResource( 121 ),
-65: SubResource( 123 )
+12: SubResource( 104 ),
+13: SubResource( 106 ),
+16: SubResource( 108 ),
+17: SubResource( 110 ),
+18: SubResource( 112 ),
+19: SubResource( 114 ),
+40: SubResource( 116 ),
+62: SubResource( 118 ),
+63: SubResource( 120 ),
+64: SubResource( 122 ),
+65: SubResource( 124 )
 }
 _point_order = [ 12, 13, 16, 62, 63, 17, 18, 40, 19, 64, 65 ]
 _constraints = {
@@ -216,8 +243,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="City" type="Node2D"]
-script = ExtResource( 13 )
+[node name="House" type="Node2D"]
+script = SubResource( 102 )
+limit_top = -1060
 limit_left = -1920
 limit_right = 1920
 
@@ -232,7 +260,7 @@ position = Vector2( 150, -150 )
 [node name="SS2D_Shape_Open" type="Node2D" parent="StaticBody2D"]
 position = Vector2( 0, 303 )
 script = ExtResource( 5 )
-_points = SubResource( 124 )
+_points = SubResource( 125 )
 material_overrides = {
 }
 shape_material = SubResource( 76 )
@@ -286,13 +314,14 @@ show_word = false
 word = "family"
 
 [node name="Label" parent="CityFrame/Reveal" instance=ExtResource( 8 )]
-margin_left = -744.0
-margin_top = -879.0
-margin_right = -386.0
-margin_bottom = -816.0
+margin_left = -1208.0
+margin_top = -552.0
+margin_right = -850.0
+margin_bottom = -489.0
 rect_scale = Vector2( 6.67427, 6.67427 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "\"We'll soon be together.
+Wait for me.
 I just have to…\""
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CityFrame/Reveal"]

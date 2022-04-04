@@ -66,4 +66,4 @@ func pressed(button):
 			$Start.hide()
 			$CreditsButtonTexture.hide()
 			GlobalCanvas.get_node('Eyes').show()
-			# GlobalCanvas.get_node('Eyes').start_tutorial()
+			GlobalCanvas.start_tutorial()

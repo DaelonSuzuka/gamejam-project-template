@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if left_closed == MAX_CLOSED and right_closed == MAX_CLOSED and not Player.character.dead:
-		# Player.character.dead()
+		Player.character.dead()
 		left_closed = 0
 		right_closed = 0
 
@@ -40,5 +40,4 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("AwakeRight"):
 		right_closed = max(0, right_closed - 250)
 
-func start_tutorial():
-	$AnimationPlayer.play('tuto')
+
