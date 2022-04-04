@@ -135,6 +135,7 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 		dead()
 
 func dead():
+	Game.seen_title = true
 	set_physics_process(false)
 	visible = false
 	dead = true

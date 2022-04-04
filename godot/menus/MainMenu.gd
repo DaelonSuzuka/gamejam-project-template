@@ -7,6 +7,11 @@ onready var MenuButtons = find_node('MenuButtons')
 # ******************************************************************************
 
 func _ready():
+	print(Game.seen_title)
+	if Game.seen_title:
+#		start()
+#		return
+		pass
 	Player.push_menu(self)
 	MenuButtons.hide()
 
@@ -24,6 +29,7 @@ func _ready():
 func hide_eyes():
 	Player.camera.follow($'../CameraTarget', Vector2(2.0, 2.0))
 	GlobalCanvas.get_node('Eyes').hide()
+	GlobalCanvas.get_node('Eyes').set_process(false)
 
 func connect_button(button):
 	button.connect('pressed', self, 'pressed', [button])
@@ -47,8 +53,13 @@ func pressed(button):
 			else:
 				$CreditsImage.hide()
 				$Start.active = true
-		'Start':
-			GlobalCanvas.get_node('Eyes').show()
-			Player.camera.follow(Player.character, Vector2(3.0, 3.0), .01)
-			Player.pop_menu()
-			$Credits.hide()
+		'Start': start()
+
+func start():
+	GlobalCanvas.get_node('Eyes').show()
+	Player.camera.follow(Player.character, Vector2(3.0, 3.0), .01)
+	Player.pop_menu()
+	$Credits.hide()
+	GlobalCanvas.get_node('AnimationPlayer').play("EyeTuto")
+	GlobalCanvas.get_node('Eyes').set_process(true)
+	

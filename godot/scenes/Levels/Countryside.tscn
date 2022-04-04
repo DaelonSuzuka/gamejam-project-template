@@ -854,8 +854,11 @@ _data = {
 }
 
 [node name="Countryside" type="Node2D"]
-position = Vector2( 877.338, 296.561 )
+position = Vector2( -2680.65, -263.514 )
 script = ExtResource( 12 )
+limit_bottom = 1376
+limit_left = -6720
+limit_right = 8480
 
 [node name="CameraTarget" type="Node2D" parent="."]
 position = Vector2( -5671.91, 206.37 )
@@ -863,6 +866,12 @@ position = Vector2( -5671.91, 206.37 )
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="Default" type="Node2D" parent="Spawns"]
+position = Vector2( -5881.34, 395.439 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NoTitle" type="Node2D" parent="Spawns"]
 position = Vector2( -5881.34, 395.439 )
 __meta__ = {
 "_editor_description_": ""
