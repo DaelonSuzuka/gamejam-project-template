@@ -18,25 +18,29 @@ export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
 
 func _ready() -> void:
+	$Body.animation = "idle"
 	randomize()
 
-func _physics_process(delta):
-	var distance = Player.global_position.x-global_position.x
-	var spotted = (distance < 1000)
+func _process(delta):
+	var distance = Player.character.global_position.x-global_position.x
+	print(distance)
+	var spotted = (abs(distance) < 1000)
 
-
-	if spotted: speed = 2
-	else: speed = 1
-
-	if spotted: sign(distance)
-	else: dir = [0,-dir,dir,dir,dir,dir][randi()%6]
-
-	if dir != 0:
-		body.playing = true
-		velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)
+	if spotted:
+		$Body.animation = "run"
+		dir = sign(distance)
+		speed = 2
 	else:
-		body.playing = false
-		velocity.x = lerp(velocity.x, 0, friction)
+		$Body.animation = "idle"
+		speed = 1
+		dir = [0,-dir,dir][randi()%3]
+
+	match dir:
+		1: $Body.flip_h = false
+		-1: $Body.flip_h = true
+
+	if dir != 0: velocity.x = lerp(velocity.x, dir * walk_speed * speed, acceleration)
+	else: velocity.x = lerp(velocity.x, 0, friction)
 
 	velocity.y += gravity
 	if is_on_floor():
