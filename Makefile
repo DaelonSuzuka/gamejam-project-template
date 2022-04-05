@@ -25,7 +25,7 @@ itch:
 
 itch-win:
 	$(GODOT) --export "Windows Desktop"
-	butler.exe push build/web bottled-up-studio/nightwaker:win
+	butler.exe push build/win bottled-up-studio/nightwaker:win
 
 # **************************************************************************** #
 # Variables
