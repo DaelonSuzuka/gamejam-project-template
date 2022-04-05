@@ -21,7 +21,11 @@ win:
 
 itch:
 	$(GODOT) --export "HTML5"
-	butler.exe push build/web bottled-up-studio/ludumdare50:html5
+	butler.exe push build/web bottled-up-studio/nightwaker:html5
+
+itch-win:
+	$(GODOT) --export "Windows Desktop"
+	butler.exe push build/web bottled-up-studio/nightwaker:win
 
 # **************************************************************************** #
 # Variables
