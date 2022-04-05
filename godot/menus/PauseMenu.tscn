@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://menus/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/pause_menu_buttons/option-OFF.png" type="Texture" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://assets/ui/grey_pause_filter.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/volume_handle.png" type="Texture" id=12]
 [ext_resource path="res://assets/sound/0_main/SFX_UI_menu_click.wav" type="AudioStream" id=13]
-[ext_resource path="res://addons/input_event_key_grabber/input_event_key_grabber_button.gd" type="Script" id=14]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 12 )
@@ -230,7 +229,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="OptionMenu/Keybinds"]
-margin_right = 97.0
+margin_right = 115.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 text = "Move Left"
@@ -238,21 +237,22 @@ align = 2
 valign = 1
 
 [node name="MoveLeft" type="Button" parent="OptionMenu/Keybinds"]
-margin_left = 101.0
-margin_right = 136.0
+margin_left = 119.0
+margin_right = 159.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 35, 20 )
+rect_min_size = Vector2( 40, 20 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 6 )
+disabled = true
 text = "A"
-script = ExtResource( 14 )
 
 [node name="Label2" type="Label" parent="OptionMenu/Keybinds"]
 margin_top = 24.0
-margin_right = 97.0
+margin_right = 115.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 0, 20 )
 text = "Move Right"
@@ -260,22 +260,23 @@ align = 2
 valign = 1
 
 [node name="MoveRight" type="Button" parent="OptionMenu/Keybinds"]
-margin_left = 101.0
+margin_left = 119.0
 margin_top = 24.0
-margin_right = 136.0
+margin_right = 159.0
 margin_bottom = 44.0
-rect_min_size = Vector2( 35, 20 )
+rect_min_size = Vector2( 40, 20 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 6 )
+disabled = true
 text = "D"
-script = ExtResource( 14 )
 
 [node name="Label5" type="Label" parent="OptionMenu/Keybinds"]
 margin_top = 48.0
-margin_right = 97.0
+margin_right = 115.0
 margin_bottom = 68.0
 rect_min_size = Vector2( 0, 20 )
 text = "Walk Faster"
@@ -283,22 +284,23 @@ align = 2
 valign = 1
 
 [node name="Run" type="Button" parent="OptionMenu/Keybinds"]
-margin_left = 101.0
+margin_left = 119.0
 margin_top = 48.0
-margin_right = 136.0
+margin_right = 159.0
 margin_bottom = 68.0
-rect_min_size = Vector2( 35, 20 )
+rect_min_size = Vector2( 40, 20 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 6 )
-text = "D"
-script = ExtResource( 14 )
+disabled = true
+text = "SHIFT"
 
 [node name="Label6" type="Label" parent="OptionMenu/Keybinds"]
 margin_top = 72.0
-margin_right = 97.0
+margin_right = 115.0
 margin_bottom = 92.0
 rect_min_size = Vector2( 0, 20 )
 text = "Activate"
@@ -306,22 +308,23 @@ align = 2
 valign = 1
 
 [node name="Activate" type="Button" parent="OptionMenu/Keybinds"]
-margin_left = 101.0
+margin_left = 119.0
 margin_top = 72.0
-margin_right = 136.0
+margin_right = 159.0
 margin_bottom = 92.0
-rect_min_size = Vector2( 35, 20 )
+rect_min_size = Vector2( 40, 20 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 6 )
+disabled = true
 text = "E"
-script = ExtResource( 14 )
 
 [node name="Label3" type="Label" parent="OptionMenu/Keybinds"]
 margin_top = 96.0
-margin_right = 97.0
+margin_right = 115.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 0, 20 )
 text = "Open Left Eye"
@@ -329,22 +332,23 @@ align = 2
 valign = 1
 
 [node name="LeftEye" type="Button" parent="OptionMenu/Keybinds"]
-margin_left = 101.0
+margin_left = 119.0
 margin_top = 96.0
-margin_right = 136.0
+margin_right = 159.0
 margin_bottom = 116.0
-rect_min_size = Vector2( 35, 20 )
+rect_min_size = Vector2( 40, 20 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 6 )
+disabled = true
 text = "J"
-script = ExtResource( 14 )
 
 [node name="Label4" type="Label" parent="OptionMenu/Keybinds"]
 margin_top = 120.0
-margin_right = 97.0
+margin_right = 115.0
 margin_bottom = 140.0
 rect_min_size = Vector2( 0, 20 )
 text = "Open Right Eye"
@@ -352,18 +356,43 @@ align = 2
 valign = 1
 
 [node name="RightEye" type="Button" parent="OptionMenu/Keybinds"]
-margin_left = 101.0
+margin_left = 119.0
 margin_top = 120.0
-margin_right = 136.0
+margin_right = 159.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 35, 20 )
+rect_min_size = Vector2( 40, 0 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 6 )
+disabled = true
 text = "L"
-script = ExtResource( 14 )
+
+[node name="Label7" type="Label" parent="OptionMenu/Keybinds"]
+margin_top = 144.0
+margin_right = 115.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 20 )
+text = "Open/Close Menu"
+align = 2
+valign = 1
+
+[node name="Menu" type="Button" parent="OptionMenu/Keybinds"]
+margin_left = 119.0
+margin_top = 144.0
+margin_right = 159.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 40, 0 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
+disabled = true
+text = "ESC"
 
 [node name="MenuClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
