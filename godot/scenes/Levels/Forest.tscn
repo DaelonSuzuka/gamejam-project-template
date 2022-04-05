@@ -861,7 +861,7 @@ limit_right = 5750
 position = Vector2( -5208, 611 )
 
 [node name="Dev" type="Node2D" parent="Spawns"]
-position = Vector2( 5507, 700 )
+position = Vector2( -1088.14, 515.406 )
 
 [node name="NextScene" parent="Spawns" instance=ExtResource( 18 )]
 position = Vector2( 5708, 793 )
@@ -889,7 +889,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Checkpoint2"]
-position = Vector2( -9.66882, -4.56091 )
+position = Vector2( -2360, 41 )
 z_index = 5
 shape = SubResource( 421 )
 
@@ -931,16 +931,28 @@ scale = Vector2( 1.5, 1 )
 motion_scale = Vector2( 1.1, 1 )
 motion_offset = Vector2( -500, 0 )
 motion_mirroring = Vector2( 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1.125, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( -1918, 0 )
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 5

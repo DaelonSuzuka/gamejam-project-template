@@ -23,3 +23,7 @@ func _on_Checkpoint_body_entered(body: Node) -> void:
 	checkpoint = "Checkpoint"
 func _on_Checkpoint2_body_entered(body: Node) -> void:
 	checkpoint = "Checkpoint2"
+
+
+func _on_Bridge_breaking():
+	pass # Replace with function body.
