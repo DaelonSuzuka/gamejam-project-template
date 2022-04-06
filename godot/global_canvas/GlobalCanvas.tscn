@@ -274,17 +274,17 @@ margin_right = 109.0
 margin_bottom = 86.0
 text = "City"
 
-[node name="Forest" type="Button" parent="DebugControls"]
-margin_top = 90.0
-margin_right = 109.0
-margin_bottom = 110.0
-text = "Forest"
-
 [node name="Beach" type="Button" parent="DebugControls"]
 margin_top = 114.0
 margin_right = 109.0
 margin_bottom = 134.0
 text = " Beach"
+
+[node name="Forest" type="Button" parent="DebugControls"]
+margin_top = 90.0
+margin_right = 109.0
+margin_bottom = 110.0
+text = "Forest"
 
 [node name="House" type="Button" parent="DebugControls"]
 margin_top = 138.0
