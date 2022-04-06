@@ -53,7 +53,7 @@ func start_tutorial():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug+"):
-		$Debug.visible = !$Debug.visible
+		$DebugControls.visible = !$DebugControls.visible
 
 
 
