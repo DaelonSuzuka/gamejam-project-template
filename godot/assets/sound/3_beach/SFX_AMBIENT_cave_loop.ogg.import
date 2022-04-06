@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_AMBIENT_cave_loop.ogg-5bbe999b4f5fcc8edeed12aef9b30206.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/3_beach/SFX_AMBIENT_cave_loop.ogg"
+dest_files=[ "res://.import/SFX_AMBIENT_cave_loop.ogg-5bbe999b4f5fcc8edeed12aef9b30206.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

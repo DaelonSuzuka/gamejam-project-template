@@ -10,12 +10,19 @@ var active := false
 # ******************************************************************************
 
 func _ready():
-	if get_tree().get_current_scene() != self:
-		MenuButtons.hide()
-		$Textures.hide()
-		$OptionMenu.hide()
+	$OptionMenu.hide()
+	MenuButtons.hide()
+	$Textures.hide()
+	
+	if get_tree().get_current_scene() == self:
+		Player.push_menu(self)
+		MenuButtons.show()
+		$Textures.show()
 
 	ScreenDimEffect.hide()
+
+	$OptionMenu/VolumeSlider.value = Game.data.volume
+	$OptionMenu/VolumeSlider.connect('value_changed', self, 'volume_changed')
 
 	for btn in MenuButtons.get_children():
 		connect_button(btn)
@@ -24,6 +31,11 @@ func _ready():
 
 func connect_button(button):
 	button.connect('pressed', self, 'pressed', [button])
+
+func volume_changed(value):
+	Game.data.volume = value
+	Game.save_requested = true
+	AudioServer.set_bus_volume_db(0, linear2db(value))
 
 func open():
 	GlobalCanvas.get_node('Eyes').hide()
@@ -68,4 +80,5 @@ func pressed(button):
 		'Exit':
 			$MenuClick.play()
 			close()
-			Game.load_scene('mainmenu')
+			Game.dead_flag = false
+			Game.load_scene('countryside')

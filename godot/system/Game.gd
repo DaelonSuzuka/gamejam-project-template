@@ -147,6 +147,7 @@ var data = {
 	position = Utils.vec_to_dict(Vector2()),
 	flags = {},
 	opened_items = [],
+	volume = 1.0,
 }
 var save_requested := false
 

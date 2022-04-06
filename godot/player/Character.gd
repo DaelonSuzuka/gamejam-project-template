@@ -123,7 +123,10 @@ func _physics_process(delta):
 	if movement_enabled:
 		velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)
 
-	body.scale.x = 0.2 if velocity.x > 0 else -0.2
+	if velocity.x > 0:
+		body.scale.x = 0.2
+	if velocity.x < 0:
+		body.scale.x = -0.2
 
 	var interact_velocity = Vector2()
 	interact_velocity.x = velocity.x

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://assets/NPCSwife_dead.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Levels/Reveal.gd" type="Script" id=12]
 [ext_resource path="res://assets/sound/5_house/SFX_AMBIENT_house_loop.ogg" type="AudioStream" id=13]
-[ext_resource path="res://assets/sound/5_house/SFX_EVENT_SOUNTRACK_wife_corpse_reveal.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/5_house/SFX_EVENT_wife_corpse_reveal.wav" type="AudioStream" id=15]
 
 [sub_resource type="GDScript" id=102]
@@ -277,6 +276,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.075, 0.075, 0.0 ]
 }
+tracks/2/type = "audio"
+tracks/2/path = NodePath("../../Sounds/EventWifeReveal")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 15 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=101]
 length = 0.001
@@ -304,6 +317,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.075 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Sounds/Ambient:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [node name="House" type="Node2D"]
 script = SubResource( 102 )
@@ -321,9 +346,6 @@ position = Vector2( -640, 688 )
 [node name="Ambient" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 13 )
 autoplay = true
-
-[node name="EventSoundtrackWifeReveal" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 14 )
 
 [node name="EventWifeReveal" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 15 )
@@ -349,7 +371,7 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 modulate = Color( 1, 1, 1, 0.3 )
 position = Vector2( 0, 1 )
-polygon = PoolVector2Array( -2073.01, 803.265, -2067.05, 985.044, -1763.83, 990.798, -1229.59, 729.589, -1255.87, 985.779, -893.213, 954.671, -594.461, 941.882, -347.092, 933.374, -248.129, 920.318, -114.033, 955.933, -99.5134, 828.101, -67.7178, 831.712, -90.3867, 990.489, -122.182, 986.878, -250.192, 952.251, -344.491, 965.268, -593.228, 973.858, -890.998, 986.595, -1278.56, 1008.35, -1247.97, 755.789, -1757.03, 1022.07, -2099.68, 1018.09, -2099.03, 986.093, -2104.99, 804.314 )
+polygon = PoolVector2Array( -2073.01, 803.265, -2067.05, 985.044, -1763.83, 990.798, -1229.59, 729.589, -1255.87, 985.779, -893.213, 954.671, -594.461, 941.882, -347.092, 933.374, -248.129, 920.318, -114.033, 955.933, -99.5134, 828.101, -67.7178, 831.712, -90.3867, 990.489, -122.182, 986.878, -250.192, 952.251, -344.491, 965.268, -593.228, 973.858, -890.998, 986.595, -1278.56, 1008.35, -1247.97, 755.788, -1757.03, 1022.07, -2099.68, 1018.09, -2099.03, 986.093, -2104.99, 804.314 )
 
 [node name="CityFrame" type="Sprite" parent="."]
 texture = ExtResource( 10 )
@@ -367,7 +389,7 @@ margin_top = 122.0
 margin_right = -597.0
 margin_bottom = 210.0
 rect_scale = Vector2( 4.29695, 4.29695 )
-bbcode_text = "\"Our house. I couldn't wait to see my [color=fuchsia]FAMILY[/color] again.\""
+bbcode_text = "\"Our house. I couldn't wait to see my [shake rate=5 level=5][color=fuchsia]FAMILY[/color][/shake] again.\""
 text = "\"Our house. I couldn't wait to see my FAMILY again.\""
 
 [node name="FakeWaver" parent="CityFrame" instance=ExtResource( 9 )]

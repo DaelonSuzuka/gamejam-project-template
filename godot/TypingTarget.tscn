@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://TypingTarget.gd" type="Script" id=1]
 [ext_resource path="res://assets/Bohemian Soul.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sound/0_main/SFX_UI_valid_type_click.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -121,6 +122,7 @@ percent_visible = 0.0
 scroll_active = false
 
 [node name="Hint" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.2 )
 position = Vector2( 0, -17 )
 z_index = 5
 
@@ -139,3 +141,6 @@ scroll_active = false
 anims/RESET = SubResource( 5 )
 anims/matched = SubResource( 4 )
 anims/mistake = SubResource( 6 )
+
+[node name="MatchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
